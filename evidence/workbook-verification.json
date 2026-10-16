@@ -1,0 +1,10 @@
+{
+  "engine": "artifact-tool",
+  "totalMatchesSource": true,
+  "inputChangePropagates": true,
+  "reviewGuardWorks": true,
+  "temporaryInputsRestored": true,
+  "nativeExcelRecalculationTested": false,
+  "errorScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+  "headlineInspect": "{\"kind\":\"table\",\"sheet\":\"Monthly report\",\"address\":\"A5:B12\",\"rows\":8,\"cols\":2,\"values\":[[\"Metric\",\"Value\"],[\"Report month\",43435.5],[\"Latest month sales\",83030.3888],[\"Latest month orders\",223],[\"Latest average order\",372.3335820627803],[\"Latest sales YoY\",-0.1327433557698947],[\"Observed total sales\",2261536.7827],[\"Distinct orders\",4922]]}"
+}
