@@ -27,8 +27,8 @@ const categoryHeader=18,regionHeader=categoryHeader+br.drivers.category.length+4
 const actionStart=actionHeader+1,footerRow=actionStart+Math.max(br.actions.length,1)+3,lastReviewRow=footerRow+1;
 business.showGridLines=false;business.getRange(`A1:F${lastReviewRow}`).format={font:{name:'Arial',size:10,color:navy},rowHeight:24,verticalAlignment:'center',columnWidth:18};
 business.getRange(`A1:A${lastReviewRow}`).format.columnWidth=28;business.getRange(`C1:C${lastReviewRow}`).format.columnWidth=22;business.getRange(`F1:F${lastReviewRow}`).format.columnWidth=52;
-title(business,'Sales review Â· '+bs.month);
-business.getRange('A3').values=[[`${bs.current_start}â€“${bs.current_end} versus ${bs.prior_start}â€“${bs.prior_end} | Historical sample | Source monetary units`]];business.getRange('A3').format.font={size:9,color:muted,italic:true};
+title(business,'Sales review · '+bs.month);
+business.getRange('A3').values=[[`${bs.current_start}–${bs.current_end} versus ${bs.prior_start}–${bs.prior_end} | Historical sample | Source monetary units`]];business.getRange('A3').format.font={size:9,color:muted,italic:true};
 business.getRange('A5:D5').values=[['Measure','Current period','Prior year','Change']];
 business.getRange('A6:D8').values=[['Sales',bs.current.sales_units/10000,bs.prior?bs.prior.sales_units/10000:null,null],['Orders',bs.current.orders,bs.prior?bs.prior.orders:null,null],['Average order value',null,null,null]];
 business.getRange('B8:C8').formulas=[['=IF(B7=0,"n.a.",B6/B7)',bs.prior?'=IF(C7=0,"n.a.",C6/C7)':'="n.a."']];
@@ -48,7 +48,7 @@ for(const [scope,header] of [['category',categoryHeader],['region',regionHeader]
  business.getRange(`B${header+1}:D${endRow}`).setNumberFormat(fmt);business.getRange(`E${header+1}:E${endRow}`).setNumberFormat('0.0%');business.getRange(`B${header+1}:C${endRow}`).format.font.color=blue;head(business,`A${header}:E${header}`);
  business.getRange(`D${header+1}:D${endRow}`).conditionalFormats.add('cellIs',{operator:'lessThan',formula:0,format:{font:{color:'#A32626'}}});
 }
-business.getRange(`A${actionHeader-1}`).values=[['Review first Â· refreshed from the latest CSVs']];business.getRange(`A${actionHeader-1}`).format.font={bold:true,size:12};
+business.getRange(`A${actionHeader-1}`).values=[['Review first · refreshed from the latest CSVs']];business.getRange(`A${actionHeader-1}`).format.font={bold:true,size:12};
 business.getRange(`A${actionHeader}:F${actionHeader}`).values=[['Priority','View','Segment','Sales change','Pattern','Product IDs to check']];head(business,`A${actionHeader}:F${actionHeader}`);
 if(br.actions.length){
  const ae=actionStart+br.actions.length-1;
@@ -108,7 +108,7 @@ for(let i=0;i<count;i++){
 }
 main.getRange(`A21:A${20+count}`).setNumberFormat('mmm yyyy');main.getRange(`B21:C${20+count}`).setNumberFormat('#,##0');main.getRange(`D21:D${20+count}`).setNumberFormat(fmt);main.getRange(`E21:F${20+count}`).setNumberFormat('0.0%');head(main,'A5:B5');head(main,'A20:G20');
 main.getRange('A35').values=[['Refresh creates a dated version. Review notes are stored separately and rejoined by month + category.']];main.getRange('A35').format.font={size:9,color:muted};
-const chart=main.charts.add('line',detail.getRange(`L${chartHeader}:M${chartHeader+count}`));chart.title='Last 12 observed months Â· sales';chart.hasLegend=false;chart.titleTextStyle.typeface='Arial';chart.titleTextStyle.fontSize=12;chart.xAxis={axisType:'textAxis',textStyle:{typeface:'Arial',fontSize:9}};chart.yAxis={numberFormatCode:'#,##0,"K"',numberFormatSourceLinked:false,textStyle:{typeface:'Arial',fontSize:10}};chart.series.items[0].line={fill:blue,style:'solid',width:2};chart.setPosition('D5','J13');
+const chart=main.charts.add('line',detail.getRange(`L${chartHeader}:M${chartHeader+count}`));chart.title='Last 12 observed months · sales';chart.hasLegend=false;chart.titleTextStyle.typeface='Arial';chart.titleTextStyle.fontSize=12;chart.xAxis={axisType:'textAxis',textStyle:{typeface:'Arial',fontSize:9}};chart.yAxis={numberFormatCode:'#,##0,"K"',numberFormatSourceLinked:false,textStyle:{typeface:'Arial',fontSize:10}};chart.series.items[0].line={fill:blue,style:'solid',width:2};chart.setPosition('D5','J13');
 wb.recalculate();
 if(bs.prior&&Math.abs(business.getRange('B10').values[0][0]-bs.sales_change_units/10000)>0.000001)throw Error('Business review change mismatch');
 if(bs.prior&&bs.current.orders&&bs.prior.orders){
