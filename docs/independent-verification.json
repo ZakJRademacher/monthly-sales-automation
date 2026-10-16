@@ -1,0 +1,31 @@
+{
+  "method": "Independent original-source Decimal/date recomputation; selected-column equality; read-only openpyxl/XML; real-engine refresh replay",
+  "checks": {
+    "source_rows": true,
+    "source_orders": true,
+    "exact_total": true,
+    "monthly_totals": true,
+    "all_rows_retained": true,
+    "selected_source_values_retained": true,
+    "no_customer_names_in_deliveries": true,
+    "all_six_reconciliations_pass": true,
+    "cached_total_matches": true,
+    "cached_last_month_matches": true,
+    "cached_yoy_matches": true,
+    "report_month_is_typed_date": true,
+    "summary_linked_to_calculations": true,
+    "first_yoy_unavailable": true,
+    "last_yoy_formula_exists": true,
+    "native_chart_exists": true,
+    "review_status_dropdown": true,
+    "review_note_keys_are_text": true,
+    "delivered_notes_are_blank": true,
+    "chart_bound_to_cells": true,
+    "chart_line_color_exported": true,
+    "real_workbook_refresh_demonstration": true,
+    "pdf_two_pages": true,
+    "pdf_source_identifier": true
+  },
+  "all_passed": true,
+  "nativeExcelRecalculationTested": false
+}

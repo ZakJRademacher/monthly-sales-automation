@@ -1,0 +1,48 @@
+{
+  "scenario": "Replay historical Kaggle monthly partitions; no fabricated sales enter delivered workbook.",
+  "test_annotation": "A clearly labeled temporary demonstration note; delivered workbook has no invented completed reviews.",
+  "before": {
+    "lines": 9341,
+    "orders": 4699,
+    "sales_units": 21785063939,
+    "first_date": "2015-01-03",
+    "last_date": "2018-11-30",
+    "input_files": 47,
+    "input_rows": 9341,
+    "repeated_rows": 0,
+    "months": 47,
+    "missing_months": 0,
+    "last_month": "2018-11",
+    "saved_note_keys": 1,
+    "unmatched_notes": 0
+  },
+  "after": {
+    "lines": 9800,
+    "orders": 4922,
+    "sales_units": 22615367827,
+    "first_date": "2015-01-03",
+    "last_date": "2018-12-30",
+    "input_files": 48,
+    "input_rows": 9800,
+    "repeated_rows": 0,
+    "months": 48,
+    "missing_months": 0,
+    "last_month": "2018-12",
+    "saved_note_keys": 1,
+    "unmatched_notes": 0
+  },
+  "checks": {
+    "real_engine_used_for_three_refreshes": true,
+    "next_month_added": true,
+    "new_lines_added": true,
+    "month_label_advanced": true,
+    "latest_month_value_changed": true,
+    "saved_note_preserved": true,
+    "identical_rerun_did_not_double_count": true,
+    "conflicting_delivery_rejected": true,
+    "failed_refresh_kept_last_good_pointer": true,
+    "last_good_workbook_retained": true
+  },
+  "all_passed": true,
+  "nativeExcelRecalculationTested": false
+}

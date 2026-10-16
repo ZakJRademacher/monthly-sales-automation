@@ -1,0 +1,12 @@
+{
+  "dataset": "rohitsahoo/sales-forecasting",
+  "source_file": "train.csv",
+  "source_sha256": "dbb0f167b27ccf02d7ff8cb0446a9abc6dbc3522e83cf9daa6939801acfdd196",
+  "source_rows": 9800,
+  "monthly_files": 48,
+  "transformation": "Selected eight original columns and partitioned by parsed Order Date; original values retained.",
+  "sample_data": true,
+  "currency": "Unspecified by Kaggle data card; no currency conversion assumed.",
+  "license_label": "GPL 2",
+  "data_page": "https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting"
+}
