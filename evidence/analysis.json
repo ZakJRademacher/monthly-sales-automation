@@ -1,0 +1,1983 @@
+{
+  "metrics": {
+    "lines": 9800,
+    "orders": 4922,
+    "sales_units": 22615367827,
+    "first_date": "2015-01-03",
+    "last_date": "2018-12-30",
+    "input_files": 48,
+    "input_rows": 9800,
+    "repeated_rows": 0,
+    "months": 48,
+    "missing_months": 0,
+    "last_month": "2018-12",
+    "saved_note_keys": 0,
+    "unmatched_notes": 0
+  },
+  "files": [
+    {
+      "file": "sales_2015-01.csv",
+      "month": "2015-01",
+      "source_rows": 77,
+      "sha256": "8268c07aaff47b2decba3e2873e6e6c2f162a9063f6de33c5cb5e927e6bbcf2c"
+    },
+    {
+      "file": "sales_2015-02.csv",
+      "month": "2015-02",
+      "source_rows": 46,
+      "sha256": "22497a2ce9a24ddcf082b7943081c4c2d76c0953b59c602b151211e9b3f51535"
+    },
+    {
+      "file": "sales_2015-03.csv",
+      "month": "2015-03",
+      "source_rows": 154,
+      "sha256": "9f744b4854a4dd0d8ee7d15cb3349385dcb6281e5a4dc3f7aefedf72f0767a14"
+    },
+    {
+      "file": "sales_2015-04.csv",
+      "month": "2015-04",
+      "source_rows": 130,
+      "sha256": "00d1bffe36d7ba2016acb6b1779066ce920a1420effb63eb1e22a52738781bbf"
+    },
+    {
+      "file": "sales_2015-05.csv",
+      "month": "2015-05",
+      "source_rows": 121,
+      "sha256": "d3c4c90f6b38e235dcc3068c67b5aaeb480e00d10dc2460ac5fe4a24771c8b2f"
+    },
+    {
+      "file": "sales_2015-06.csv",
+      "month": "2015-06",
+      "source_rows": 131,
+      "sha256": "0a4c649ae6eb50a6c3e12775e4d159e5f60bf11c7b18d58669a57dcb326317e3"
+    },
+    {
+      "file": "sales_2015-07.csv",
+      "month": "2015-07",
+      "source_rows": 142,
+      "sha256": "6afafe0f1613be7f34d6c49a525e9869b7293bdff44137b88001dc4bb4d745d0"
+    },
+    {
+      "file": "sales_2015-08.csv",
+      "month": "2015-08",
+      "source_rows": 146,
+      "sha256": "6d7f23166b83251af4765eb392e4dfb2622c7bca3a6e65715611c95445fa0c77"
+    },
+    {
+      "file": "sales_2015-09.csv",
+      "month": "2015-09",
+      "source_rows": 267,
+      "sha256": "cfc824f983ee7b8fa88af8625f9853c19caa11b5ed2d703edd697deb43cacdfc"
+    },
+    {
+      "file": "sales_2015-10.csv",
+      "month": "2015-10",
+      "source_rows": 159,
+      "sha256": "611abf6cbb9fcfc9a69d8f2c1d6fda88023c60a575d3c22b5918395eb8265303"
+    },
+    {
+      "file": "sales_2015-11.csv",
+      "month": "2015-11",
+      "source_rows": 306,
+      "sha256": "5618133ab4eb6b775b8c4e78ccf1bf672e1cf25fb8565124a5a6c3fa2812c252"
+    },
+    {
+      "file": "sales_2015-12.csv",
+      "month": "2015-12",
+      "source_rows": 274,
+      "sha256": "30258ac4a1a09977933e2d762629ea3aa3eaa71a681b3c5f5ca5695c2af595d5"
+    },
+    {
+      "file": "sales_2016-01.csv",
+      "month": "2016-01",
+      "source_rows": 57,
+      "sha256": "fa92d840daa0c0a93ae0527307b0723c364c8155356dec7960c66f602f0e7f64"
+    },
+    {
+      "file": "sales_2016-02.csv",
+      "month": "2016-02",
+      "source_rows": 64,
+      "sha256": "2e73b161d9c584f5cf2ac40cf99ad9a87e0d445adcb7d803e003e7d35897b49d"
+    },
+    {
+      "file": "sales_2016-03.csv",
+      "month": "2016-03",
+      "source_rows": 128,
+      "sha256": "5382c3f45d2cc05a3ebff6f5d45f87433fbc07bb5f6ef5fe4678317a04b66ce5"
+    },
+    {
+      "file": "sales_2016-04.csv",
+      "month": "2016-04",
+      "source_rows": 159,
+      "sha256": "1aa6f03b8e938dd727319f032ae3f49f478a73304783a828dcf701a832f45483"
+    },
+    {
+      "file": "sales_2016-05.csv",
+      "month": "2016-05",
+      "source_rows": 143,
+      "sha256": "9085fc89836a09b567c8612369290442108e5298e09239c054e65a5fab51a03f"
+    },
+    {
+      "file": "sales_2016-06.csv",
+      "month": "2016-06",
+      "source_rows": 129,
+      "sha256": "278e372f6337e132918ac4be3b705f0f99fcf268bf42592512f3349842d157e4"
+    },
+    {
+      "file": "sales_2016-07.csv",
+      "month": "2016-07",
+      "source_rows": 136,
+      "sha256": "b4347b1e4ccce847b67dccd97cdc13f99a6353dfb1d2fd1a1396112a945466a0"
+    },
+    {
+      "file": "sales_2016-08.csv",
+      "month": "2016-08",
+      "source_rows": 158,
+      "sha256": "89bc12d3e5eb1d386ac2e9b7f9e4bda128a107a317d1c090116272a78a037105"
+    },
+    {
+      "file": "sales_2016-09.csv",
+      "month": "2016-09",
+      "source_rows": 285,
+      "sha256": "634abe2f8ad70ebc80140b3361e090a6be9095c6a803912605ae284b3ab22547"
+    },
+    {
+      "file": "sales_2016-10.csv",
+      "month": "2016-10",
+      "source_rows": 164,
+      "sha256": "7c983ffe9d1ec5a7940cce039e03f65bcab2fa445977c1def6b0fdf1c07f1b53"
+    },
+    {
+      "file": "sales_2016-11.csv",
+      "month": "2016-11",
+      "source_rows": 321,
+      "sha256": "313aa4ce6fb62dfd711643c9c3b86240b0b5bf95ff899b029a34e75e343922c4"
+    },
+    {
+      "file": "sales_2016-12.csv",
+      "month": "2016-12",
+      "source_rows": 311,
+      "sha256": "486a5abc153c40cc72429af05443ec5bcf00403ee0a95b2113d81c0c36d17766"
+    },
+    {
+      "file": "sales_2017-01.csv",
+      "month": "2017-01",
+      "source_rows": 89,
+      "sha256": "ce514d41c8dba3b00c17013afee1bd0951a9e98d2a3d318f80b6e1e7abd79a23"
+    },
+    {
+      "file": "sales_2017-02.csv",
+      "month": "2017-02",
+      "source_rows": 83,
+      "sha256": "2063a10a15e86f2c856004663bc93dfeee34c3f3351ae2abe835daf38e6af1c4"
+    },
+    {
+      "file": "sales_2017-03.csv",
+      "month": "2017-03",
+      "source_rows": 161,
+      "sha256": "3087979a1e203bfb8536de50783fe3a8f7ae8ca1862b46a012343b05a720d1b8"
+    },
+    {
+      "file": "sales_2017-04.csv",
+      "month": "2017-04",
+      "source_rows": 168,
+      "sha256": "f4a6fdefa9a3773aa7e026f510dcb3b908ca0e9479077d0fa08783b581de5354"
+    },
+    {
+      "file": "sales_2017-05.csv",
+      "month": "2017-05",
+      "source_rows": 221,
+      "sha256": "14e97f7301d30fe77a9540039e37014cf7ad5ff301fd86c34cbd4bce93c21ce6"
+    },
+    {
+      "file": "sales_2017-06.csv",
+      "month": "2017-06",
+      "source_rows": 196,
+      "sha256": "7fd6c3f86a147d9d89907f390dbfb475e9a0a49acd40492ebf17f121410a190e"
+    },
+    {
+      "file": "sales_2017-07.csv",
+      "month": "2017-07",
+      "source_rows": 196,
+      "sha256": "27c1f4174aac428b1612184257d0cb5376eb075532108240262d4d15f3ed2ca9"
+    },
+    {
+      "file": "sales_2017-08.csv",
+      "month": "2017-08",
+      "source_rows": 175,
+      "sha256": "35e33cf0822d38b095a7daf8c229c7f5bff24c27cca6f8764c33e36624c7530a"
+    },
+    {
+      "file": "sales_2017-09.csv",
+      "month": "2017-09",
+      "source_rows": 349,
+      "sha256": "d9bb45ccd04654589804964a73ec1113eba21b6794908d1ab0231ed283f5b832"
+    },
+    {
+      "file": "sales_2017-10.csv",
+      "month": "2017-10",
+      "source_rows": 192,
+      "sha256": "4f67b359e29b76f7ed6e97a19ee98b4280916e55c0645e39ec04a1e1cb9cb932"
+    },
+    {
+      "file": "sales_2017-11.csv",
+      "month": "2017-11",
+      "source_rows": 366,
+      "sha256": "06eed1ac6f7d1f32460cdc515b13956b083d4dfede7ec19aeefbfa9954b4420d"
+    },
+    {
+      "file": "sales_2017-12.csv",
+      "month": "2017-12",
+      "source_rows": 338,
+      "sha256": "05f0690ed16c2b7c43bd8a728912764534edc7ddd2d86a41d17ae289706b845b"
+    },
+    {
+      "file": "sales_2018-01.csv",
+      "month": "2018-01",
+      "source_rows": 143,
+      "sha256": "57315f46bccb4c71cb17321d1ca320ad21a88ea196465d984e4acd0ec9207c09"
+    },
+    {
+      "file": "sales_2018-02.csv",
+      "month": "2018-02",
+      "source_rows": 104,
+      "sha256": "6d83b1723ffb7194104d57a980506c701adb00cc3a2d985dce82d812054f8a92"
+    },
+    {
+      "file": "sales_2018-03.csv",
+      "month": "2018-03",
+      "source_rows": 237,
+      "sha256": "eb5bbdb2c0b77cf2aa4467475522fa4a21a465cac96c681546f71f18c5b3c6da"
+    },
+    {
+      "file": "sales_2018-04.csv",
+      "month": "2018-04",
+      "source_rows": 200,
+      "sha256": "841e18c26dec54295f71b4c59d064ffb4d2b5ec5c022c0397cb8ea3042b5ac6f"
+    },
+    {
+      "file": "sales_2018-05.csv",
+      "month": "2018-05",
+      "source_rows": 240,
+      "sha256": "f1366ecc5bf7e1fc0e40fe011c92636ad896bfb9b29af86a69987b15ae243a3d"
+    },
+    {
+      "file": "sales_2018-06.csv",
+      "month": "2018-06",
+      "source_rows": 235,
+      "sha256": "ad891f717332af43f45394fbb55d96523d90c293ff9d57b5f15b375db35616bf"
+    },
+    {
+      "file": "sales_2018-07.csv",
+      "month": "2018-07",
+      "source_rows": 223,
+      "sha256": "4c60be9d864acaa90b61422fe37c2fdd1ec1de1f085b9993ad32c930eb69b77c"
+    },
+    {
+      "file": "sales_2018-08.csv",
+      "month": "2018-08",
+      "source_rows": 214,
+      "sha256": "62f43734573d3ab4814fe572440acaed99a593abdeeb03bbdd313ac7ab06dc8a"
+    },
+    {
+      "file": "sales_2018-09.csv",
+      "month": "2018-09",
+      "source_rows": 453,
+      "sha256": "dce4c0ef52a584d1126781047fcce58cb3174ae5cd1855bd1263b0c784e4eced"
+    },
+    {
+      "file": "sales_2018-10.csv",
+      "month": "2018-10",
+      "source_rows": 294,
+      "sha256": "c991eda91c7100b758e774bb310db2577c24a5700937ac4d09f5239298b049c7"
+    },
+    {
+      "file": "sales_2018-11.csv",
+      "month": "2018-11",
+      "source_rows": 456,
+      "sha256": "0d6196f9b80cef99eb380c2d880f42ae2527293d4105af72fb0e5c6932fa4378"
+    },
+    {
+      "file": "sales_2018-12.csv",
+      "month": "2018-12",
+      "source_rows": 459,
+      "sha256": "449abd845bed4dfa9f9398f839f393144c1eb015a03ca105bfc74f6ca2a2fb91"
+    }
+  ],
+  "reports": {
+    "monthly": [
+      {
+        "month": "2015-01",
+        "coverage": "Imported",
+        "lines": 77,
+        "orders": 30,
+        "sales_units": 142057070
+      },
+      {
+        "month": "2015-02",
+        "coverage": "Imported",
+        "lines": 46,
+        "orders": 28,
+        "sales_units": 45198920
+      },
+      {
+        "month": "2015-03",
+        "coverage": "Imported",
+        "lines": 154,
+        "orders": 69,
+        "sales_units": 552057970
+      },
+      {
+        "month": "2015-04",
+        "coverage": "Imported",
+        "lines": 130,
+        "orders": 63,
+        "sales_units": 279068550
+      },
+      {
+        "month": "2015-05",
+        "coverage": "Imported",
+        "lines": 121,
+        "orders": 68,
+        "sales_units": 236443030
+      },
+      {
+        "month": "2015-06",
+        "coverage": "Imported",
+        "lines": 131,
+        "orders": 64,
+        "sales_units": 343229356
+      },
+      {
+        "month": "2015-07",
+        "coverage": "Imported",
+        "lines": 142,
+        "orders": 64,
+        "sales_units": 337815430
+      },
+      {
+        "month": "2015-08",
+        "coverage": "Imported",
+        "lines": 146,
+        "orders": 70,
+        "sales_units": 271175365
+      },
+      {
+        "month": "2015-09",
+        "coverage": "Imported",
+        "lines": 267,
+        "orders": 129,
+        "sales_units": 816235268
+      },
+      {
+        "month": "2015-10",
+        "coverage": "Imported",
+        "lines": 159,
+        "orders": 78,
+        "sales_units": 314533930
+      },
+      {
+        "month": "2015-11",
+        "coverage": "Imported",
+        "lines": 306,
+        "orders": 145,
+        "sales_units": 779076607
+      },
+      {
+        "month": "2015-12",
+        "coverage": "Imported",
+        "lines": 274,
+        "orders": 139,
+        "sales_units": 681670585
+      },
+      {
+        "month": "2016-01",
+        "coverage": "Imported",
+        "lines": 57,
+        "orders": 29,
+        "sales_units": 180669576
+      },
+      {
+        "month": "2016-02",
+        "coverage": "Imported",
+        "lines": 64,
+        "orders": 36,
+        "sales_units": 119514110
+      },
+      {
+        "month": "2016-03",
+        "coverage": "Imported",
+        "lines": 128,
+        "orders": 75,
+        "sales_units": 323393184
+      },
+      {
+        "month": "2016-04",
+        "coverage": "Imported",
+        "lines": 159,
+        "orders": 71,
+        "sales_units": 341544685
+      },
+      {
+        "month": "2016-05",
+        "coverage": "Imported",
+        "lines": 143,
+        "orders": 72,
+        "sales_units": 299595305
+      },
+      {
+        "month": "2016-06",
+        "coverage": "Imported",
+        "lines": 129,
+        "orders": 66,
+        "sales_units": 235993740
+      },
+      {
+        "month": "2016-07",
+        "coverage": "Imported",
+        "lines": 136,
+        "orders": 64,
+        "sales_units": 286082590
+      },
+      {
+        "month": "2016-08",
+        "coverage": "Imported",
+        "lines": 158,
+        "orders": 67,
+        "sales_units": 368183422
+      },
+      {
+        "month": "2016-09",
+        "coverage": "Imported",
+        "lines": 285,
+        "orders": 137,
+        "sales_units": 631336060
+      },
+      {
+        "month": "2016-10",
+        "coverage": "Imported",
+        "lines": 164,
+        "orders": 86,
+        "sales_units": 310117375
+      },
+      {
+        "month": "2016-11",
+        "coverage": "Imported",
+        "lines": 321,
+        "orders": 157,
+        "sales_units": 752493995
+      },
+      {
+        "month": "2016-12",
+        "coverage": "Imported",
+        "lines": 311,
+        "orders": 159,
+        "sales_units": 745436012
+      },
+      {
+        "month": "2017-01",
+        "coverage": "Imported",
+        "lines": 89,
+        "orders": 48,
+        "sales_units": 185424910
+      },
+      {
+        "month": "2017-02",
+        "coverage": "Imported",
+        "lines": 83,
+        "orders": 45,
+        "sales_units": 229788150
+      },
+      {
+        "month": "2017-03",
+        "coverage": "Imported",
+        "lines": 161,
+        "orders": 85,
+        "sales_units": 511650590
+      },
+      {
+        "month": "2017-04",
+        "coverage": "Imported",
+        "lines": 168,
+        "orders": 88,
+        "sales_units": 386797670
+      },
+      {
+        "month": "2017-05",
+        "coverage": "Imported",
+        "lines": 221,
+        "orders": 107,
+        "sales_units": 566569080
+      },
+      {
+        "month": "2017-06",
+        "coverage": "Imported",
+        "lines": 196,
+        "orders": 95,
+        "sales_units": 397244860
+      },
+      {
+        "month": "2017-07",
+        "coverage": "Imported",
+        "lines": 196,
+        "orders": 95,
+        "sales_units": 383207830
+      },
+      {
+        "month": "2017-08",
+        "coverage": "Imported",
+        "lines": 175,
+        "orders": 89,
+        "sales_units": 305422003
+      },
+      {
+        "month": "2017-09",
+        "coverage": "Imported",
+        "lines": 349,
+        "orders": 186,
+        "sales_units": 691933909
+      },
+      {
+        "month": "2017-10",
+        "coverage": "Imported",
+        "lines": 192,
+        "orders": 103,
+        "sales_units": 595830330
+      },
+      {
+        "month": "2017-11",
+        "coverage": "Imported",
+        "lines": 366,
+        "orders": 182,
+        "sales_units": 790664958
+      },
+      {
+        "month": "2017-12",
+        "coverage": "Imported",
+        "lines": 338,
+        "orders": 172,
+        "sales_units": 957391210
+      },
+      {
+        "month": "2018-01",
+        "coverage": "Imported",
+        "lines": 143,
+        "orders": 67,
+        "sales_units": 434764740
+      },
+      {
+        "month": "2018-02",
+        "coverage": "Imported",
+        "lines": 104,
+        "orders": 52,
+        "sales_units": 199209974
+      },
+      {
+        "month": "2018-03",
+        "coverage": "Imported",
+        "lines": 237,
+        "orders": 117,
+        "sales_units": 588634128
+      },
+      {
+        "month": "2018-04",
+        "coverage": "Imported",
+        "lines": 200,
+        "orders": 115,
+        "sales_units": 355419101
+      },
+      {
+        "month": "2018-05",
+        "coverage": "Imported",
+        "lines": 240,
+        "orders": 116,
+        "sales_units": 438259822
+      },
+      {
+        "month": "2018-06",
+        "coverage": "Imported",
+        "lines": 235,
+        "orders": 129,
+        "sales_units": 481907277
+      },
+      {
+        "month": "2018-07",
+        "coverage": "Imported",
+        "lines": 223,
+        "orders": 108,
+        "sales_units": 448251040
+      },
+      {
+        "month": "2018-08",
+        "coverage": "Imported",
+        "lines": 214,
+        "orders": 109,
+        "sales_units": 628378480
+      },
+      {
+        "month": "2018-09",
+        "coverage": "Imported",
+        "lines": 453,
+        "orders": 222,
+        "sales_units": 861528880
+      },
+      {
+        "month": "2018-10",
+        "coverage": "Imported",
+        "lines": 294,
+        "orders": 144,
+        "sales_units": 774481312
+      },
+      {
+        "month": "2018-11",
+        "coverage": "Imported",
+        "lines": 456,
+        "orders": 259,
+        "sales_units": 1179381550
+      },
+      {
+        "month": "2018-12",
+        "coverage": "Imported",
+        "lines": 459,
+        "orders": 223,
+        "sales_units": 830303888
+      }
+    ],
+    "category_month": [
+      {
+        "month": "2015-01",
+        "category": "Furniture",
+        "lines": 19,
+        "sales_units": 62172770,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-01",
+        "category": "Office Supplies",
+        "lines": 49,
+        "sales_units": 48451400,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-01",
+        "category": "Technology",
+        "lines": 9,
+        "sales_units": 31432900,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-02",
+        "category": "Furniture",
+        "lines": 7,
+        "sales_units": 18396580,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-02",
+        "category": "Office Supplies",
+        "lines": 31,
+        "sales_units": 10717240,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-02",
+        "category": "Technology",
+        "lines": 8,
+        "sales_units": 16085100,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-03",
+        "category": "Furniture",
+        "lines": 32,
+        "sales_units": 142433680,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-03",
+        "category": "Office Supplies",
+        "lines": 101,
+        "sales_units": 86024550,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-03",
+        "category": "Technology",
+        "lines": 21,
+        "sales_units": 323599740,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-04",
+        "category": "Furniture",
+        "lines": 26,
+        "sales_units": 79448370,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-04",
+        "category": "Office Supplies",
+        "lines": 80,
+        "sales_units": 109888740,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-04",
+        "category": "Technology",
+        "lines": 24,
+        "sales_units": 89731440,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-05",
+        "category": "Furniture",
+        "lines": 24,
+        "sales_units": 69127870,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-05",
+        "category": "Office Supplies",
+        "lines": 70,
+        "sales_units": 71316400,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-05",
+        "category": "Technology",
+        "lines": 27,
+        "sales_units": 95998760,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-06",
+        "category": "Furniture",
+        "lines": 29,
+        "sales_units": 131445816,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-06",
+        "category": "Office Supplies",
+        "lines": 81,
+        "sales_units": 127423890,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-06",
+        "category": "Technology",
+        "lines": 21,
+        "sales_units": 84359650,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-07",
+        "category": "Furniture",
+        "lines": 33,
+        "sales_units": 108210510,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-07",
+        "category": "Office Supplies",
+        "lines": 82,
+        "sales_units": 151212080,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-07",
+        "category": "Technology",
+        "lines": 27,
+        "sales_units": 78392840,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-08",
+        "category": "Furniture",
+        "lines": 23,
+        "sales_units": 71252105,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-08",
+        "category": "Office Supplies",
+        "lines": 97,
+        "sales_units": 110552760,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-08",
+        "category": "Technology",
+        "lines": 26,
+        "sales_units": 89370500,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-09",
+        "category": "Furniture",
+        "lines": 56,
+        "sales_units": 238164808,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-09",
+        "category": "Office Supplies",
+        "lines": 166,
+        "sales_units": 274232980,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-09",
+        "category": "Technology",
+        "lines": 45,
+        "sales_units": 303837480,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-10",
+        "category": "Furniture",
+        "lines": 32,
+        "sales_units": 123042470,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-10",
+        "category": "Office Supplies",
+        "lines": 97,
+        "sales_units": 72111280,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-10",
+        "category": "Technology",
+        "lines": 30,
+        "sales_units": 119380180,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-11",
+        "category": "Furniture",
+        "lines": 60,
+        "sales_units": 214710407,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-11",
+        "category": "Office Supplies",
+        "lines": 186,
+        "sales_units": 263631960,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-11",
+        "category": "Technology",
+        "lines": 60,
+        "sales_units": 300734240,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-12",
+        "category": "Furniture",
+        "lines": 73,
+        "sales_units": 306373425,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-12",
+        "category": "Office Supplies",
+        "lines": 152,
+        "sales_units": 169564920,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2015-12",
+        "category": "Technology",
+        "lines": 49,
+        "sales_units": 205732240,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-01",
+        "category": "Furniture",
+        "lines": 15,
+        "sales_units": 117399416,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-01",
+        "category": "Office Supplies",
+        "lines": 32,
+        "sales_units": 18087800,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-01",
+        "category": "Technology",
+        "lines": 10,
+        "sales_units": 45182360,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-02",
+        "category": "Furniture",
+        "lines": 11,
+        "sales_units": 31343740,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-02",
+        "category": "Office Supplies",
+        "lines": 39,
+        "sales_units": 53680670,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-02",
+        "category": "Technology",
+        "lines": 14,
+        "sales_units": 34489700,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-03",
+        "category": "Furniture",
+        "lines": 26,
+        "sales_units": 87226374,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-03",
+        "category": "Office Supplies",
+        "lines": 75,
+        "sales_units": 134727390,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-03",
+        "category": "Technology",
+        "lines": 27,
+        "sales_units": 101439420,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-04",
+        "category": "Furniture",
+        "lines": 33,
+        "sales_units": 104756985,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-04",
+        "category": "Office Supplies",
+        "lines": 89,
+        "sales_units": 125178180,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-04",
+        "category": "Technology",
+        "lines": 37,
+        "sales_units": 111609520,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-05",
+        "category": "Furniture",
+        "lines": 30,
+        "sales_units": 93749505,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-05",
+        "category": "Office Supplies",
+        "lines": 91,
+        "sales_units": 89415800,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-05",
+        "category": "Technology",
+        "lines": 22,
+        "sales_units": 116430000,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-06",
+        "category": "Furniture",
+        "lines": 25,
+        "sales_units": 75409710,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-06",
+        "category": "Office Supplies",
+        "lines": 77,
+        "sales_units": 96230370,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-06",
+        "category": "Technology",
+        "lines": 27,
+        "sales_units": 64353660,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-07",
+        "category": "Furniture",
+        "lines": 39,
+        "sales_units": 136670400,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-07",
+        "category": "Office Supplies",
+        "lines": 76,
+        "sales_units": 47062430,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-07",
+        "category": "Technology",
+        "lines": 21,
+        "sales_units": 102349760,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-08",
+        "category": "Furniture",
+        "lines": 32,
+        "sales_units": 96385922,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-08",
+        "category": "Office Supplies",
+        "lines": 96,
+        "sales_units": 117351080,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-08",
+        "category": "Technology",
+        "lines": 30,
+        "sales_units": 154446420,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-09",
+        "category": "Furniture",
+        "lines": 55,
+        "sales_units": 250854230,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-09",
+        "category": "Office Supplies",
+        "lines": 182,
+        "sales_units": 190310550,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-09",
+        "category": "Technology",
+        "lines": 48,
+        "sales_units": 190171280,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-10",
+        "category": "Furniture",
+        "lines": 35,
+        "sales_units": 116644875,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-10",
+        "category": "Office Supplies",
+        "lines": 88,
+        "sales_units": 86423600,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-10",
+        "category": "Technology",
+        "lines": 41,
+        "sales_units": 107048900,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-11",
+        "category": "Furniture",
+        "lines": 76,
+        "sales_units": 301975005,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-11",
+        "category": "Office Supplies",
+        "lines": 184,
+        "sales_units": 211782980,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-11",
+        "category": "Technology",
+        "lines": 61,
+        "sales_units": 238736010,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-12",
+        "category": "Furniture",
+        "lines": 63,
+        "sales_units": 228122512,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-12",
+        "category": "Office Supplies",
+        "lines": 181,
+        "sales_units": 160993220,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2016-12",
+        "category": "Technology",
+        "lines": 67,
+        "sales_units": 356320280,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-01",
+        "category": "Furniture",
+        "lines": 22,
+        "sales_units": 76227430,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-01",
+        "category": "Office Supplies",
+        "lines": 45,
+        "sales_units": 52996820,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-01",
+        "category": "Technology",
+        "lines": 22,
+        "sales_units": 56200660,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-02",
+        "category": "Furniture",
+        "lines": 19,
+        "sales_units": 39255510,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-02",
+        "category": "Office Supplies",
+        "lines": 48,
+        "sales_units": 67943500,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-02",
+        "category": "Technology",
+        "lines": 16,
+        "sales_units": 122589140,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-03",
+        "category": "Furniture",
+        "lines": 40,
+        "sales_units": 122726620,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-03",
+        "category": "Office Supplies",
+        "lines": 84,
+        "sales_units": 173245450,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-03",
+        "category": "Technology",
+        "lines": 37,
+        "sales_units": 215678520,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-04",
+        "category": "Furniture",
+        "lines": 35,
+        "sales_units": 132120900,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-04",
+        "category": "Office Supplies",
+        "lines": 111,
+        "sales_units": 105771750,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-04",
+        "category": "Technology",
+        "lines": 22,
+        "sales_units": 148905020,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-05",
+        "category": "Furniture",
+        "lines": 41,
+        "sales_units": 148925750,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-05",
+        "category": "Office Supplies",
+        "lines": 138,
+        "sales_units": 129316420,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-05",
+        "category": "Technology",
+        "lines": 42,
+        "sales_units": 288326910,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-06",
+        "category": "Furniture",
+        "lines": 35,
+        "sales_units": 124505240,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-06",
+        "category": "Office Supplies",
+        "lines": 125,
+        "sales_units": 109018100,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-06",
+        "category": "Technology",
+        "lines": 36,
+        "sales_units": 163721520,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-07",
+        "category": "Furniture",
+        "lines": 37,
+        "sales_units": 125697590,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-07",
+        "category": "Office Supplies",
+        "lines": 127,
+        "sales_units": 129038240,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-07",
+        "category": "Technology",
+        "lines": 32,
+        "sales_units": 128472000,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-08",
+        "category": "Furniture",
+        "lines": 28,
+        "sales_units": 119100583,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-08",
+        "category": "Office Supplies",
+        "lines": 110,
+        "sales_units": 89597400,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-08",
+        "category": "Technology",
+        "lines": 37,
+        "sales_units": 96724020,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-09",
+        "category": "Furniture",
+        "lines": 81,
+        "sales_units": 267554749,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-09",
+        "category": "Office Supplies",
+        "lines": 223,
+        "sales_units": 230134020,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-09",
+        "category": "Technology",
+        "lines": 45,
+        "sales_units": 194245140,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-10",
+        "category": "Furniture",
+        "lines": 46,
+        "sales_units": 118130090,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-10",
+        "category": "Office Supplies",
+        "lines": 117,
+        "sales_units": 162366500,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-10",
+        "category": "Technology",
+        "lines": 29,
+        "sales_units": 315333740,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-11",
+        "category": "Furniture",
+        "lines": 81,
+        "sales_units": 317836288,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-11",
+        "category": "Office Supplies",
+        "lines": 212,
+        "sales_units": 201418080,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-11",
+        "category": "Technology",
+        "lines": 73,
+        "sales_units": 271410590,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-12",
+        "category": "Furniture",
+        "lines": 82,
+        "sales_units": 366049650,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-12",
+        "category": "Office Supplies",
+        "lines": 197,
+        "sales_units": 373329380,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2017-12",
+        "category": "Technology",
+        "lines": 59,
+        "sales_units": 218012180,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-01",
+        "category": "Furniture",
+        "lines": 22,
+        "sales_units": 59301620,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-01",
+        "category": "Office Supplies",
+        "lines": 93,
+        "sales_units": 210529790,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-01",
+        "category": "Technology",
+        "lines": 28,
+        "sales_units": 164933330,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-02",
+        "category": "Furniture",
+        "lines": 25,
+        "sales_units": 67743774,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-02",
+        "category": "Office Supplies",
+        "lines": 58,
+        "sales_units": 73781720,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-02",
+        "category": "Technology",
+        "lines": 21,
+        "sales_units": 57684480,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-03",
+        "category": "Furniture",
+        "lines": 38,
+        "sales_units": 108934448,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-03",
+        "category": "Office Supplies",
+        "lines": 144,
+        "sales_units": 145413460,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-03",
+        "category": "Technology",
+        "lines": 55,
+        "sales_units": 334286220,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-04",
+        "category": "Furniture",
+        "lines": 44,
+        "sales_units": 90659581,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-04",
+        "category": "Office Supplies",
+        "lines": 131,
+        "sales_units": 142149470,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-04",
+        "category": "Technology",
+        "lines": 25,
+        "sales_units": 122610050,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-05",
+        "category": "Furniture",
+        "lines": 53,
+        "sales_units": 169575582,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-05",
+        "category": "Office Supplies",
+        "lines": 145,
+        "sales_units": 134938040,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-05",
+        "category": "Technology",
+        "lines": 42,
+        "sales_units": 133746200,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-06",
+        "category": "Furniture",
+        "lines": 49,
+        "sales_units": 170323867,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-06",
+        "category": "Office Supplies",
+        "lines": 143,
+        "sales_units": 142211010,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-06",
+        "category": "Technology",
+        "lines": 43,
+        "sales_units": 169372400,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-07",
+        "category": "Furniture",
+        "lines": 50,
+        "sales_units": 113758220,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-07",
+        "category": "Office Supplies",
+        "lines": 124,
+        "sales_units": 102393560,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-07",
+        "category": "Technology",
+        "lines": 49,
+        "sales_units": 232099260,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-08",
+        "category": "Furniture",
+        "lines": 38,
+        "sales_units": 154191220,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-08",
+        "category": "Office Supplies",
+        "lines": 140,
+        "sales_units": 297995640,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-08",
+        "category": "Technology",
+        "lines": 36,
+        "sales_units": 176191620,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-09",
+        "category": "Furniture",
+        "lines": 82,
+        "sales_units": 285167060,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-09",
+        "category": "Office Supplies",
+        "lines": 281,
+        "sales_units": 316075230,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-09",
+        "category": "Technology",
+        "lines": 90,
+        "sales_units": 260286590,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-10",
+        "category": "Furniture",
+        "lines": 71,
+        "sales_units": 218840682,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-10",
+        "category": "Office Supplies",
+        "lines": 166,
+        "sales_units": 227084000,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-10",
+        "category": "Technology",
+        "lines": 57,
+        "sales_units": 328556630,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-11",
+        "category": "Furniture",
+        "lines": 99,
+        "sales_units": 370567150,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-11",
+        "category": "Office Supplies",
+        "lines": 267,
+        "sales_units": 314723370,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-11",
+        "category": "Technology",
+        "lines": 90,
+        "sales_units": 494091030,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-12",
+        "category": "Furniture",
+        "lines": 106,
+        "sales_units": 314074668,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-12",
+        "category": "Office Supplies",
+        "lines": 278,
+        "sales_units": 296380120,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      },
+      {
+        "month": "2018-12",
+        "category": "Technology",
+        "lines": 75,
+        "sales_units": 219849100,
+        "owner": "",
+        "status": "Not started",
+        "note": ""
+      }
+    ],
+    "regions": [
+      {
+        "region": "West",
+        "lines": 3140,
+        "orders": 1587,
+        "sales_units": 7102196845
+      },
+      {
+        "region": "East",
+        "lines": 2785,
+        "orders": 1369,
+        "sales_units": 6695187260
+      },
+      {
+        "region": "Central",
+        "lines": 2277,
+        "orders": 1156,
+        "sales_units": 4926469132
+      },
+      {
+        "region": "South",
+        "lines": 1598,
+        "orders": 810,
+        "sales_units": 3891514590
+      }
+    ],
+    "unmatched_notes": []
+  },
+  "checks": {
+    "source_row_partition": true,
+    "monthly_sales_reconcile": true,
+    "monthly_order_count_reconcile": true,
+    "category_sales_reconcile": true,
+    "region_sales_reconcile": true,
+    "sqlite_integrity": true
+  },
+  "units": "Sales are source monetary units. Currency is not specified by this mirror; no conversion is made.",
+  "date_format": "day/month/year",
+  "amount_scale": 10000
+}
