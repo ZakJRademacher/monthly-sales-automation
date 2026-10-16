@@ -275,13 +275,39 @@ def analyze(input_dir, notes_path, output_dir):
         "sqlite_integrity": db.execute("PRAGMA integrity_check").fetchone()[0] == "ok",
     }
     from business_review import build_review, render_html
+
     business_review = build_review(db, m)
-    render_html(business_review, output_dir / 'sales-review.html')
-    action_headers=['priority','scope','segment','current_sales','prior_sales','sales_change','change_pct','reason','product_ids_to_check','next_step']
-    write_csv(output_dir / 'review_actions.csv', business_review['actions'], action_headers)
-    for scope, rows in business_review['drivers'].items():
-        write_csv(output_dir / f'review_{scope}.csv', rows, ['member','current_sales_units','prior_sales_units','current_orders','prior_orders','change_units','change_pct'])
-    write_json(output_dir / 'business-review.json', business_review)
+    render_html(business_review, output_dir / "sales-review.html")
+    action_headers = [
+        "priority",
+        "scope",
+        "segment",
+        "current_sales",
+        "prior_sales",
+        "sales_change",
+        "change_pct",
+        "reason",
+        "product_ids_to_check",
+        "next_step",
+    ]
+    write_csv(
+        output_dir / "review_actions.csv", business_review["actions"], action_headers
+    )
+    for scope, rows in business_review["drivers"].items():
+        write_csv(
+            output_dir / f"review_{scope}.csv",
+            rows,
+            [
+                "member",
+                "current_sales_units",
+                "prior_sales_units",
+                "current_orders",
+                "prior_orders",
+                "change_units",
+                "change_pct",
+            ],
+        )
+    write_json(output_dir / "business-review.json", business_review)
     db.commit()
     db.close()
     result = {
