@@ -1,0 +1,9 @@
+data/raw/*
+runs/
+tmp/
+__pycache__/
+*.pyc
+node_modules/
+*.inspect.ndjson
+data/notes/*.tmp
+data/notes/review_notes.csv

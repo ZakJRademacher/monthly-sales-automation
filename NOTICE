@@ -1,0 +1,9 @@
+Monthly Sales Report Automation
+Original project code and documentation: Copyright (c) 2026 Zak Rademacher, MIT licensed.
+
+Dataset: Superstore Sales Dataset, Kaggle uploader Rohit Sahoo.
+https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting
+Kaggle license label: GPL 2. License text: data/LICENSE.
+Selected-column monthly inputs and data-derived reports retain that source license label.
+Transformation: original values in eight columns, partitioned by parsed Order Date.
+No authorship of the source dataset is claimed. Historical sample, not client data.
