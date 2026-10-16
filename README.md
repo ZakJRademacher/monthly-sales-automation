@@ -1,10 +1,30 @@
 # Monthly Sales Report Automation
 
-**Drop monthly CSVs into a folder. Run one command. Receive a refreshed, dated Excel report.**
+**Add sales CSVs. Get a written explanation of what changed and a ranked list of products to investigate.**
 
-A working Python/SQL/Excel portfolio project built from a downloaded Kaggle Superstore sample: **9,800 sales lines, 4,922 distinct orders and 48 historical monthly files**. It demonstrates recurring reporting, saved reviewer notes and failure-safe publication.
+A working Python/SQL/Excel portfolio project built from a downloaded Kaggle Superstore sample: **9,800 sales lines, 4,922 distinct orders and 48 historical monthly files**. It returns a useful business review, with source product IDs for follow-up, alongside recurring spreadsheet automation.
 
-![Workflow overview](deliverables/portfolio-cover.png)
+![Useful sales findings](deliverables/portfolio-cover.png)
+
+## What it returns
+
+For **Dec 1–30, 2018 vs Dec 1–30, 2017**, sales declined **12.6%** (95,007.35 → 83,030.39), although orders increased **33.5%** (167 → 223). Average order value fell **34.6%** (568.91 → 372.33). Values use source monetary units.
+
+The report identifies **East (−7,961.58)** and **Office Supplies (−7,265.53)** as the leading regional/category review leads. The generated CSV ranks five declining segments and lists source product IDs with the largest losses in each. These overlapping views must not be added together. This is a traceable starting point for investigation, not an invented recommendation to cut staff or reorder stock.
+
+- [Open the sales review](deliverables/sales-review.html) — download and open locally; GitHub displays HTML source.
+- [Prioritized follow-up CSV](deliverables/review_actions.csv)
+- [Actual Excel business-review preview](deliverables/excel-sales-review.png)
+
+**A fresh clone produces these useful outputs using only Python 3.10+:**
+
+```sh
+python refresh.py --summary-only
+```
+
+Read `runs/latest.json`, then open `sales-review.html` in the referenced run folder. The CSV sits beside it. No package installation, account, Node runtime or spreadsheet dependency is needed for this path. SQL extracts, a SQLite database and input hashes accompany each run.
+
+The report uses the latest recorded day of the latest input month as a common day-of-month cutoff for both years (limited to their common calendar days). Missing prior-year delivery means unavailable; an explicitly empty file means zero. Equal cutoffs do not prove equal source coverage or an accounting close.
 
 ## Inspect the deliverables
 
@@ -15,7 +35,7 @@ A working Python/SQL/Excel portfolio project built from a downloaded Kaggle Supe
 - [Excel preview](deliverables/excel-monthly-report.png)
 - [Refresh guide](docs/REFRESH_GUIDE.md), [setup](docs/SETUP.md), [method](docs/METHOD.md), [source and license](docs/SOURCES.md)
 
-## Run the example
+## Optional Excel generation
 
 The 48 selected-column CSV inputs are included, so a fresh download is not required. No customer names or addresses are bundled. With Python 3.10+, Node.js and the documented compatible spreadsheet runtime:
 
@@ -23,14 +43,14 @@ The 48 selected-column CSV inputs are included, so a fresh download is not requi
 python refresh.py
 ```
 
-The program creates a unique folder in `runs/` containing `monthly-sales_YYYY-MM.xlsx`, a SQLite database, SQL extracts, input hashes, processing log and formula-verification evidence. `runs/latest.json` points to the last fully generated workbook. Older successful runs remain available. See [SETUP.md](docs/SETUP.md) for the actual authoring dependency and environment variables; this is a local workflow, not a hosted service.
+The Excel path adds a workbook to the same business-review outputs. The program creates a unique folder in `runs/` containing `monthly-sales_YYYY-MM.xlsx`, a SQLite database, SQL extracts, input hashes, processing log and formula-verification evidence. `runs/latest.json` points to the last fully generated workbook. Older successful runs remain available. See [SETUP.md](docs/SETUP.md) for the actual authoring dependency and environment variables; this is a local workflow, not a hosted service.
 
 ## What is automated
 
 1. Validate required columns, stable Row IDs, day/month/year dates, filename months and supported amounts.
 2. Skip identical repeat IDs; reject conflicts rather than silently choosing a record.
 3. Rebuild SQLite and SQL aggregates from the current delivery-folder snapshot. Repeated runs do not accumulate prior totals.
-4. Build a three-sheet workbook with live formulas, a native chart, typed period dates and a review-status dropdown.
+4. Build a four-sheet workbook with live formulas, a native chart, typed period dates and a review-status dropdown.
 5. Rejoin saved review notes by **month + category**, regardless of row position.
 6. Publish a new version only after workbook generation succeeds. A rejected import keeps the previous successful pointer and workbook.
 
@@ -42,7 +62,7 @@ The program creates a unique folder in `runs/` containing `monthly-sales_YYYY-MM
 | Add December 2018 | 48 | 9,800 | 2,261,536.7827 |
 | Run the same input again | 48 | 9,800 | 2,261,536.7827 |
 
-The real spreadsheet engine ran all three refreshes. A temporary demonstration note survived. A conflicting-row test then preserved the last successful version. [Ten replay assertions passed](docs/refresh-demonstration.json). The delivered workbook starts with blank review annotations; it contains no invented completed reviews.
+The real spreadsheet engine ran all three refreshes. A temporary demonstration note survived. A conflicting-row test then preserved the last successful version. [Thirteen replay assertions passed](docs/refresh-demonstration.json). The delivered workbook starts with blank review annotations; it contains no invented completed reviews.
 
 ## Review notes
 
@@ -64,7 +84,7 @@ python tools/demo_refresh.py
 python tools/verify_outputs.py
 ```
 
-The 23 standard-library tests run without Node or the authoring package; publication tests use a clearly identified writer test double. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
+The 32 standard-library tests run without Node or the authoring package; publication tests use a clearly identified writer test double. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
 
 To reproduce the visual briefing and compact bundle:
 

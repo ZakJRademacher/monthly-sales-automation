@@ -42,7 +42,7 @@ def workbook_writer(stage, render=False):
         )
 
 
-def refresh(input_dir, notes, output, render=False, writer=None):
+def refresh(input_dir, notes, output, render=False, writer=None, generate_excel=True):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     lock = output / ".refresh.lock"
@@ -69,9 +69,10 @@ def refresh(input_dir, notes, output, render=False, writer=None):
             else b"month,category,owner,status,note\n"
         )
         analysis = analyze(input_dir, snapshot, stage)
-        (writer or workbook_writer)(stage, render)
+        if generate_excel:
+            (writer or workbook_writer)(stage, render)
         expected = stage / f"monthly-sales_{analysis['metrics']['last_month']}.xlsx"
-        if not expected.is_file():
+        if generate_excel and not expected.is_file():
             raise RuntimeError("Workbook generation did not produce the expected XLSX")
         log = {
             "run_id": run_id,
@@ -79,7 +80,9 @@ def refresh(input_dir, notes, output, render=False, writer=None):
             "metrics": analysis["metrics"],
             "input_files": analysis["files"],
             "checks": analysis["checks"],
-            "workbook": expected.name,
+            "workbook": expected.name if generate_excel else None,
+            "report": "sales-review.html",
+            "review_list": "review_actions.csv",
             "notes_sha256": __import__("hashlib")
             .sha256(snapshot.read_bytes())
             .hexdigest(),
@@ -90,7 +93,9 @@ def refresh(input_dir, notes, output, render=False, writer=None):
         pointer = {
             "run_id": run_id,
             "directory": run_id,
-            "workbook": expected.name,
+            "workbook": expected.name if generate_excel else None,
+            "report": "sales-review.html",
+            "review_list": "review_actions.csv",
             "metrics": analysis["metrics"],
         }
         temp = output / ("latest_" + uuid.uuid4().hex + ".tmp")
@@ -120,9 +125,25 @@ if __name__ == "__main__":
     p.add_argument("--notes", type=Path, default=ROOT / "data/notes/review_notes.csv")
     p.add_argument("--output", type=Path, default=ROOT / "runs")
     p.add_argument("--render", action="store_true")
+    p.add_argument(
+        "--summary-only",
+        action="store_true",
+        help="Generate the useful HTML review and CSV follow-up list with standard-library Python; skip Excel generation",
+    )
     a = p.parse_args()
     try:
-        print(json.dumps(refresh(a.input, a.notes, a.output, a.render), indent=2))
+        print(
+            json.dumps(
+                refresh(
+                    a.input,
+                    a.notes,
+                    a.output,
+                    a.render,
+                    generate_excel=not a.summary_only,
+                ),
+                indent=2,
+            )
+        )
     except (ValueError, RuntimeError, OSError) as exc:
         print(str(exc), file=sys.stderr)
         sys.exit(1)
