@@ -1,8 +1,11 @@
 # Operating and refresh guide
 
+## Start with the business review
+Use `python refresh.py --summary-only` for an ordinary Python-only refresh, or `python refresh.py` to include Excel. In the latest run folder, open sales-review.html and review_actions.csv. Inspect the headline, matched periods and category/region drivers, then trace the ranked product IDs back to orders before acting. Adding the next monthly CSV advances the review automatically. The script reads local deliveries; it does not claim a live Kaggle feed.
+
 ## Routine monthly refresh
 1. Keep existing monthly delivery files in `data/incoming/`. Add the next file as `sales_YYYY-MM.csv` with the same eight required columns.
-2. Run `python refresh.py`. Optional: `--input`, `--notes` and `--output` select other local locations. `--render` also writes three visual previews.
+2. Run `python refresh.py`. Optional: `--input`, `--notes` and `--output` select other local locations. `--render` also writes four visual previews.
 3. Open `runs/latest.json`, then the referenced run folder and workbook. The file is named for the latest delivered month; its parent run folder provides a unique UTC timestamp and run suffix.
 4. Inspect coverage and any unmatched notes before using comparisons. Imported means the monthly file was present, not that every business transaction or calendar day is represented.
 

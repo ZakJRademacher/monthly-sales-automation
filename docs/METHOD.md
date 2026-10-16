@@ -1,5 +1,12 @@
 # Method and field definitions
 
+## Matched business comparison and priorities
+The Sales review and HTML compare day 1 through the latest recorded day of the latest filename month with the same days a year earlier. Leap-day comparisons use common calendar days. An explicitly empty latest file uses the full common month. A missing prior-year file stays unavailable; zero baselines have no percentage. Distinct orders and sales use the same cutoff. Average order value = sales / distinct orders.
+
+Category and region SQL each reconcile independently to total sales change. Negative segment changes are ranked by largest absolute decline, without arbitrary score thresholds. Up to three source Product IDs with the largest declines within each segment are returned for investigation. Overlapping category/region views are not additive. The arithmetic bridge is (current orders − prior orders) × prior average + current orders × (current average − prior average); it describes arithmetic, not causation.
+
+The older Monthly report and Monthly detail sheets retain full observed-month comparisons. December 2018 has orders only through day 30, while December 2017 includes day 31: the older full-month YoY is −13.3%, versus −12.6% for the matched review. Neither certifies complete upstream coverage.
+
 ## Required delivery fields
 Row ID (text, unique line key); Order ID (text, multiple lines per order permitted); Order Date and Ship Date (day/month/year); Category, Region and Product ID (nonblank text); Sales (nonnegative finite decimal with at most four fractional places). Original column labels are preserved in the supplied CSVs. Dates must parse, order dates must match the filename month, shipping cannot precede ordering, and all lines for an Order ID must use one order date.
 

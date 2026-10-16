@@ -1,13 +1,13 @@
 # Portfolio listing
 
-Title: Automated Monthly Sales Reports | Python, SQL & Excel
+Title: Automated Sales Review | Python, SQL & Excel
 
-Role: Portfolio project owner | CSV validation, report automation and Excel handoff
+Role: Portfolio project owner | Python/SQL reporting and spreadsheet automation
 
-Description: Built a repeatable sales-reporting workflow using 9,800 Kaggle Superstore sample lines across 48 monthly CSVs. One command validates inputs, runs SQL reports and generates a dated Excel workbook with formulas and a chart. Saved notes rejoin by month/category. Conflicting imports preserve the last successful report. Includes 23 tests, real refresh-replay evidence, source attribution and a full operating guide. Historical sample data; compatible authoring runtime required for new workbook generation.
+Description: Built a sales-review workflow from 9,800 historical Kaggle sample lines. Adding monthly CSVs produces an HTML summary, Excel report and ranked follow-up CSV with source product IDs. Matched December periods show sales down 12.6% despite 33.5% more orders; the report identifies lower average order value and traces category/regional declines. Python-only mode runs without extra packages. Includes 32 tests, source attribution, refresh evidence and complete handoff documentation.
 
 Skills: Python; SQL; Microsoft Excel; Data Cleaning; Automation.
 
-Cover caption: One-command monthly refresh: CSV validation, SQL reports, live Excel formulas and preserved reviewer notes.
+Cover caption: Matched-period sales findings and prioritized follow-ups, refreshed from monthly CSVs.
 
-PDF caption: Two-page case study with actual refresh replay, failure recovery, operating instructions and verification.
+PDF caption: Business findings, concrete product review leads, operating instructions and verification.

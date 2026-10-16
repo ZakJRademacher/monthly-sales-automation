@@ -272,8 +272,8 @@
     },
     {
       "path": "deliverables/case-study.pdf",
-      "bytes": 41788,
-      "sha256": "e0f3649ca579b131ee758289d7c85dd2816eadbba43197b9a40cbdc47b611748"
+      "bytes": 5641,
+      "sha256": "c6323775f892dec4a5a608939f0c36942fe236676d0de04d28d682a8ab326e7c"
     },
     {
       "path": "deliverables/excel-category-review.png",
@@ -287,8 +287,13 @@
     },
     {
       "path": "deliverables/excel-monthly-report.png",
-      "bytes": 226589,
-      "sha256": "8c4a3b2eae519cccaa61d497f1326aab54e2e9e7ade6a8128a4a7a5beafb8c6d"
+      "bytes": 229114,
+      "sha256": "916fb57d574abadd4936d4bc634b597fb93311e429bca07942d5c89b8624ab24"
+    },
+    {
+      "path": "deliverables/excel-sales-review.png",
+      "bytes": 283875,
+      "sha256": "3962c257f218ff6f19bcd616ddab5baddfaa223aa6e115c1a8f349f0806123e2"
     },
     {
       "path": "deliverables/monthly-sales-trend.png",
@@ -297,53 +302,63 @@
     },
     {
       "path": "deliverables/monthly-sales_2018-12.xlsx",
-      "bytes": 27100,
-      "sha256": "c2ce6b37b33e565e5861db5f80136ac3e7eb22cd53b0bdedafdd2f2ab36a1932"
+      "bytes": 30150,
+      "sha256": "59922d81e29b1f55b58ef304b23cc31f99ae26de7b2580d157d7b241ca892f4a"
     },
     {
       "path": "deliverables/portfolio-cover.png",
-      "bytes": 133594,
-      "sha256": "94bedebd4d446a7e12294c68be81770ed57b664189b1b90a5a254ab9fb4f385b"
+      "bytes": 101682,
+      "sha256": "76ae64a7f9545415cca5a95a6c5ec8c65cd4b629c7fc1dbedcfda20a2397bb55"
     },
     {
       "path": "deliverables/README.md",
-      "bytes": 457,
-      "sha256": "9a6eb1e086cbc1121bef6eb97e94fa958d3bdbd01d5fccc5f68e7c14677a199f"
+      "bytes": 856,
+      "sha256": "9e36252bbe99ca83c2054404cac99aeea77236d1ef7ca849a78fd8ee6415dac5"
+    },
+    {
+      "path": "deliverables/review_actions.csv",
+      "bytes": 1452,
+      "sha256": "b8c22d101edcdc9d8132fa16368a8704c4dba7a98869fb165b7fe322ebf6434b"
+    },
+    {
+      "path": "deliverables/sales-review.html",
+      "bytes": 4067,
+      "sha256": "1c0f189777fb49651614435b41e2ac1b53f16a9cb071286a676f4e8c6dd86490"
     },
     {
       "path": "docs/independent-verification.json",
-      "bytes": 1094,
-      "sha256": "0a3adc888ea03bfaaa1fe17420c0c545daf1aae82e315ab4956a3ba8e994125b"
+      "bytes": 1773,
+      "sha256": "2a41af5b0c253ba200af434200a5aefae08655404bb2df9134ccd81309dab3bb"
     },
     {
       "path": "docs/METHOD.md",
-      "bytes": 3269,
-      "sha256": "a7f7a304d24c221d7be1c26c1caa3750bc966226bcec5907ee7efd981d86e349"
+      "bytes": 4544,
+      "sha256": "df99a79310f5fb032d596178199101ae1df2ccd449afb599a9ee455c007ed7c1"
     },
     {
       "path": "docs/PROJECT_WALKTHROUGH.md",
-      "bytes": 1354,
-      "sha256": "9ba68b8a37f1b065697b73942b4300ddf6cd9fca6f99b863ab6102aeccb520ea"
+      "bytes": 1892,
+      "sha256": "5a36ea187e14826460ec09599a0c6c9be22fba266c12e7641e10a0c1eed9384a"
     },
     {
       "path": "docs/QA_REPORT.md",
-      "bytes": 2043,
-      "sha256": "b029af3114f4641960b21ef4ece6eca90a7d13183d6ae5fff193ce639c0c7429"
+      "bytes": 2563,
+      "sha256": "e8824c4b24ed0a96bbac4b29c0113a757fb1dfb6038b4e39c314c1adb34f3e12"
     },
     {
       "path": "docs/refresh-demonstration.json",
-      "bytes": 1415,
-      "sha256": "d57d17be3546dbc945737fa7926f9cc9cfd8410478a99f2206a106f47494cc42"
+      "bytes": 1563,
+      "sha256": "da5fe8063372a8fdc6f23bd45fa417444b7dae0941d5ecc12277898dfd150b7c"
     },
     {
       "path": "docs/REFRESH_GUIDE.md",
-      "bytes": 4119,
-      "sha256": "ecf36ffe1152f40292b896772ee81ff615da8dd7fac719156c0fb44dd638c30e"
+      "bytes": 4610,
+      "sha256": "c138ba3db77fa1755b6280654e5f186b0763d4b80e040f4b6b4a75be0fbd406d"
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 2516,
-      "sha256": "811d6cd92db73522af697925670cc8537d3b2bed2bcf2d76b19916aece4b8904"
+      "bytes": 2816,
+      "sha256": "0337c043ec18f1e1fe43d00770e22c3b979ac2fbaf4852979c7d448b2f06aa4c"
     },
     {
       "path": "docs/source-provenance.json",
@@ -357,13 +372,18 @@
     },
     {
       "path": "docs/UPWORK_LISTING.md",
-      "bytes": 996,
-      "sha256": "1b2a12ca59166b51da149cd166107047eb768455a86af274d2d0766a5eefbaf8"
+      "bytes": 923,
+      "sha256": "8a97b60ff8dcd6babbc44e0908f28ba2266547e20cdf87f0fa2d0e69fd9e1d37"
     },
     {
       "path": "evidence/analysis.json",
-      "bytes": 47563,
-      "sha256": "5ce3822c35417d10af943a1c22adddb565597b9d66a8c66cc9918d0c5e5e58d9"
+      "bytes": 53744,
+      "sha256": "d3549445bce3bd7ead9c1b4642397a5ccb7a3e61575d2cf507911e11aed14f03"
+    },
+    {
+      "path": "evidence/business-review.json",
+      "bytes": 5819,
+      "sha256": "6c70a232be70ae1362e14954b1e72c1f22564bf5f66be5b0b1afd39c5b622681"
     },
     {
       "path": "evidence/category_month.csv",
@@ -386,9 +406,24 @@
       "sha256": "9c25f49a717530bf28b883676a58b936215acbaa77ef801a27ab2967e92b7d48"
     },
     {
+      "path": "evidence/review_actions.csv",
+      "bytes": 1452,
+      "sha256": "b8c22d101edcdc9d8132fa16368a8704c4dba7a98869fb165b7fe322ebf6434b"
+    },
+    {
+      "path": "evidence/review_category.csv",
+      "bytes": 312,
+      "sha256": "500211025447799503437d2ffe8629639df9e057ce0520069f7e1b17ff981ab0"
+    },
+    {
+      "path": "evidence/review_region.csv",
+      "bytes": 355,
+      "sha256": "d081070e45ae9fcdd90ee68ae3ed34d3f2bf9c203647a5cb20dec487d414a7d0"
+    },
+    {
       "path": "evidence/run-log.json",
-      "bytes": 9582,
-      "sha256": "c69fc85a54fd0a94376c81b2f0b99af86be040c8af2a9fa6e7b246ebb1bc7343"
+      "bytes": 9654,
+      "sha256": "b2e8f06f37b57cf6f8dd631abc57756b8391ce6da58ef10ee0983dbef6857443"
     },
     {
       "path": "evidence/unmatched_notes.csv",
@@ -397,8 +432,8 @@
     },
     {
       "path": "evidence/workbook-verification.json",
-      "bytes": 691,
-      "sha256": "d3684e58c5f900a981aab69cad65c70d38c0317576c6b2e221801fb02b73a496"
+      "bytes": 695,
+      "sha256": "7774176d693f56cea17260a6bfed711befb5817f204864ecc4c6f59d83738576"
     },
     {
       "path": "LICENSE",
@@ -412,13 +447,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 5519,
-      "sha256": "d0e19b6676cc5db5011a2dbd99a4e0f2cb3e5311d5fd2ce50197bef5eb8472cc"
+      "bytes": 7286,
+      "sha256": "6956d5bb9058f3f2cb3c366208767a9388ca0998d940a7ee738d5993419d08e7"
     },
     {
       "path": "refresh.py",
-      "bytes": 4496,
-      "sha256": "6088410f09fcbd08487213ecb1e582aec3f084766745864f374a0c37ca8141da"
+      "bytes": 5234,
+      "sha256": "c97b54dc76d035513c8791afe21dc73688eeb7ae56ea9741821be1ba18a6af83"
     },
     {
       "path": "requirements-qa.txt",
@@ -446,9 +481,24 @@
       "sha256": "43a62f10cbc084ec9f407a40c8cf2fc80a89825ca47c3db8b38b4790a3d3e4ad"
     },
     {
+      "path": "sql/review_drivers.sql",
+      "bytes": 748,
+      "sha256": "f2879414b09294d595c27ac83b96f1c61e94fa63ffabc66d8796430cb3e1d195"
+    },
+    {
+      "path": "sql/review_products.sql",
+      "bytes": 624,
+      "sha256": "5fc1e3b1976248d343d7d0db240612f3b522ece8ff96be2239085e0e7136a51f"
+    },
+    {
       "path": "sql/unmatched_notes.sql",
       "bytes": 157,
       "sha256": "9965bb502dabef257cfc0ffb5e090af689a9237702862d422247cd2ed6b3c15a"
+    },
+    {
+      "path": "src/business_review.py",
+      "bytes": 13550,
+      "sha256": "a94db83aa99c449e95e7d01cfbd6b6600a9f67aa2e717d650f60f9e2ae1f5f73"
     },
     {
       "path": "src/download_data.py",
@@ -467,28 +517,28 @@
     },
     {
       "path": "src/sales.py",
-      "bytes": 10900,
-      "sha256": "7c4d6a073b79e117d07d88f06c79f0d37783ba4821f3ea4288167be35b7b1c48"
+      "bytes": 11951,
+      "sha256": "d68baca2497b5a33e4d9039e184815523c6534021c1af155cb4ca46672bb4ec8"
     },
     {
       "path": "tests/test_refresh.py",
-      "bytes": 9941,
-      "sha256": "dc154b85bdb10d342f645ee3193a8284eda22d50cc63df86461cb06b0429e915"
+      "bytes": 13788,
+      "sha256": "4ff52adb22214433c727510c285fead7734ad56e0ed84f99db5016376873f9f8"
     },
     {
       "path": "tools/build_presentation.py",
-      "bytes": 33198,
-      "sha256": "c3842cfd86ee52985780145022154137a2139a1d11b1c56857da5f7984021600"
+      "bytes": 42223,
+      "sha256": "0959f33b350ff84c2394f8a596b25c9ead4dd22e55dfe73132a8f49e98982a45"
     },
     {
       "path": "tools/build_workbook.mjs",
-      "bytes": 10748,
-      "sha256": "e18e1160784a8b8f20b7c57e7203431fdf46b6775e49b60127865006b0b3bd31"
+      "bytes": 16194,
+      "sha256": "267763f679d4adf8065420f9514fbc3ec8a0e601b72aa7fe86bb8413411782a3"
     },
     {
       "path": "tools/demo_refresh.py",
-      "bytes": 3917,
-      "sha256": "874a231eafba4f3c0c85047478185e16e951f49b23cc771107ef23b51905e9fb"
+      "bytes": 4762,
+      "sha256": "dcc12a52427a74f4c615f47fae8ebadd428f495a6e58baaf7693a875cb85f751"
     },
     {
       "path": "tools/package_project.py",
@@ -497,8 +547,8 @@
     },
     {
       "path": "tools/verify_outputs.py",
-      "bytes": 4356,
-      "sha256": "2eab62d281c46768920c0da2ab3ac14b9c049e99240d5c86a2b2b45c964e13cf"
+      "bytes": 7721,
+      "sha256": "209097f90839432fd30c211579e4cd5f850769f4bc7fe6ff299bec6329c4a45a"
     }
   ],
   "omitted": [

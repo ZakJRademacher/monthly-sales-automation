@@ -1,7 +1,10 @@
 # Setup and reproducibility
 
+## Portable useful output
+Run `python refresh.py --summary-only` with Python 3.10+ alone. No pip install or spreadsheet runtime is required. Open the HTML report and prioritized CSV in the directory referenced by runs/latest.json. The Node dependency below applies only to optional XLSX generation.
+
 ## Core workflow
-Python 3.10+ runs ingestion, SQLite, note import and the 23 tests with the standard library. Selected monthly source files are already included. Run from this repository's root.
+Python 3.10+ runs ingestion, SQLite, note import and the 32 tests with the standard library. Selected monthly source files are already included. Run from this repository's root.
 
 ## Excel generation
 `refresh.py` invokes `tools/build_workbook.mjs`. It requires Node.js and **@oai/artifact-tool**, supplied by a compatible Codex desktop dependency runtime. This dependency is not bundled in the repository and is not assumed to be publicly installable from npm. The ready-made XLSX can be opened independently; generating new workbooks requires that runtime or a separately implemented replacement writer.
@@ -22,4 +25,4 @@ Optional: `python src/download_data.py` downloads the Kaggle snapshot into ignor
 ## QA and presentation dependencies
 `pip install -r requirements-qa.txt` supplies read-only XLSX/PDF inspection. `pip install -r requirements-visuals.txt` supplies the optional chart and PDF builder. `python tools/demo_refresh.py` also needs the real spreadsheet runtime. `tools/verify_outputs.py` needs the original downloaded train.csv and delivered evidence. `tools/build_presentation.py` needs the verified evidence, while packaging uses only the standard library.
 
-GitHub Actions runs the 23 core tests on Python 3.10 and 3.12. It does not pretend to install the optional private authoring runtime or recalculate in native desktop Excel.
+GitHub Actions runs the 32 core tests on Python 3.10 and 3.12. It does not pretend to install the optional private authoring runtime or recalculate in native desktop Excel.
