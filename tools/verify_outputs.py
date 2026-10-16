@@ -89,6 +89,95 @@ demo = json.loads((ROOT / "docs/refresh-demonstration.json").read_text())
 checks["real_workbook_refresh_demonstration"] = demo["all_passed"]
 from pypdf import PdfReader
 
+# Recompute matched business findings directly from original rows, independently of SQL.
+br = a["business_review"]
+bs = br["summary"]
+current_rows = [
+    r
+    for r in source
+    if datetime.strptime(r["Order Date"], "%d/%m/%Y").strftime("%Y-%m-%d")
+    >= bs["current_start"]
+    and datetime.strptime(r["Order Date"], "%d/%m/%Y").strftime("%Y-%m-%d")
+    <= bs["current_end"]
+]
+prior_rows = [
+    r
+    for r in source
+    if datetime.strptime(r["Order Date"], "%d/%m/%Y").strftime("%Y-%m-%d")
+    >= bs["prior_start"]
+    and datetime.strptime(r["Order Date"], "%d/%m/%Y").strftime("%Y-%m-%d")
+    <= bs["prior_end"]
+]
+amount = lambda rows: sum(int(Decimal(r["Sales"]) * 10000) for r in rows)
+checks["matched_source_sales"] = (
+    amount(current_rows) == bs["current"]["sales_units"]
+    and amount(prior_rows) == bs["prior"]["sales_units"]
+)
+checks["matched_source_orders"] = (
+    len({r["Order ID"] for r in current_rows}) == bs["current"]["orders"]
+    and len({r["Order ID"] for r in prior_rows}) == bs["prior"]["orders"]
+)
+checks["matching_day_cutoffs"] = (
+    bs["current_end"] == "2018-12-30" and bs["prior_end"] == "2017-12-30"
+)
+expected_actions = []
+for scope, field in [("category", "Category"), ("region", "Region")]:
+    for driver in br["drivers"][scope]:
+        cur = [r for r in current_rows if r[field] == driver["member"]]
+        prev = [r for r in prior_rows if r[field] == driver["member"]]
+        checks[scope + "_" + driver["member"] + "_source_delta"] = (
+            amount(cur) - amount(prev) == driver["change_units"]
+        )
+        if amount(cur) < amount(prev):
+            products = {r["Product ID"] for r in cur + prev}
+            losses = [
+                (
+                    amount([r for r in cur if r["Product ID"] == product])
+                    - amount([r for r in prev if r["Product ID"] == product]),
+                    product,
+                )
+                for product in products
+            ]
+            ids = ", ".join(
+                product for delta, product in sorted(losses) if delta < 0
+            ).split(", ")[:3]
+            expected_actions.append(
+                (amount(cur) - amount(prev), scope, driver["member"], ", ".join(ids))
+            )
+checks["review_rank_and_source_product_ids"] = [
+    (r["sales_change"], r["scope"], r["segment"], r["product_ids_to_check"])
+    for r in br["actions"]
+] == [
+    (delta / 10000, scope, member, ids)
+    for delta, scope, member, ids in sorted(expected_actions)
+]
+checks["all_business_reconciliations"] = len(br["checks"]) == 7 and all(
+    br["checks"].values()
+)
+checks["business_sheet_first"] = values.sheetnames[0] == "Sales review"
+checks["business_cached_yoy"] = (
+    abs(
+        values["Sales review"]["D6"].value
+        - (amount(current_rows) / amount(prior_rows) - 1)
+    )
+    < 1e-10
+)
+checks["business_bridge_reconciles"] = (
+    abs(
+        values["Sales review"]["B11"].value
+        + values["Sales review"]["B12"].value
+        - (amount(current_rows) - amount(prior_rows)) / 10000
+    )
+    < 1e-7
+)
+checks["useful_deliverables_exist"] = all(
+    (ROOT / "deliverables" / name).is_file()
+    for name in ["sales-review.html", "review_actions.csv", "excel-sales-review.png"]
+)
+checks["html_reports_actual_findings"] = br["headline"] in (
+    ROOT / "deliverables/sales-review.html"
+).read_text(encoding="utf-8")
+
 pdf = PdfReader(ROOT / "deliverables/case-study.pdf", strict=True)
 checks["pdf_two_pages"] = len(pdf.pages) == 2
 checks["pdf_source_identifier"] = (

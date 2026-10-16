@@ -42,6 +42,12 @@ with tempfile.TemporaryDirectory(dir=parent) as directory:
         return load_workbook(Path(run["directory"]) / run["workbook"], data_only=True)
 
     b1, b2 = workbook(first), workbook(second)
+    business_before = json.loads(
+        (Path(first["directory"]) / "business-review.json").read_text()
+    )
+    business_after = json.loads(
+        (Path(second["directory"]) / "business-review.json").read_text()
+    )
     matched = [
         row
         for row in b2["Category review"].iter_rows(min_row=6, values_only=True)
@@ -72,6 +78,19 @@ with tempfile.TemporaryDirectory(dir=parent) as directory:
         and b2["Monthly report"]["B6"].value.month == 12,
         "latest_month_value_changed": b1["Monthly report"]["B7"].value
         != b2["Monthly report"]["B7"].value,
+        "business_review_advanced_with_delivery": business_before["summary"]["month"]
+        == "2018-11"
+        and business_after["summary"]["month"] == "2018-12",
+        "new_review_returns_actual_sales_finding": abs(
+            business_after["summary"]["sales_change_pct"] - (83030.3888 / 95007.353 - 1)
+        )
+        < 1e-10
+        and len(business_after["actions"]) == 5,
+        "useful_html_and_csv_generated": all(
+            (Path(run["directory"]) / filename).is_file()
+            for run in [first, second, third]
+            for filename in ["sales-review.html", "review_actions.csv"]
+        ),
         "saved_note_preserved": len(matched) == 1
         and matched[0][3:6] == ("Demo reviewer", "In progress", note),
         "identical_rerun_did_not_double_count": second["metrics"] == third["metrics"],

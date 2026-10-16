@@ -26,6 +26,8 @@ OUT = ROOT / "deliverables"
 DOC = ROOT / "docs"
 a = json.loads((ROOT / "evidence/analysis.json").read_text())
 m = a["metrics"]
+business = a["business_review"]
+summary = business["summary"]
 months = a["reports"]["monthly"]
 demo = json.loads((DOC / "refresh-demonstration.json").read_text())
 provenance = json.loads((DOC / "source-provenance.json").read_text())
@@ -53,32 +55,40 @@ def sales_chart(ax):
     values = [x["sales_units"] / 10000 for x in last]
     ax.plot(range(12), values, color=blue, linewidth=2.8, marker="o", markersize=4)
     ax.set_xticks(range(12), [x["month"][-2:] + "/18" for x in last])
-    ax.set_ylabel("Sales · source monetary units")
+    ax.set_ylabel("Sales Â· source monetary units")
     ax.set_ylim(0, max(values) * 1.18)
     ax.grid(axis="y", color="#DFE6EE")
     ax.set_axisbelow(True)
 
 
 fig = plt.figure(figsize=(12, 9), facecolor="#F4F6F9")
-fig.text(0.09, 0.91, "MONTHLY REPORT AUTOMATION", fontsize=23, weight="bold")
+fig.text(0.09, 0.91, "WHAT CHANGED IN SALES?", fontsize=23, weight="bold")
 fig.text(
     0.09,
     0.86,
-    "CSV deliveries → validation → refreshed Excel → dated report",
+    "New CSVs â†’ matched comparison â†’ ranked review list",
     fontsize=13,
     color=muted,
 )
 for x, value, label in [
-    (0.09, "48", "MONTHLY FILES"),
-    (0.39, "9,800", "SOURCE SALES LINES"),
-    (0.70, "23", "AUTOMATED TESTS"),
+    (0.09, "âˆ’12.6%", "SALES"),
+    (0.39, "+33.5%", "ORDERS"),
+    (0.70, "âˆ’34.6%", "AVERAGE ORDER VALUE"),
 ]:
     fig.text(x, 0.73, value, fontsize=34, weight="bold")
     fig.text(x, 0.685, label, fontsize=10, weight="bold", color=muted)
-ax = fig.add_axes([0.14, 0.33, 0.74, 0.26])
-sales_chart(ax)
+ax = fig.add_axes([0.25, 0.32, 0.63, 0.26])
+drivers = business["drivers"]["region"]
+ax.barh(
+    [r["member"] for r in drivers],
+    [r["change_units"] / 10000 for r in drivers],
+    color=["#AF4F48" if r["change_units"] < 0 else blue for r in drivers],
+)
+ax.invert_yaxis()
+ax.axvline(0, color=muted, linewidth=0.8)
+ax.set_xlabel("Regional sales change Â· source monetary units")
 ax.set_title(
-    "The report advances when the next monthly file arrives",
+    "East is the first regional review lead",
     loc="left",
     fontsize=12,
     pad=15,
@@ -87,22 +97,22 @@ ax.set_title(
 fig.text(
     0.09,
     0.215,
-    "Saved review notes survive the refresh.",
-    fontsize=15,
+    "83,030 sales across 223 orders, versus 95,007 across 167.",
+    fontsize=14,
     weight="bold",
     color=blue,
 )
 fig.text(
     0.09,
     0.165,
-    "A failed import keeps the last successful report available.",
+    "HTML summary Â· Excel review Â· prioritized CSV with product IDs",
     fontsize=13,
     color=navy,
 )
 fig.text(
     0.09,
     0.09,
-    "Python · SQLite · Excel | Kaggle Superstore sample | Source data: 2015–2018",
+    "Dec 1â€“30, 2018 vs Dec 1â€“30, 2017 | Historical Kaggle Superstore sample",
     fontsize=10,
     color=muted,
 )
@@ -142,56 +152,41 @@ styles["Heading2"].fontSize = 13
 styles["Heading2"].leading = 17
 styles["Heading2"].spaceBefore = 12
 styles["Heading2"].textColor = colors.HexColor(navy)
-p = lambda text, style="BodyText": Paragraph(text, styles[style])
-rows = [
-    ["REFRESH STEP", "FILES", "LINES", "OBSERVED SALES"],
-    ["Before December delivery", "47", "9,341", "2,178,506.3939"],
-    ["After December delivery", "48", "9,800", "2,261,536.7827"],
-    ["Repeat the same refresh", "48", "9,800", "2,261,536.7827"],
-]
-t = Table(rows, colWidths=[2.6 * inch, 0.6 * inch, 0.7 * inch, 1.9 * inch])
-t.setStyle(
-    TableStyle(
-        [
-            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor(navy)),
-            ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-            ("FONTSIZE", (0, 0), (-1, -1), 9),
-            ("TOPPADDING", (0, 0), (-1, -1), 9),
-            ("BOTTOMPADDING", (0, 0), (-1, -1), 9),
-            (
-                "ROWBACKGROUNDS",
-                (0, 1),
-                (-1, -1),
-                [colors.HexColor("#F1F4F8"), colors.white],
-            ),
-            ("ALIGN", (1, 1), (-1, -1), "RIGHT"),
-        ]
-    )
+p = lambda text, style="BodyText": Paragraph(
+    text.replace("âˆ’", "-").replace("â€“", "-"), styles[style]
 )
 story = [
-    p("Automated monthly sales reporting", "ProjectTitle"),
+    p("A sales report that tells you where to look", "ProjectTitle"),
     p(
         "Portfolio case study | Python, SQLite and Excel | Kaggle Superstore sample",
         "Deck",
     ),
-    p("The recurring task", "Heading2"),
+    p("The business question", "Heading2"),
     p(
-        "A business receives a new sales CSV every month. It needs a consistent workbook, traceable totals and saved review notes, without rebuilding formulas or overwriting the last usable report when a file is malformed."
+        "When the next sales export arrives, what changed, which segments explain the change, and which source products should someone review first? This project automatically turns monthly CSVs into a written sales review, a prioritized follow-up list and an Excel workbook."
     ),
-    p("The delivered workflow", "Heading2"),
+    p("What the sample actually shows", "Heading2"),
     p(
-        "Place files named sales_YYYY-MM.csv into the input folder and run <b>python refresh.py</b>. The program validates IDs, dates and amounts, builds SQL aggregates, generates the Excel workbook and writes a versioned run log. It updates latest.json only after the workbook has been generated successfully."
+        "For <b>December 1â€“30, 2018 versus December 1â€“30, 2017</b>, sales fell from <b>95,007.35 to 83,030.39 (âˆ’12.6%)</b>. Orders rose from <b>167 to 223 (+33.5%)</b>, while average order value fell from <b>568.91 to 372.33 (âˆ’34.6%)</b>. These are source monetary units; the mirror does not specify currency."
     ),
-    p("Demonstrated with actual workbook refreshes", "Heading2"),
-    t,
-    Spacer(1, 10),
+    p("Start with these review leads", "Heading2"),
     p(
-        "The December delivery adds 459 lines and 83,030.3888 source monetary units. A temporary, clearly labeled review note remains attached to its November/category key. Repeating the same input leaves totals unchanged. A conflicting Row ID then blocks publication while the previous pointer and workbook remain available."
+        "<b>East:</b> sales declined 7,961.58. <b>Office Supplies:</b> sales declined 7,265.53. Both recorded more orders but lower sales per order. The generated review CSV ranks five declining segments and supplies the three product IDs with the largest declines inside each segment."
     ),
-    Image(str(OUT / "monthly-sales-trend.png"), width=6.8 * inch, height=2.04 * inch),
     p(
-        "This replays 48 historical partitions from one downloaded sample dataset. It does not claim that Kaggle publishes a new monthly file or that the sample represents a current retailer.",
+        "For example, inspect East product <b>FUR-CH-10002331</b> against its prior-period orders. Confirm export coverage and product mix before deciding on a response. Categories and regions overlap, so their declines cannot be added together as total lost sales."
+    ),
+    p("The arithmetic behind the finding", "Heading2"),
+    p(
+        "At the previous average order value, the extra orders contribute +31,858.75. The average-order change contributes âˆ’43,835.72. Together these reconcile to the sales change of âˆ’11,976.96. This is an arithmetic decomposition, not proof of a cause, stock shortage or margin loss."
+    ),
+    p("Run it with ordinary Python", "Heading2"),
+    Preformatted("python refresh.py --summary-only", styles["Code"]),
+    p(
+        "The standard-library path returns <b>sales-review.html</b>, <b>review_actions.csv</b>, SQL extracts and a SQLite database in a dated run folder. Read runs/latest.json to locate the newest successful output. Add new monthly inputs and rerun; the report advances automatically. The optional Excel path is documented separately."
+    ),
+    p(
+        "Historical sample demonstration: 9,800 lines from 48 partitions of one Kaggle file. Kaggle is not a live monthly feed. No client outcome or time saving is claimed.",
         "Deck",
     ),
     PageBreak(),
@@ -202,7 +197,7 @@ story = [
     ),
     p("What the workbook contains", "Heading2"),
     p(
-        "<b>Monthly report:</b> the latest period, sales, distinct orders, average order amount, year-over-year comparison and a native trend chart. <b>Monthly detail:</b> all observed periods, imported counts, prior-period references and live ratio formulas. <b>Category review:</b> editable owner, status and note cells linked to stable month/category keys."
+        "<b>Sales review:</b> matched day-of-month comparisons, category/region drivers, arithmetic bridge and ranked product review leads. <b>Monthly report:</b> full observed-month totals and trend. Its December YoY is âˆ’13.3% because its 2017 baseline includes December 31; the matched review excludes that day. <b>Monthly detail:</b> period formulas and coverage. <b>Category review:</b> saved notes keyed by month/category."
     ),
     p("Notes and refresh behavior", "Heading2"),
     p(
@@ -214,15 +209,15 @@ story = [
     ),
     p("Evidence", "Heading2"),
     p(
-        "Twenty-three automated tests cover the ingestion, note-import and publication rules. Ten real-engine replay checks cover a new month, note retention, a repeat run and a rejected conflict. Independent original-source and XLSX checks confirm the sales totals, typed dates, year-over-year formulas, chart bindings, dropdown and empty delivered notes."
+        "Thirty-two automated tests cover ingestion, notes, publication, matched cutoffs, zero/missing baselines, leap dates, review ranking, source product IDs, arithmetic reconciliation, HTML escaping and the portable Python path. Thirteen real-engine replay checks cover a new month, retained notes, a repeat and a rejected conflict. Independent original-source and read-only XLSX checks verify the delivered outputs."
     ),
     p("Source and operating limits", "Heading2"),
     p(
-        "Downloaded Kaggle dataset: rohitsahoo/sales-forecasting. The data card labels the dataset GPL 2. The project records the exact source SHA-256 and supplies selected original columns as reproducible monthly inputs. The source is a Superstore sample covering Jan 3, 2015–Dec 30, 2018. Currency is unspecified by the mirror, so the report preserves source monetary units and four-decimal precision. Displayed amounts use two decimals."
+        "Downloaded Kaggle dataset: rohitsahoo/sales-forecasting. The data card labels the dataset GPL 2. The project records the exact source SHA-256 and supplies selected original columns as reproducible monthly inputs. The source is a Superstore sample covering Jan 3, 2015â€“Dec 30, 2018. Currency is unspecified by the mirror, so the report preserves source monetary units and four-decimal precision. Displayed amounts use two decimals."
     ),
     p("Runtime and review", "Heading2"),
     p(
-        "Core ingestion, SQL reporting and tests use standard-library Python. Excel generation requires Node.js and the compatible artifact-tool authoring runtime documented in SETUP.md. The delivered workbook is ready to inspect. Formula recalculation was tested in that engine; native desktop Excel was not available. Worksheet edits require CSV note import before refresh; there is no background watcher or automatic workbook write-back."
+        "The useful HTML review, prioritized CSV, SQLite database and tests need only Python 3.10+. Optional Excel generation requires Node.js and the compatible artifact-tool runtime in SETUP.md. The delivered workbook can be opened independently. Formula recalculation was checked in the authoring engine; native desktop Excel was unavailable. Notes need CSV import before refresh; there is no scheduler or background watcher."
     ),
     p(
         '<link href="https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting" color="#3667AF">Kaggle dataset and license label</link> | Complete source, test evidence and refresh guide accompany this briefing.'
@@ -252,6 +247,89 @@ SimpleDocTemplate(
 
 
 def write(name, text):
+    text = (
+        text.replace("Ten real-engine", "Thirteen real-engine")
+        .replace("Ten replay assertions", "Thirteen replay assertions")
+        .replace(
+            "Ten real-engine refresh checks", "Thirteen real-engine refresh checks"
+        )
+    )
+    text = (
+        text.replace("23 tests", "32 tests")
+        .replace("23 standard-library tests", "32 standard-library tests")
+        .replace("23 core tests", "32 core tests")
+        .replace("23 automated tests", "32 automated tests")
+        .replace("the 23 tests", "the 32 tests")
+        .replace("three-sheet workbook", "four-sheet workbook")
+        .replace("three visual previews", "four visual previews")
+        .replace("all three sheets", "all four sheets")
+        .replace("three sheet previews", "four sheet previews")
+    )
+    if name == "README.md":
+        text = text.replace(
+            "**Drop monthly CSVs into a folder. Run one command. Receive a refreshed, dated Excel report.**",
+            "**Add sales CSVs. Get a written explanation of what changed and a ranked list of products to investigate.**",
+        )
+        text = text.replace(
+            "It demonstrates recurring reporting, saved reviewer notes and failure-safe publication.",
+            "It returns a useful business review, with source product IDs for follow-up, alongside recurring spreadsheet automation.",
+        )
+        text = text.replace("![Workflow overview]", "![Useful sales findings]")
+        section = """## What it returns
+
+For **Dec 1â€“30, 2018 vs Dec 1â€“30, 2017**, sales declined **12.6%** (95,007.35 â†’ 83,030.39), although orders increased **33.5%** (167 â†’ 223). Average order value fell **34.6%** (568.91 â†’ 372.33). Values use source monetary units.
+
+The report identifies **East (âˆ’7,961.58)** and **Office Supplies (âˆ’7,265.53)** as the leading regional/category review leads. The generated CSV ranks five declining segments and lists source product IDs with the largest losses in each. These overlapping views must not be added together. This is a traceable starting point for investigation, not an invented recommendation to cut staff or reorder stock.
+
+- [Open the sales review](deliverables/sales-review.html) â€” download and open locally; GitHub displays HTML source.
+- [Prioritized follow-up CSV](deliverables/review_actions.csv)
+- [Actual Excel business-review preview](deliverables/excel-sales-review.png)
+
+**A fresh clone produces these useful outputs using only Python 3.10+:**
+
+```sh
+python refresh.py --summary-only
+```
+
+Read `runs/latest.json`, then open `sales-review.html` in the referenced run folder. The CSV sits beside it. No package installation, account, Node runtime or spreadsheet dependency is needed for this path. SQL extracts, a SQLite database and input hashes accompany each run.
+
+The report uses the latest recorded day of the latest input month as a common day-of-month cutoff for both years (limited to their common calendar days). Missing prior-year delivery means unavailable; an explicitly empty file means zero. Equal cutoffs do not prove equal source coverage or an accounting close.
+
+"""
+        text = text.replace(
+            "## Inspect the deliverables", section + "## Inspect the deliverables"
+        )
+        text = text.replace("## Run the example", "## Optional Excel generation")
+        text = text.replace(
+            "The program creates a unique folder",
+            "The Excel path adds a workbook to the same business-review outputs. The program creates a unique folder",
+        )
+    additions = {
+        "docs/SETUP.md": "## Portable useful output\nRun `python refresh.py --summary-only` with Python 3.10+ alone. No pip install or spreadsheet runtime is required. Open the HTML report and prioritized CSV in the directory referenced by runs/latest.json. The Node dependency below applies only to optional XLSX generation.\n\n",
+        "docs/REFRESH_GUIDE.md": "## Start with the business review\nUse `python refresh.py --summary-only` for an ordinary Python-only refresh, or `python refresh.py` to include Excel. In the latest run folder, open sales-review.html and review_actions.csv. Inspect the headline, matched periods and category/region drivers, then trace the ranked product IDs back to orders before acting. Adding the next monthly CSV advances the review automatically. The script reads local deliveries; it does not claim a live Kaggle feed.\n\n",
+        "docs/METHOD.md": "## Matched business comparison and priorities\nThe Sales review and HTML compare day 1 through the latest recorded day of the latest filename month with the same days a year earlier. Leap-day comparisons use common calendar days. An explicitly empty latest file uses the full common month. A missing prior-year file stays unavailable; zero baselines have no percentage. Distinct orders and sales use the same cutoff. Average order value = sales / distinct orders.\n\nCategory and region SQL each reconcile independently to total sales change. Negative segment changes are ranked by largest absolute decline, without arbitrary score thresholds. Up to three source Product IDs with the largest declines within each segment are returned for investigation. Overlapping category/region views are not additive. The arithmetic bridge is (current orders âˆ’ prior orders) Ã— prior average + current orders Ã— (current average âˆ’ prior average); it describes arithmetic, not causation.\n\nThe older Monthly report and Monthly detail sheets retain full observed-month comparisons. December 2018 has orders only through day 30, while December 2017 includes day 31: the older full-month YoY is âˆ’13.3%, versus âˆ’12.6% for the matched review. Neither certifies complete upstream coverage.\n\n",
+        "docs/QA_REPORT.md": "## Business-output checks\nNine additional tests cover equal day cutoffs, leap-year handling, zero and missing baselines, the exact arithmetic bridge, ranked segment declines, source product IDs, HTML escaping and the Python-only refresh. The suite now has 32 tests. Seven full-data business reconciliations check category/region current, prior and change totals and the arithmetic bridge. Independent verification recomputes the matched comparison from the original source CSV and inspects cached workbook results.\n\n",
+        "docs/PROJECT_WALKTHROUGH.md": "## Lead with the useful result\nOpen deliverables/sales-review.html: sales âˆ’12.6%, orders +33.5%, average order value âˆ’34.6% for matched December 1â€“30 periods. Show East and Office Supplies, then the product IDs in review_actions.csv. Explain why this guides investigation but does not prove a cause. Run `python refresh.py --summary-only` without any third-party packages to reproduce the review. Show the first Sales review Excel sheet if discussing spreadsheet work. The underlying replay and controls below support this result.\n\n",
+        "deliverables/README.md": "## Start here\nDownload and open `sales-review.html` locally. It explains the matched sales decline and ranks follow-ups; keep `review_actions.csv` alongside it for the download link. The CSV includes specific source Product IDs to investigate. `excel-sales-review.png` previews the workbook's first, business-focused sheet. The other three sheets retain historical monthly reporting and note entry.\n\n",
+    }
+    if name in additions:
+        first, rest = text.split("\n", 1)
+        text = first + "\n\n" + additions[name] + rest.lstrip()
+    if name == "docs/UPWORK_LISTING.md":
+        text = """# Portfolio listing
+
+Title: Automated Sales Review | Python, SQL & Excel
+
+Role: Portfolio project owner | Python/SQL reporting and spreadsheet automation
+
+Description: Built a sales-review workflow from 9,800 historical Kaggle sample lines. Adding monthly CSVs produces an HTML summary, Excel report and ranked follow-up CSV with source product IDs. Matched December periods show sales down 12.6% despite 33.5% more orders; the report identifies lower average order value and traces category/regional declines. Python-only mode runs without extra packages. Includes 32 tests, source attribution, refresh evidence and complete handoff documentation.
+
+Skills: Python; SQL; Microsoft Excel; Data Cleaning; Automation.
+
+Cover caption: Matched-period sales findings and prioritized follow-ups, refreshed from monthly CSVs.
+
+PDF caption: Business findings, concrete product review leads, operating instructions and verification.
+"""
     path = ROOT / name
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
@@ -341,7 +419,7 @@ Recurring spreadsheet updates; CSV cleanup and merging; SQL summaries; exception
 
 ## Data context
 
-Kaggle [Superstore Sales Dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting), uploader Rohit Sahoo, downloaded October 15, 2026. The data card labels it **GPL 2**. It is a historical sample, not verified transactions from a current retailer. The input CSVs replay one frozen source file as monthly deliveries; Kaggle lists its update frequency as Never. Dates span Jan 3, 2015–Dec 30, 2018. File presence does not prove a complete calendar month's business activity.
+Kaggle [Superstore Sales Dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting), uploader Rohit Sahoo, downloaded October 15, 2026. The data card labels it **GPL 2**. It is a historical sample, not verified transactions from a current retailer. The input CSVs replay one frozen source file as monthly deliveries; Kaggle lists its update frequency as Never. Dates span Jan 3, 2015â€“Dec 30, 2018. File presence does not prove a complete calendar month's business activity.
 
 Currency is unspecified by the mirror. Sales remain in source monetary units, with four-decimal precision preserved in integer ten-thousandths; Excel displays two decimals. Sales are not profit, cash receipts or a forecast.
 
@@ -425,7 +503,7 @@ Row ID (text, unique line key); Order ID (text, multiple lines per order permitt
 Missing/repeated headers and extra CSV fields fail the run. Row IDs must contain decimal digits. Identical repeated selected values for an ID keep the first deterministic file/row occurrence; differing selected values block publication. There is no auto-correction of conflicting identifiers. For a real client, establish the meaning and uniqueness of the export's line key before adaptation.
 
 ## Precision and measures
-Sales are recorded amounts in unspecified source monetary units, not a calculated quantity × price because those factors are absent. Decimal values are stored as integer ten-thousandths in SQLite; more than four decimal places, nonfinite values, negatives and unsupported magnitudes are rejected. Total scaled values must fit the exact integer range used by the spreadsheet. Excel stores numeric amounts in original units and formats them to two decimals. The underlying four-decimal input precision is retained. A displayed sum of individually rounded figures can differ from the rounded precise total.
+Sales are recorded amounts in unspecified source monetary units, not a calculated quantity Ã— price because those factors are absent. Decimal values are stored as integer ten-thousandths in SQLite; more than four decimal places, nonfinite values, negatives and unsupported magnitudes are rejected. Total scaled values must fit the exact integer range used by the spreadsheet. Excel stores numeric amounts in original units and formats them to two decimals. The underlying four-decimal input precision is retained. A displayed sum of individually rounded figures can differ from the rounded precise total.
 
 SQL owns accepted line, distinct order, monthly, region and month/category aggregates. An order's consistent order date makes monthly order counts additive; region order counts are not assumed additive. Average order amount divides sales by distinct orders for the same month. Workbook MoM = current / prior calendar month - 1; YoY = current / same month one year earlier - 1. Missing or zero bases produce n.a., not zero growth or a hidden formula error.
 
@@ -446,7 +524,7 @@ write(
 - [Superstore Sales Dataset on Kaggle](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting), uploader Rohit Sahoo. The data card describes a four-year retail sample and labels its license **GPL 2**, with update frequency Never.
 - Download endpoint: https://www.kaggle.com/api/v1/datasets/download/rohitsahoo/sales-forecasting
 - Downloaded October 15, 2026. Original file `train.csv`, 9,800 lines, 18 columns. SHA-256: `{provenance['source_sha256']}`.
-- Original Order Date range: January 3, 2015–December 30, 2018, parsed as day/month/year.
+- Original Order Date range: January 3, 2015â€“December 30, 2018, parsed as day/month/year.
 - This project selects eight original fields and splits by received order month. No sales records are fabricated, extended or relabeled as current activity. The source itself is a Superstore sample; no real client or retailer engagement is claimed.
 - The mirror does not define a currency. Monetary values are retained in source units; no dollar label or exchange rate is invented.
 - Customer Name, Customer ID, address-related fields and other unused columns are omitted from the included selected-column deliveries.
