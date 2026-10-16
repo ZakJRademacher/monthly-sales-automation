@@ -1979,5 +1979,176 @@
   },
   "units": "Sales are source monetary units. Currency is not specified by this mirror; no conversion is made.",
   "date_format": "day/month/year",
-  "amount_scale": 10000
+  "amount_scale": 10000,
+  "business_review": {
+    "summary": {
+      "month": "2018-12",
+      "current_start": "2018-12-01",
+      "current_end": "2018-12-30",
+      "prior_start": "2017-12-01",
+      "prior_end": "2017-12-30",
+      "prior_available": true,
+      "current": {
+        "lines": 459,
+        "orders": 223,
+        "sales_units": 830303888,
+        "average_order": 372.3335820627803
+      },
+      "prior": {
+        "lines": 331,
+        "orders": 167,
+        "sales_units": 950073530,
+        "average_order": 568.9063053892215
+      },
+      "sales_change_units": -119769642,
+      "sales_change_pct": -0.1260635500496472,
+      "orders_change_pct": 0.33532934131736525,
+      "average_order_change_pct": -0.3455274119205878,
+      "order_volume_effect": 31858.753101796407,
+      "average_order_effect": -43835.717301796394
+    },
+    "headline": "Sales down 12.6%; 223 orders versus 167.",
+    "interpretation": "Order count changed +33.5%; average order value changed -34.6%. Review product mix and the ranked segment declines below.",
+    "drivers": {
+      "category": [
+        {
+          "member": "Office Supplies",
+          "current_sales_units": 296380120,
+          "prior_sales_units": 369035460,
+          "current_orders": 170,
+          "prior_orders": 120,
+          "change_units": -72655340,
+          "change_pct": -0.19687902078569908
+        },
+        {
+          "member": "Furniture",
+          "current_sales_units": 314074668,
+          "prior_sales_units": 366049650,
+          "current_orders": 84,
+          "prior_orders": 67,
+          "change_units": -51974982,
+          "change_pct": -0.14198888593391634
+        },
+        {
+          "member": "Technology",
+          "current_sales_units": 219849100,
+          "prior_sales_units": 214988420,
+          "current_orders": 63,
+          "prior_orders": 44,
+          "change_units": 4860680,
+          "change_pct": 0.022609031686450898
+        }
+      ],
+      "region": [
+        {
+          "member": "East",
+          "current_sales_units": 192854860,
+          "prior_sales_units": 272470680,
+          "current_orders": 66,
+          "prior_orders": 49,
+          "change_units": -79615820,
+          "change_pct": -0.29219958639219457
+        },
+        {
+          "member": "Central",
+          "current_sales_units": 188830708,
+          "prior_sales_units": 253353210,
+          "current_orders": 53,
+          "prior_orders": 36,
+          "change_units": -64522502,
+          "change_pct": -0.25467410497778975
+        },
+        {
+          "member": "West",
+          "current_sales_units": 296520950,
+          "prior_sales_units": 315990380,
+          "current_orders": 71,
+          "prior_orders": 57,
+          "change_units": -19469430,
+          "change_pct": -0.06161399597038364
+        },
+        {
+          "member": "South",
+          "current_sales_units": 152097370,
+          "prior_sales_units": 108259260,
+          "current_orders": 33,
+          "prior_orders": 25,
+          "change_units": 43838110,
+          "change_pct": 0.40493635371237535
+        }
+      ]
+    },
+    "actions": [
+      {
+        "priority": 1,
+        "scope": "region",
+        "segment": "East",
+        "current_sales": 19285.486,
+        "prior_sales": 27247.068,
+        "sales_change": -7961.582,
+        "change_pct": -0.29219958639219457,
+        "reason": "More/same orders, lower sales per order",
+        "product_ids_to_check": "FUR-CH-10002331, OFF-ST-10000142, TEC-CO-10002095",
+        "next_step": "Compare the listed product IDs with their prior-period orders; check product mix and source coverage."
+      },
+      {
+        "priority": 2,
+        "scope": "category",
+        "segment": "Office Supplies",
+        "current_sales": 29638.012,
+        "prior_sales": 36903.546,
+        "sales_change": -7265.534,
+        "change_pct": -0.19687902078569908,
+        "reason": "More/same orders, lower sales per order",
+        "product_ids_to_check": "OFF-BI-10000545, OFF-AP-10002945, OFF-ST-10000142",
+        "next_step": "Compare the listed product IDs with their prior-period orders; check product mix and source coverage."
+      },
+      {
+        "priority": 3,
+        "scope": "region",
+        "segment": "Central",
+        "current_sales": 18883.0708,
+        "prior_sales": 25335.321,
+        "sales_change": -6452.2502,
+        "change_pct": -0.25467410497778975,
+        "reason": "More/same orders, lower sales per order",
+        "product_ids_to_check": "OFF-BI-10000545, FUR-CH-10000454, FUR-TA-10000198",
+        "next_step": "Compare the listed product IDs with their prior-period orders; check product mix and source coverage."
+      },
+      {
+        "priority": 4,
+        "scope": "category",
+        "segment": "Furniture",
+        "current_sales": 31407.4668,
+        "prior_sales": 36604.965,
+        "sales_change": -5197.4982,
+        "change_pct": -0.14198888593391634,
+        "reason": "More/same orders, lower sales per order",
+        "product_ids_to_check": "FUR-CH-10002331, FUR-CH-10000454, FUR-TA-10001307",
+        "next_step": "Compare the listed product IDs with their prior-period orders; check product mix and source coverage."
+      },
+      {
+        "priority": 5,
+        "scope": "region",
+        "segment": "West",
+        "current_sales": 29652.095,
+        "prior_sales": 31599.038,
+        "sales_change": -1946.943,
+        "change_pct": -0.06161399597038364,
+        "reason": "More/same orders, lower sales per order",
+        "product_ids_to_check": "TEC-PH-10002200, FUR-TA-10001307, TEC-AC-10003870",
+        "next_step": "Compare the listed product IDs with their prior-period orders; check product mix and source coverage."
+      }
+    ],
+    "checks": {
+      "category_current_sales_reconcile": true,
+      "category_prior_sales_reconcile": true,
+      "category_change_reconcile": true,
+      "region_current_sales_reconcile": true,
+      "region_prior_sales_reconcile": true,
+      "region_change_reconcile": true,
+      "arithmetic_bridge_reconciles": true
+    },
+    "priority_rule": "Negative category and regional sales changes ranked by absolute decline; overlapping scopes must not be added."
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "run_id": "20261016T025942Z_5cd0da40",
+  "run_id": "20261016T051636Z_33514149",
   "status": "success",
   "metrics": {
     "lines": 9800,
@@ -315,5 +315,7 @@
     "sqlite_integrity": true
   },
   "workbook": "monthly-sales_2018-12.xlsx",
+  "report": "sales-review.html",
+  "review_list": "review_actions.csv",
   "notes_sha256": "9679b6c3fa31bd6dc41d3c00d751cf3de2679379feb1f10a20f8c06e8e489013"
 }
