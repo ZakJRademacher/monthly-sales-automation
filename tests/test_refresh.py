@@ -279,6 +279,92 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(first["metrics"], second["metrics"])
         self.assertNotEqual(first["run_id"], second["run_id"])
 
+    def test_business_review_matches_calendar_cutoffs(self):
+        prior = self.row("90", "2017-01", "100")
+        late = self.row("91", "2017-01", "900")
+        late["Order Date"] = "31/01/2017"
+        late["Ship Date"] = "31/01/2017"
+        self.file("2017-01", [prior, late])
+        self.file(rows=[self.row(sales="80")])
+        b = self.build()["business_review"]
+        self.assertEqual(b["summary"]["prior"]["sales_units"], 1000000)
+        self.assertAlmostEqual(b["summary"]["sales_change_pct"], -0.2)
+
+    def test_missing_business_baseline_is_not_zero(self):
+        self.file()
+        b = self.build()["business_review"]
+        self.assertIsNone(b["summary"]["sales_change_pct"])
+        self.assertFalse(b["actions"])
+        self.assertIn("unavailable", b["headline"])
+
+    def test_zero_business_baseline_has_no_percentage(self):
+        self.file("2017-01", [self.row("90", "2017-01", "0")])
+        self.file()
+        b = self.build()["business_review"]
+        self.assertIsNone(b["summary"]["sales_change_pct"])
+        self.assertIn("baseline is zero", b["headline"])
+
+    def test_business_bridge_reconciles(self):
+        self.file("2017-01", [self.row("90", "2017-01", "100")])
+        self.file(rows=[self.row("1", sales="30"), self.row("2", sales="30")])
+        b = self.build()["business_review"]
+        s = b["summary"]
+        self.assertAlmostEqual(s["order_volume_effect"], 100)
+        self.assertAlmostEqual(s["average_order_effect"], -140)
+        self.assertTrue(all(b["checks"].values()))
+
+    def test_review_priorities_follow_largest_decline(self):
+        a = self.row("90", "2017-01", "100")
+        z = self.row("91", "2017-01", "200")
+        z["Category"] = "Furniture"
+        self.file("2017-01", [a, z])
+        self.file(rows=[self.row(sales="90")])
+        b = self.build()["business_review"]
+        cats = [r for r in b["actions"] if r["scope"] == "category"]
+        self.assertEqual([r["segment"] for r in cats], ["Furniture", "Technology"])
+        self.assertTrue(all(r["sales_change"] < 0 for r in cats))
+
+    def test_review_identifies_source_product_ids(self):
+        self.file("2017-01", [self.row("90", "2017-01", "100")])
+        self.file(rows=[self.row(sales="20")])
+        b = self.build()["business_review"]
+        self.assertEqual(b["actions"][0]["product_ids_to_check"], "P1")
+
+    def test_review_leap_year_uses_common_day_cutoff(self):
+        old = self.row("90", "2019-02", "100")
+        old["Order Date"] = "28/02/2019"
+        old["Ship Date"] = "28/02/2019"
+        now = self.row("1", "2020-02", "50")
+        now["Order Date"] = "28/02/2020"
+        now["Ship Date"] = "28/02/2020"
+        leap = dict(now)
+        leap["Row ID"] = "2"
+        leap["Order ID"] = "leap"
+        leap["Order Date"] = "29/02/2020"
+        leap["Ship Date"] = "29/02/2020"
+        self.file("2019-02", [old])
+        self.file("2020-02", [now, leap])
+        s = self.build()["business_review"]["summary"]
+        self.assertEqual(s["current_end"], "2020-02-28")
+        self.assertEqual(s["current"]["sales_units"], 500000)
+
+    def test_portable_summary_produces_business_deliverables(self):
+        self.file()
+        r = refresh(self.inputs, self.notes, self.root / "runs", generate_excel=False)
+        directory = Path(r["directory"])
+        self.assertIsNone(r["workbook"])
+        self.assertTrue((directory / "sales-review.html").exists())
+        self.assertTrue((directory / "review_actions.csv").exists())
+
+    def test_html_escapes_source_labels(self):
+        row = self.row()
+        row["Category"] = "<script>alert(1)</script>"
+        self.file(rows=[row])
+        self.build()
+        rendered = next(self.root.glob("stage*/sales-review.html")).read_text()
+        self.assertNotIn("<script>", rendered)
+        self.assertIn("&lt;script&gt;", rendered)
+
 
 if __name__ == "__main__":
     unittest.main()
