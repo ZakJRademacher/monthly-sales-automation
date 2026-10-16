@@ -243,9 +243,9 @@ def render_html(review, output):
         )
 
     body = (
-        "<h1>Sales review Â· "
+        "<h1>Sales review · "
         + e(s["month"])
-        + '</h1><p class="context">Historical Kaggle Superstore sample Â· sales in source monetary units</p><h2>'
+        + '</h1><p class="context">Historical Kaggle Superstore sample · sales in source monetary units</p><h2>'
         + e(review["headline"])
         + "</h2><p>"
         + e(review["interpretation"])
@@ -254,18 +254,18 @@ def render_html(review, output):
     body += (
         '<p class="context">Comparison: '
         + e(s["current_start"])
-        + "â€“"
+        + "–"
         + e(s["current_end"])
         + " versus "
         + e(s["prior_start"])
-        + "â€“"
+        + "–"
         + e(s["prior_end"])
         + ". Periods use the same day-of-month cutoff.</p>"
     )
     body += table(["Measure", "Current period", "Prior year", "Change"], metrics)
     for scope in ["category", "region"]:
         body += (
-            "<h2>Where the change came from Â· "
+            "<h2>Where the change came from · "
             + scope
             + "</h2>"
             + table(
