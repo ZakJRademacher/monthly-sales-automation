@@ -5,6 +5,8 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
+from types import SimpleNamespace
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -364,6 +366,45 @@ class RefreshTests(unittest.TestCase):
         rendered = next(self.root.glob("stage*/sales-review.html")).read_text()
         self.assertNotIn("<script>", rendered)
         self.assertIn("&lt;script&gt;", rendered)
+
+    def test_failed_pdf_keeps_previous_success(self):
+        self.file()
+        output = self.root / "runs"
+        refresh(self.inputs, self.notes, output, generate_excel=False)
+        before = (output / "latest.json").read_bytes()
+        with patch(
+            "refresh.subprocess.run",
+            return_value=SimpleNamespace(
+                returncode=1, stdout="", stderr="missing reportlab"
+            ),
+        ):
+            with self.assertRaisesRegex(RuntimeError, "PDF generation failed"):
+                refresh(
+                    self.inputs,
+                    self.notes,
+                    output,
+                    generate_excel=False,
+                    generate_pdf=True,
+                )
+        self.assertEqual(before, (output / "latest.json").read_bytes())
+        self.assertFalse((output / ".refresh.lock").exists())
+
+    def test_requested_pdf_must_exist_before_publication(self):
+        self.file()
+        output = self.root / "runs"
+        with patch(
+            "refresh.subprocess.run",
+            return_value=SimpleNamespace(returncode=0, stdout="", stderr=""),
+        ):
+            with self.assertRaisesRegex(RuntimeError, "PDF generation failed"):
+                refresh(
+                    self.inputs,
+                    self.notes,
+                    output,
+                    generate_excel=False,
+                    generate_pdf=True,
+                )
+        self.assertFalse((output / "latest.json").exists())
 
 
 if __name__ == "__main__":

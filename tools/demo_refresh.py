@@ -8,6 +8,7 @@ import tempfile
 from decimal import Decimal
 from pathlib import Path
 from openpyxl import load_workbook
+from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -33,10 +34,10 @@ with tempfile.TemporaryDirectory(dir=parent) as directory:
         [dict(zip(NOTE_FIELDS, [*key, "Demo reviewer", "In progress", note]))],
         NOTE_FIELDS,
     )
-    first = refresh(incoming, notes, runs)
+    first = refresh(incoming, notes, runs, generate_pdf=True)
     shutil.copy2(sources[-1], incoming / sources[-1].name)
-    second = refresh(incoming, notes, runs)
-    third = refresh(incoming, notes, runs)
+    second = refresh(incoming, notes, runs, generate_pdf=True)
+    third = refresh(incoming, notes, runs, generate_pdf=True)
 
     def workbook(run):
         return load_workbook(Path(run["directory"]) / run["workbook"], data_only=True)
@@ -66,6 +67,17 @@ with tempfile.TemporaryDirectory(dir=parent) as directory:
     except ValueError as exc:
         blocked = "conflicting Row ID" in str(exc)
     checks = {
+        "pdf_rebuilt_for_new_month": all(
+            run["metrics"]["last_month"]
+            in PdfReader(Path(run["directory"]) / "case-study.pdf")
+            .pages[0]
+            .extract_text()
+            for run in [first, second, third]
+        ),
+        "pdf_has_two_pages_each_run": all(
+            len(PdfReader(Path(run["directory"]) / "case-study.pdf").pages) == 2
+            for run in [first, second, third]
+        ),
         "real_engine_used_for_three_refreshes": all(
             (Path(run["directory"]) / "workbook-verification.json").exists()
             for run in [first, second, third]

@@ -1,10 +1,14 @@
-# Monthly Sales Report Automation
+# Fieldnotes / Monthly Sales Review
 
 **Add sales CSVs. Get a written explanation of what changed and a ranked list of products to investigate.**
 
 A working Python/SQL/Excel portfolio project built from a downloaded Kaggle Superstore sample: **9,800 sales lines, 4,922 distinct orders and 48 historical monthly files**. It returns a useful business review, with source product IDs for follow-up, alongside recurring spreadsheet automation.
 
-![Useful sales findings](deliverables/portfolio-cover.png)
+![Generated two-page sales briefing, page one](deliverables/portfolio-cover.png)
+
+A restrained visual report across **Excel, responsive HTML and a generated two-page PDF**. The design, comparisons, charts and review leads regenerate from the current input folder; new months do not require manual cover edits.
+
+![Actual Excel dashboard](deliverables/excel-sales-overview.png)
 
 ## What it returns
 
@@ -29,7 +33,7 @@ The report uses the latest recorded day of the latest input month as a common da
 ## Inspect the deliverables
 
 - [Ready-to-open workbook](deliverables/monthly-sales_2018-12.xlsx)
-- [Two-page case study](deliverables/case-study.pdf)
+- [Generated two-page sales briefing](deliverables/case-study.pdf)
 - [Actual refresh replay evidence](docs/refresh-demonstration.json)
 - [Independent verification](docs/independent-verification.json)
 - [Excel preview](deliverables/excel-monthly-report.png)
@@ -40,19 +44,20 @@ The report uses the latest recorded day of the latest input month as a common da
 The 48 selected-column CSV inputs are included, so a fresh download is not required. No customer names or addresses are bundled. With Python 3.10+, Node.js and the documented compatible spreadsheet runtime:
 
 ```sh
-python refresh.py
+python refresh.py --render --pdf
 ```
 
-The Excel path adds a workbook to the same business-review outputs. The program creates a unique folder in `runs/` containing `monthly-sales_YYYY-MM.xlsx`, a SQLite database, SQL extracts, input hashes, processing log and formula-verification evidence. `runs/latest.json` points to the last fully generated workbook. Older successful runs remain available. See [SETUP.md](docs/SETUP.md) for the actual authoring dependency and environment variables; this is a local workflow, not a hosted service.
+The Excel path adds a workbook to the same business-review outputs. `--pdf` adds a matching two-page briefing (install `requirements-visuals.txt`); `--render` adds six actual workbook previews. Every requested output must succeed before the new version becomes current. The program creates a unique folder in `runs/` containing `monthly-sales_YYYY-MM.xlsx`, a SQLite database, SQL extracts, input hashes, processing log and formula-verification evidence. `runs/latest.json` points to the last fully generated workbook. Older successful runs remain available. See [SETUP.md](docs/SETUP.md) for the actual authoring dependency and environment variables; this is a local workflow, not a hosted service.
 
 ## What is automated
 
 1. Validate required columns, stable Row IDs, day/month/year dates, filename months and supported amounts.
 2. Skip identical repeat IDs; reject conflicts rather than silently choosing a record.
 3. Rebuild SQLite and SQL aggregates from the current delivery-folder snapshot. Repeated runs do not accumulate prior totals.
-4. Build a four-sheet workbook with live formulas, a native chart, typed period dates and a review-status dropdown.
-5. Rejoin saved review notes by **month + category**, regardless of row position.
-6. Publish a new version only after workbook generation succeeds. A rejected import keeps the previous successful pointer and workbook.
+4. Build a four-sheet workbook with live KPI cards, three native charts, typed period dates and a review-status dropdown. Match-period calculations sit in **Monthly detail O:S**; the first sheet links to them.
+5. Generate the responsive HTML report and, with `--pdf`, the two-page briefing from that same validated run.
+6. Rejoin saved review notes by **month + category**, regardless of row position.
+7. Publish a new version only after workbook generation succeeds. A rejected import keeps the previous successful pointer and workbook.
 
 ## Proof that a new month works
 
@@ -62,7 +67,7 @@ The Excel path adds a workbook to the same business-review outputs. The program 
 | Add December 2018 | 48 | 9,800 | 2,261,536.7827 |
 | Run the same input again | 48 | 9,800 | 2,261,536.7827 |
 
-The real spreadsheet engine ran all three refreshes. A temporary demonstration note survived. A conflicting-row test then preserved the last successful version. [Thirteen replay assertions passed](docs/refresh-demonstration.json). The delivered workbook starts with blank review annotations; it contains no invented completed reviews.
+The real spreadsheet engine ran all three refreshes. A temporary demonstration note survived. A conflicting-row test then preserved the last successful version. [Fifteen replay assertions passed](docs/refresh-demonstration.json). The delivered workbook starts with blank review annotations; it contains no invented completed reviews.
 
 ## Review notes
 
@@ -84,15 +89,18 @@ python tools/demo_refresh.py
 python tools/verify_outputs.py
 ```
 
-The 32 standard-library tests run without Node or the authoring package; publication tests use a clearly identified writer test double. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
+The 34 standard-library tests run without Node or the authoring package; publication tests use a clearly identified writer test double. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
 
-To reproduce the visual briefing and compact bundle:
+To reproduce the briefing from the published evidence and build the compact bundle:
 
 ```sh
 pip install -r requirements-visuals.txt
 python tools/build_presentation.py
+# For fresh data, prefer refresh.py --render --pdf so the PDF belongs to its run.
 python tools/package_project.py
 ```
+
+See [visual design and interpretation](docs/DESIGN.md) for chart choices, palette, design references and refresh behavior.
 
 ## Relevant remote work
 

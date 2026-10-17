@@ -32,6 +32,8 @@
     "unmatched_notes": 0
   },
   "checks": {
+    "pdf_rebuilt_for_new_month": true,
+    "pdf_has_two_pages_each_run": true,
     "real_engine_used_for_three_refreshes": true,
     "next_month_added": true,
     "new_lines_added": true,

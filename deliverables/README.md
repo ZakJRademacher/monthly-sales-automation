@@ -1,6 +1,7 @@
-# Ready-to-review deliverables
+# Ready-to-review reports
 
-## Start here
-Download and open `sales-review.html` locally. It explains the matched sales decline and ranks follow-ups; keep `review_actions.csv` alongside it for the download link. The CSV includes specific source Product IDs to investigate. `excel-sales-review.png` previews the workbook's first, business-focused sheet. The other three sheets retain historical monthly reporting and note entry.
+Start with `case-study.pdf` for the generated two-page sales briefing or `monthly-sales_2018-12.xlsx` for the editable four-sheet workbook. `excel-sales-overview.png` shows the actual Excel opening view; `portfolio-cover.png` is page one of the PDF rendered as an image. Supporting workbook previews include the full first sheet, history, monthly inputs, matched calculations and note-entry workflow.
 
-`monthly-sales_2018-12.xlsx` is the latest demonstrated workbook: report, all-month calculations and editable category-review notes. `case-study.pdf` is the two-page workflow briefing. The cover, trend graphic and four sheet previews show the public portfolio example. New report versions are produced by refresh.py; preserve notes through the documented CSV import before refresh. No macros or background watcher are used.
+Download `sales-review.html` and open it locally. It is responsive and self-contained; keep `review_actions.csv` beside it for the download link. GitHub displays HTML source. The report includes matched dates, segment changes and product IDs to investigate.
+
+Run `python refresh.py --render --pdf` to regenerate the design and findings for the latest monthly inputs. See docs/SETUP.md for the optional spreadsheet runtime and reportlab. Save review notes through the documented CSV import before refresh. The authoring engine verified formulas; native Microsoft Excel recalculation remains untested.

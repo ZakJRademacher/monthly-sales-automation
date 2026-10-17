@@ -42,7 +42,15 @@ def workbook_writer(stage, render=False):
         )
 
 
-def refresh(input_dir, notes, output, render=False, writer=None, generate_excel=True):
+def refresh(
+    input_dir,
+    notes,
+    output,
+    render=False,
+    writer=None,
+    generate_excel=True,
+    generate_pdf=False,
+):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     lock = output / ".refresh.lock"
@@ -74,6 +82,27 @@ def refresh(input_dir, notes, output, render=False, writer=None, generate_excel=
         expected = stage / f"monthly-sales_{analysis['metrics']['last_month']}.xlsx"
         if generate_excel and not expected.is_file():
             raise RuntimeError("Workbook generation did not produce the expected XLSX")
+        if generate_pdf:
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(ROOT / "tools/build_briefing.py"),
+                    "--stage",
+                    str(stage),
+                    "--output",
+                    str(stage),
+                ],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            (stage / "briefing-build.log").write_text(
+                result.stdout + "\n" + result.stderr, encoding="utf-8"
+            )
+            if result.returncode or not (stage / "case-study.pdf").is_file():
+                raise RuntimeError(
+                    "PDF generation failed; inspect briefing-build.log. Install reportlab from requirements-visuals.txt."
+                )
         log = {
             "run_id": run_id,
             "status": "success",
@@ -83,6 +112,7 @@ def refresh(input_dir, notes, output, render=False, writer=None, generate_excel=
             "workbook": expected.name if generate_excel else None,
             "report": "sales-review.html",
             "review_list": "review_actions.csv",
+            "pdf": "case-study.pdf" if generate_pdf else None,
             "notes_sha256": __import__("hashlib")
             .sha256(snapshot.read_bytes())
             .hexdigest(),
@@ -96,6 +126,7 @@ def refresh(input_dir, notes, output, render=False, writer=None, generate_excel=
             "workbook": expected.name if generate_excel else None,
             "report": "sales-review.html",
             "review_list": "review_actions.csv",
+            "pdf": "case-study.pdf" if generate_pdf else None,
             "metrics": analysis["metrics"],
         }
         temp = output / ("latest_" + uuid.uuid4().hex + ".tmp")
@@ -126,6 +157,11 @@ if __name__ == "__main__":
     p.add_argument("--output", type=Path, default=ROOT / "runs")
     p.add_argument("--render", action="store_true")
     p.add_argument(
+        "--pdf",
+        action="store_true",
+        help="Include the two-page briefing; requires reportlab. Failure preserves the previous successful version.",
+    )
+    p.add_argument(
         "--summary-only",
         action="store_true",
         help="Generate the useful HTML review and CSV follow-up list with standard-library Python; skip Excel generation",
@@ -140,6 +176,7 @@ if __name__ == "__main__":
                     a.output,
                     a.render,
                     generate_excel=not a.summary_only,
+                    generate_pdf=a.pdf,
                 ),
                 indent=2,
             )

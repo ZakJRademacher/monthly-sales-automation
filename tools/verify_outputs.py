@@ -82,9 +82,18 @@ checks.update(
     }
 )
 with zipfile.ZipFile(book) as z:
-    chart = z.read(next(n for n in z.namelist() if n.endswith("/chart1.xml"))).decode()
+    charts = [
+        z.read(n).decode()
+        for n in z.namelist()
+        if "/charts/" in n and n.endswith(".xml")
+    ]
+    chart = next(xml for xml in charts if "lineChart" in xml)
+    checks["three_native_charts"] = len(charts) == 3
+    checks["comparison_chart_palette"] = (
+        sum("126F69" in xml.upper() and "B8C1C7" in xml.upper() for xml in charts) == 2
+    )
     checks["chart_bound_to_cells"] = f"$M${end+4}:$M${end+15}" in chart
-    checks["chart_line_color_exported"] = "3667AF" in chart.upper()
+    checks["chart_line_color_exported"] = "126F69" in chart.upper()
 demo = json.loads((ROOT / "docs/refresh-demonstration.json").read_text())
 checks["real_workbook_refresh_demonstration"] = demo["all_passed"]
 from pypdf import PdfReader
@@ -157,15 +166,21 @@ checks["all_business_reconciliations"] = len(br["checks"]) == 7 and all(
 checks["business_sheet_first"] = values.sheetnames[0] == "Sales review"
 checks["business_cached_yoy"] = (
     abs(
-        values["Sales review"]["D6"].value
+        values["Sales review"]["B11"].value
         - (amount(current_rows) / amount(prior_rows) - 1)
     )
     < 1e-10
 )
+checks["dashboard_card_linked"] = (
+    formulas["Sales review"]["B9"].value == "='Monthly detail'!P6"
+)
+checks["dashboard_card_matches_source"] = (
+    abs(values["Sales review"]["B9"].value - amount(current_rows) / 10000) < 1e-7
+)
 checks["business_bridge_reconciles"] = (
     abs(
-        values["Sales review"]["B11"].value
-        + values["Sales review"]["B12"].value
+        values["Monthly detail"]["P12"].value
+        + values["Monthly detail"]["P13"].value
         - (amount(current_rows) - amount(prior_rows)) / 10000
     )
     < 1e-7
