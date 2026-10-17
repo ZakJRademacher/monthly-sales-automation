@@ -1,15 +1,11 @@
 # Portfolio listing
 
-Title: Monthly Sales Reporting | Excel, Python & SQL
+Title: Interactive Sales Dashboard | Power BI, Python & Excel
 
-Role: Portfolio project owner | Reporting automation and data visualization
+Role: Reporting automation and data visualization
 
-Description: Turned 9,800 historical Kaggle sales lines into a repeatable reporting workflow: an Excel dashboard with live KPI formulas and three native charts, a responsive HTML review, a two-page PDF and ranked product follow-ups. Matching December periods show sales down 12.6% despite 33.5% more orders. Adding monthly CSVs refreshes the layout and findings while preserving saved review notes. Includes 34 tests, source reconciliations, refresh replay evidence and full setup documentation. Independent portfolio project; sales use source monetary units.
+Description: Built a native Power BI sales dashboard from 9,800 historical Kaggle order lines. Synced filters, a category ribbon, dynamic comparisons and product-to-source exploration turn monthly CSVs into a repeatable business review. Python/SQL validates deliveries before publishing a snapshot; Power BI Refresh updates the report. Includes the PBIX, editable source, Excel exports, documentation, 38 tests, native DAX checks and a verified November-to-December refresh replay. Independent portfolio project; amounts use source units.
 
-Skills: Python; SQL; Microsoft Excel; Data Cleaning; Automation.
+Skills: Microsoft Power BI; Python; SQL; Microsoft Excel; Data Visualization.
 
-Cover caption: Generated sales briefing: matched-period results and segment changes.
-
-Workbook caption: Actual Excel dashboard with linked KPI formulas and native current-versus-prior charts.
-
-PDF caption: Two-page generated sales report with ranked review leads, source product IDs and refresh instructions.
+Previews: Actual Power BI pages; static PDF export. Interactivity is available in the PBIX linked from GitHub.

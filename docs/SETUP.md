@@ -28,3 +28,7 @@ Optional: `python src/download_data.py` downloads the Kaggle snapshot into ignor
 GitHub Actions runs the 34 core tests on Python 3.10 and 3.12. It does not pretend to install the optional private authoring runtime or recalculate in native desktop Excel.
 
 The `--render` previews require the spreadsheet runtime. PDF rendering into portfolio PNGs uses optional Poppler: `pdftoppm -r 144 -png -f 1 -singlefile deliverables/case-study.pdf deliverables/portfolio-cover`. The PDF builder itself needs no Poppler or Matplotlib.
+
+## Native Power BI dashboard
+
+The interactive report is `deliverables/Monthly Sales Explorer.pbix` from the repository root. See [Power BI setup, exploration and refresh](../powerbi/README.md) and [native verification](../powerbi/NATIVE_QA.md). Its four-page PDF and PNG previews are static native exports; the PBIX contains the interactive report and imported public sample.

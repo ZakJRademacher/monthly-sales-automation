@@ -14,7 +14,7 @@ Excel compares current and prior segment sales with two editable, cell-bound col
 - Monthly detail: all-month inputs and formulas in A:J; matched-period inputs, calculations and chart ranges in O:S. Sources are cited beside inputs. This is a working calculation area, not a terminal audit.
 - Category review: yellow editable owner/status/note fields with stable month + category keys.
 
-The PDF is a concise two-page output: up to four leading rows per segment view and the first five review leads; full detail remains in HTML, Excel and review_actions.csv. New schemas or unusually long segment names require layout review. There are no slicers, macros, live feeds or cloud schedules. All deliverables use the same validated run. Excel formulas and native charts recalculate from linked cells; generated narrative and ranks update through the Python refresh.
+The PDF is a concise two-page output: up to four leading rows per segment view and the first five review leads; full detail remains in HTML, Excel and review_actions.csv. New schemas or unusually long segment names require layout review. These Excel/HTML/PDF outputs have no slicers, macros, live feeds or cloud schedules. All deliverables use the same validated run. Excel formulas and native charts recalculate from linked cells; generated narrative and ranks update through the Python refresh.
 
 ## Design references
 Reviewed these public discussions for inspiration and critique, without copying their charts, layout files or assets:
@@ -25,3 +25,7 @@ The implementation is an original report for this project's question and existin
 
 ## Verification and scope
 All four sheets and both PDF pages were rendered and reviewed. The builder changes and restores a source amount to verify card propagation, checks full-data totals, exercises note prerequisites, and scans formula errors. An actual-engine refresh replay adds a month, reruns identical input and rejects a conflict. Independent QA checks saved values, formula links, three chart objects and exported colors. This does not constitute native Microsoft Excel recalculation verification; that remains untested.
+
+## Interactive Power BI edition
+
+The native Power BI report adds synchronized slicers and chart interactions. A dark canvas, serif page titles, quiet labels and mint/coral/lilac category colors establish hierarchy. The ribbon shows changing category rank and full observed monthly amounts; it does not show customer movement. Matched KPI comparisons use separate common-day cutoffs. Drivers use zero-centered change bars and a labeled arithmetic bridge. Product selection connects summary signals to original file/row records. Details and operating instructions are in [the Power BI guide](../powerbi/README.md); [native checks](../powerbi/NATIVE_QA.md) record actual Desktop verification. Previews are actual Desktop screenshots or native PDF exports.

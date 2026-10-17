@@ -12,3 +12,7 @@ Open deliverables/sales-review.html: sales −12.6%, orders +33.5%, average orde
 7. Run the 34 tests. Show the original-source verification and discuss the documented authoring-runtime and native-Excel limits.
 
 Relevant tasks: recurring report refreshes, CSV cleanup/merging, SQL aggregation, spreadsheet formulas, exception handling and written operating guides. Adapt a client's real schema, line key, currency, return rules, reporting calendar and access constraints before using this example with private data.
+
+## Native Power BI dashboard
+
+The interactive report is `deliverables/Monthly Sales Explorer.pbix` from the repository root. See [Power BI setup, exploration and refresh](../powerbi/README.md) and [native verification](../powerbi/NATIVE_QA.md). Its four-page PDF and PNG previews are static native exports; the PBIX contains the interactive report and imported public sample.

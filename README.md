@@ -1,14 +1,32 @@
-# Fieldnotes / Monthly Sales Review
+# Fieldnotes / Interactive Sales Explorer
 
-**Add sales CSVs. Get a written explanation of what changed and a ranked list of products to investigate.**
+**Explore monthly sales inside Power BI. Filter the business, inspect what changed, and trace products back to source records.**
 
-A working Python/SQL/Excel portfolio project built from a downloaded Kaggle Superstore sample: **9,800 sales lines, 4,922 distinct orders and 48 historical monthly files**. It returns a useful business review, with source product IDs for follow-up, alongside recurring spreadsheet automation.
+A native four-page Power BI report backed by Python/SQLite validation: **9,800 historical Kaggle sales lines, 4,922 orders and 48 monthly files**. Includes a category ribbon, synchronized month/category/region selectors, responsive KPI comparisons, interacting change bars and product-to-source exploration.
 
-![Generated two-page sales briefing, page one](deliverables/portfolio-cover.png)
+![Actual Power BI opening view](deliverables/powerbi-overview.png)
 
-A restrained visual report across **Excel, responsive HTML and a generated two-page PDF**. The design, comparisons, charts and review leads regenerate from the current input folder; new months do not require manual cover edits.
+- [Download the interactive PBIX](deliverables/Monthly%20Sales%20Explorer.pbix) — open in Power BI Desktop; imported sample included.
+- [Preview all four pages as PDF](deliverables/Monthly%20Sales%20Explorer.pdf) — static native export.
+- [Open, explore and refresh](powerbi/README.md) — data contract, parameters, definitions and limitations.
+- [Native validation evidence](powerbi/NATIVE_QA.md) — 13 DAX checks, interactions and an actual November-to-December refresh.
+- [Editable Power BI project](powerbi/SalesExplorer.pbip) — keep the Report and SemanticModel folders alongside it.
 
-![Actual Excel dashboard](deliverables/excel-sales-overview.png)
+## Update the dashboard
+
+Add or replace matching monthly CSVs in `data/incoming`, retain history, then run:
+
+```sh
+python powerbi/export_data.py
+```
+
+Set Power BI's `DataFolder` parameter to your local `powerbi/sample-data` folder once, then **Home > Refresh**. Clear the month selector to follow the newest month. Validation publishes an immutable snapshot and changes `latest.json` only after export succeeds. Do not export during a Desktop refresh. This is a repeatable local workflow; unattended cloud scheduling is not configured.
+
+![Actual Power BI drivers page, native PDF export](deliverables/powerbi-drivers.png)
+
+## Supporting Excel and written reports
+
+The same source deliveries also produce an editable workbook, a responsive HTML review, a generated two-page briefing and ranked product follow-ups. These remain separate outputs, with their own refresh command below.
 
 ## What it returns
 
@@ -89,7 +107,7 @@ python tools/demo_refresh.py
 python tools/verify_outputs.py
 ```
 
-The 34 standard-library tests run without Node or the authoring package; publication tests use a clearly identified writer test double. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
+The 38 standard-library tests run without Node or the authoring package; publication tests use a clearly identified writer test double. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
 
 To reproduce the briefing from the published evidence and build the compact bundle:
 

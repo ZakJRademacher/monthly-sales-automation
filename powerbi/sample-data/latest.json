@@ -1,0 +1,19 @@
+{
+  "contract_version": 1,
+  "snapshot": "aa9c70b67f36a2be",
+  "metrics": {
+    "lines": 9800,
+    "orders": 4922,
+    "sales_units": 22615367827,
+    "first_date": "2015-01-03",
+    "last_date": "2018-12-30",
+    "input_files": 48,
+    "input_rows": 9800,
+    "repeated_rows": 0,
+    "months": 48,
+    "missing_months": 0,
+    "last_month": "2018-12",
+    "saved_note_keys": 0,
+    "unmatched_notes": 0
+  }
+}

@@ -7,3 +7,6 @@ node_modules/
 *.inspect.ndjson
 data/notes/*.tmp
 data/notes/review_notes.csv
+**/.pbi/
+powerbi/sample-data/staging_*/
+powerbi/sample-data/latest_*.tmp

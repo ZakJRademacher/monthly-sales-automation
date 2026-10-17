@@ -41,3 +41,7 @@ The notes input is copied into the run before ingestion. Each accepted line carr
 Every refresh rebuilds KPI cards, native chart bindings, comparison labels, segment order and ranked product leads for the latest delivery. The Excel cards and charts link to Monthly detail O:S; the plain-language headline and ranked list regenerate when the pipeline runs. Editing a cell manually does not rerun Python, re-rank leads or rewrite the HTML/PDF. Edit source CSVs and rerun for a consistent new report.
 
 The first sheet compares matched day cutoffs. Monthly report shows full observed months; its YoY can differ because the prior month can contain additional days. Review notes are the intended manual workbook inputs. Keep source files and client annotations private.
+
+## Native Power BI dashboard
+
+The interactive report is `deliverables/Monthly Sales Explorer.pbix` from the repository root. See [Power BI setup, exploration and refresh](../powerbi/README.md) and [native verification](../powerbi/NATIVE_QA.md). Its four-page PDF and PNG previews are static native exports; the PBIX contains the interactive report and imported public sample.

@@ -16,3 +16,7 @@ The optional spreadsheet authoring runtime is explicitly documented. Native desk
 
 ## Redesigned presentation
 The two added tests reject failed or missing requested PDFs before publication. Actual-engine replay still passes all 15 checks. The final artifact includes three native chart objects; the first-sheet cards link to matched-period calculations, with dynamic sign formatting. Both PDF pages and all workbook views were rendered and visually checked. A fresh PDF is generated within each requested run; static portfolio PNGs are rendered from that PDF separately. See DESIGN.md.
+
+## Native Power BI dashboard
+
+The interactive report is `deliverables/Monthly Sales Explorer.pbix` from the repository root. See [Power BI setup, exploration and refresh](../powerbi/README.md) and [native verification](../powerbi/NATIVE_QA.md). Its four-page PDF and PNG previews are static native exports; the PBIX contains the interactive report and imported public sample.

@@ -23,6 +23,7 @@ for folder in [
     "docs",
     "deliverables",
     "evidence",
+    "powerbi",
     "data/incoming",
     ".github",
 ]:
@@ -31,6 +32,8 @@ for folder in [
         for p in (ROOT / folder).rglob("*")
         if p.is_file()
         and "__pycache__" not in p.parts
+        and ".pbi" not in p.parts
+        and not any(part.startswith(("latest_", "staging_")) for part in p.relative_to(ROOT).parts)
         and not p.name.endswith(".inspect.ndjson")
         and p.name != "package-manifest.json"
     )
@@ -55,8 +58,9 @@ manifest.write_text(
                 "runs/*",
                 "tmp/*",
                 "__pycache__/*",
+                "**/.pbi/*",
             ],
-            "runtime": "Python 3.10+, Node.js and compatible artifact-tool for fresh XLSX generation; see docs/SETUP.md",
+            "runtime": "Power BI Desktop for PBIX exploration; Python 3.10+ for data export. Optional XLSX generation also requires Node.js and compatible artifact-tool; see docs/SETUP.md and powerbi/README.md",
         },
         indent=2,
     )

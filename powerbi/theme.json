@@ -1,0 +1,28 @@
+{
+  "name": "The shape of sales",
+  "dataColors": [
+    "#64D8C5",
+    "#FF927F",
+    "#B6A5F5",
+    "#EACB79"
+  ],
+  "background": "#121F2D",
+  "foreground": "#EFF4F7",
+  "tableAccent": "#64D8C5",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 13,
+      "color": "#EFF4F7"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 11,
+      "color": "#A4B5C4"
+    },
+    "callout": {
+      "fontFace": "Segoe UI",
+      "color": "#EFF4F7"
+    }
+  }
+}

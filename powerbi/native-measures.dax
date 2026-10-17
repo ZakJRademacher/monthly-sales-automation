@@ -1,0 +1,100 @@
+Sales =
+COALESCE(DIVIDE(SUM(Sales[SalesUnits]), 10000), 0)
+
+Orders =
+COALESCE(DISTINCTCOUNT(Sales[OrderID]), 0)
+
+AOV =
+DIVIDE([Sales], [Orders])
+
+Report Month =
+SELECTEDVALUE(DeliveryCoverage[Month], MAXX(ALL(DeliveryCoverage), DeliveryCoverage[Month]))
+
+As Of Date =
+VAR StartDate = [Report Month]
+    VAR LastDay = EOMONTH(StartDate, 0)
+    VAR Observed = MAXX(
+        FILTER(ALL(Sales), Sales[OrderDate] >= StartDate && Sales[OrderDate] <= LastDay),
+        Sales[OrderDate])
+    RETURN COALESCE(Observed, LastDay)
+
+Cutoff Date =
+VAR Anchor = [As Of Date]
+    VAR PriorLastDay = DAY(EOMONTH(DATE(YEAR(Anchor) - 1, MONTH(Anchor), 1), 0))
+    RETURN DATE(YEAR(Anchor), MONTH(Anchor), MIN(DAY(Anchor), PriorLastDay))
+
+Prior Delivery Available =
+VAR PriorMonth = EDATE([Report Month], -12)
+    RETURN COUNTROWS(FILTER(ALL(DeliveryCoverage),
+        DeliveryCoverage[Month] = PriorMonth && DeliveryCoverage[Coverage] = "Imported")) > 0
+
+Matched Sales =
+VAR StartDate = [Report Month]
+    VAR EndDate = [Cutoff Date]
+    RETURN CALCULATE([Sales], FILTER(ALL(Dates), Dates[Date] >= StartDate && Dates[Date] <= EndDate))
+
+Matched Orders =
+VAR StartDate = [Report Month]
+    VAR EndDate = [Cutoff Date]
+    RETURN CALCULATE([Orders], FILTER(ALL(Dates), Dates[Date] >= StartDate && Dates[Date] <= EndDate))
+
+Prior Matched Sales =
+VAR StartDate = EDATE([Report Month], -12)
+    VAR EndDate = EDATE([Cutoff Date], -12)
+    RETURN IF([Prior Delivery Available],
+        CALCULATE([Sales], FILTER(ALL(Dates), Dates[Date] >= StartDate && Dates[Date] <= EndDate)), BLANK())
+
+Prior Matched Orders =
+VAR StartDate = EDATE([Report Month], -12)
+    VAR EndDate = EDATE([Cutoff Date], -12)
+    RETURN IF([Prior Delivery Available],
+        CALCULATE([Orders], FILTER(ALL(Dates), Dates[Date] >= StartDate && Dates[Date] <= EndDate)), BLANK())
+
+Matched AOV =
+DIVIDE([Matched Sales], [Matched Orders])
+
+Prior Matched AOV =
+DIVIDE([Prior Matched Sales], [Prior Matched Orders])
+
+Sales Change =
+IF([Prior Delivery Available], [Matched Sales] - [Prior Matched Sales], BLANK())
+
+Sales Change % =
+DIVIDE([Sales Change], [Prior Matched Sales])
+
+Orders Change % =
+IF([Prior Delivery Available], DIVIDE([Matched Orders] - [Prior Matched Orders], [Prior Matched Orders]), BLANK())
+
+AOV Change % =
+IF(NOT ISBLANK([Matched AOV]) && NOT ISBLANK([Prior Matched AOV]),
+    DIVIDE([Matched AOV] - [Prior Matched AOV], [Prior Matched AOV]), BLANK())
+
+Period Caption =
+FORMAT([Report Month], "yyyy-MM-dd") & " to " & FORMAT([Cutoff Date], "yyyy-MM-dd") &
+    " versus " & FORMAT(EDATE([Report Month], -12), "yyyy-MM-dd") & " to " &
+    FORMAT(EDATE([Cutoff Date], -12), "yyyy-MM-dd") &
+    IF([Prior Delivery Available], " | Historical sample; source units", " | Prior-year delivery missing")
+
+Headline =
+IF(NOT [Prior Delivery Available], "Prior-year delivery missing", IF(ISBLANK([Sales Change %]), "Prior sales baseline is zero", FORMAT(ABS([Sales Change %]), "0.0%") & IF([Sales Change] < 0, " less sales", IF([Sales Change] > 0," more sales"," change in sales")) & " | " & FORMAT([Matched Orders], "#,0") & " orders in the selected view"))
+
+Filter Context =
+"Region: " & IF(ISFILTERED('Sales'[Region]), CONCATENATEX(VALUES('Sales'[Region]), 'Sales'[Region], ", "), "All") & "   /   Category: " & IF(ISFILTERED('Sales'[Category]), CONCATENATEX(VALUES('Sales'[Category]), 'Sales'[Category], ", "), "All")
+
+Window Sales =
+VAR AxisDate = MAX('Dates'[Date]) VAR AxisMonth = DATE(YEAR(AxisDate), MONTH(AxisDate), 1) VAR Anchor = [Report Month] VAR Available = COUNTROWS(FILTER(ALL('DeliveryCoverage'), 'DeliveryCoverage'[Month] = AxisMonth && 'DeliveryCoverage'[Coverage] = "Imported")) > 0 RETURN IF(AxisMonth >= EDATE(Anchor,-11) && AxisMonth <= Anchor && Available, [Sales])
+
+Order Volume Effect =
+IF([Prior Delivery Available] && [Prior Matched Orders] > 0, ([Matched Orders]-[Prior Matched Orders])*[Prior Matched AOV])
+
+Average Order Effect =
+IF([Prior Delivery Available] && [Prior Matched Orders] > 0 && [Matched Orders] > 0, [Matched Orders]*([Matched AOV]-[Prior Matched AOV]))
+
+Product Review Change =
+IF([Prior Delivery Available] && ( [Matched Sales] <> 0 || [Prior Matched Sales] <> 0), [Sales Change])
+
+Current sales =
+IF([Matched Sales] <> 0 || [Prior Matched Sales] <> 0, [Matched Sales])
+
+Prior sales =
+IF([Matched Sales] <> 0 || [Prior Matched Sales] <> 0, [Prior Matched Sales])

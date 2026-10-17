@@ -1,0 +1,317 @@
+{
+  "metrics": {
+    "lines": 9800,
+    "orders": 4922,
+    "sales_units": 22615367827,
+    "first_date": "2015-01-03",
+    "last_date": "2018-12-30",
+    "input_files": 48,
+    "input_rows": 9800,
+    "repeated_rows": 0,
+    "months": 48,
+    "missing_months": 0,
+    "last_month": "2018-12",
+    "saved_note_keys": 0,
+    "unmatched_notes": 0
+  },
+  "checks": {
+    "sales_units_reconcile": true,
+    "distinct_orders_reconcile": true,
+    "accepted_rows_reconcile": true,
+    "calendar_covers_sales": true
+  },
+  "power_bi_desktop_tested": false,
+  "power_query_tested": false,
+  "dax_tested": false,
+  "files": [
+    {
+      "file": "sales_2015-01.csv",
+      "month": "2015-01",
+      "source_rows": 77,
+      "sha256": "8268c07aaff47b2decba3e2873e6e6c2f162a9063f6de33c5cb5e927e6bbcf2c"
+    },
+    {
+      "file": "sales_2015-02.csv",
+      "month": "2015-02",
+      "source_rows": 46,
+      "sha256": "22497a2ce9a24ddcf082b7943081c4c2d76c0953b59c602b151211e9b3f51535"
+    },
+    {
+      "file": "sales_2015-03.csv",
+      "month": "2015-03",
+      "source_rows": 154,
+      "sha256": "9f744b4854a4dd0d8ee7d15cb3349385dcb6281e5a4dc3f7aefedf72f0767a14"
+    },
+    {
+      "file": "sales_2015-04.csv",
+      "month": "2015-04",
+      "source_rows": 130,
+      "sha256": "00d1bffe36d7ba2016acb6b1779066ce920a1420effb63eb1e22a52738781bbf"
+    },
+    {
+      "file": "sales_2015-05.csv",
+      "month": "2015-05",
+      "source_rows": 121,
+      "sha256": "d3c4c90f6b38e235dcc3068c67b5aaeb480e00d10dc2460ac5fe4a24771c8b2f"
+    },
+    {
+      "file": "sales_2015-06.csv",
+      "month": "2015-06",
+      "source_rows": 131,
+      "sha256": "0a4c649ae6eb50a6c3e12775e4d159e5f60bf11c7b18d58669a57dcb326317e3"
+    },
+    {
+      "file": "sales_2015-07.csv",
+      "month": "2015-07",
+      "source_rows": 142,
+      "sha256": "6afafe0f1613be7f34d6c49a525e9869b7293bdff44137b88001dc4bb4d745d0"
+    },
+    {
+      "file": "sales_2015-08.csv",
+      "month": "2015-08",
+      "source_rows": 146,
+      "sha256": "6d7f23166b83251af4765eb392e4dfb2622c7bca3a6e65715611c95445fa0c77"
+    },
+    {
+      "file": "sales_2015-09.csv",
+      "month": "2015-09",
+      "source_rows": 267,
+      "sha256": "cfc824f983ee7b8fa88af8625f9853c19caa11b5ed2d703edd697deb43cacdfc"
+    },
+    {
+      "file": "sales_2015-10.csv",
+      "month": "2015-10",
+      "source_rows": 159,
+      "sha256": "611abf6cbb9fcfc9a69d8f2c1d6fda88023c60a575d3c22b5918395eb8265303"
+    },
+    {
+      "file": "sales_2015-11.csv",
+      "month": "2015-11",
+      "source_rows": 306,
+      "sha256": "5618133ab4eb6b775b8c4e78ccf1bf672e1cf25fb8565124a5a6c3fa2812c252"
+    },
+    {
+      "file": "sales_2015-12.csv",
+      "month": "2015-12",
+      "source_rows": 274,
+      "sha256": "30258ac4a1a09977933e2d762629ea3aa3eaa71a681b3c5f5ca5695c2af595d5"
+    },
+    {
+      "file": "sales_2016-01.csv",
+      "month": "2016-01",
+      "source_rows": 57,
+      "sha256": "fa92d840daa0c0a93ae0527307b0723c364c8155356dec7960c66f602f0e7f64"
+    },
+    {
+      "file": "sales_2016-02.csv",
+      "month": "2016-02",
+      "source_rows": 64,
+      "sha256": "2e73b161d9c584f5cf2ac40cf99ad9a87e0d445adcb7d803e003e7d35897b49d"
+    },
+    {
+      "file": "sales_2016-03.csv",
+      "month": "2016-03",
+      "source_rows": 128,
+      "sha256": "5382c3f45d2cc05a3ebff6f5d45f87433fbc07bb5f6ef5fe4678317a04b66ce5"
+    },
+    {
+      "file": "sales_2016-04.csv",
+      "month": "2016-04",
+      "source_rows": 159,
+      "sha256": "1aa6f03b8e938dd727319f032ae3f49f478a73304783a828dcf701a832f45483"
+    },
+    {
+      "file": "sales_2016-05.csv",
+      "month": "2016-05",
+      "source_rows": 143,
+      "sha256": "9085fc89836a09b567c8612369290442108e5298e09239c054e65a5fab51a03f"
+    },
+    {
+      "file": "sales_2016-06.csv",
+      "month": "2016-06",
+      "source_rows": 129,
+      "sha256": "278e372f6337e132918ac4be3b705f0f99fcf268bf42592512f3349842d157e4"
+    },
+    {
+      "file": "sales_2016-07.csv",
+      "month": "2016-07",
+      "source_rows": 136,
+      "sha256": "b4347b1e4ccce847b67dccd97cdc13f99a6353dfb1d2fd1a1396112a945466a0"
+    },
+    {
+      "file": "sales_2016-08.csv",
+      "month": "2016-08",
+      "source_rows": 158,
+      "sha256": "89bc12d3e5eb1d386ac2e9b7f9e4bda128a107a317d1c090116272a78a037105"
+    },
+    {
+      "file": "sales_2016-09.csv",
+      "month": "2016-09",
+      "source_rows": 285,
+      "sha256": "634abe2f8ad70ebc80140b3361e090a6be9095c6a803912605ae284b3ab22547"
+    },
+    {
+      "file": "sales_2016-10.csv",
+      "month": "2016-10",
+      "source_rows": 164,
+      "sha256": "7c983ffe9d1ec5a7940cce039e03f65bcab2fa445977c1def6b0fdf1c07f1b53"
+    },
+    {
+      "file": "sales_2016-11.csv",
+      "month": "2016-11",
+      "source_rows": 321,
+      "sha256": "313aa4ce6fb62dfd711643c9c3b86240b0b5bf95ff899b029a34e75e343922c4"
+    },
+    {
+      "file": "sales_2016-12.csv",
+      "month": "2016-12",
+      "source_rows": 311,
+      "sha256": "486a5abc153c40cc72429af05443ec5bcf00403ee0a95b2113d81c0c36d17766"
+    },
+    {
+      "file": "sales_2017-01.csv",
+      "month": "2017-01",
+      "source_rows": 89,
+      "sha256": "ce514d41c8dba3b00c17013afee1bd0951a9e98d2a3d318f80b6e1e7abd79a23"
+    },
+    {
+      "file": "sales_2017-02.csv",
+      "month": "2017-02",
+      "source_rows": 83,
+      "sha256": "2063a10a15e86f2c856004663bc93dfeee34c3f3351ae2abe835daf38e6af1c4"
+    },
+    {
+      "file": "sales_2017-03.csv",
+      "month": "2017-03",
+      "source_rows": 161,
+      "sha256": "3087979a1e203bfb8536de50783fe3a8f7ae8ca1862b46a012343b05a720d1b8"
+    },
+    {
+      "file": "sales_2017-04.csv",
+      "month": "2017-04",
+      "source_rows": 168,
+      "sha256": "f4a6fdefa9a3773aa7e026f510dcb3b908ca0e9479077d0fa08783b581de5354"
+    },
+    {
+      "file": "sales_2017-05.csv",
+      "month": "2017-05",
+      "source_rows": 221,
+      "sha256": "14e97f7301d30fe77a9540039e37014cf7ad5ff301fd86c34cbd4bce93c21ce6"
+    },
+    {
+      "file": "sales_2017-06.csv",
+      "month": "2017-06",
+      "source_rows": 196,
+      "sha256": "7fd6c3f86a147d9d89907f390dbfb475e9a0a49acd40492ebf17f121410a190e"
+    },
+    {
+      "file": "sales_2017-07.csv",
+      "month": "2017-07",
+      "source_rows": 196,
+      "sha256": "27c1f4174aac428b1612184257d0cb5376eb075532108240262d4d15f3ed2ca9"
+    },
+    {
+      "file": "sales_2017-08.csv",
+      "month": "2017-08",
+      "source_rows": 175,
+      "sha256": "35e33cf0822d38b095a7daf8c229c7f5bff24c27cca6f8764c33e36624c7530a"
+    },
+    {
+      "file": "sales_2017-09.csv",
+      "month": "2017-09",
+      "source_rows": 349,
+      "sha256": "d9bb45ccd04654589804964a73ec1113eba21b6794908d1ab0231ed283f5b832"
+    },
+    {
+      "file": "sales_2017-10.csv",
+      "month": "2017-10",
+      "source_rows": 192,
+      "sha256": "4f67b359e29b76f7ed6e97a19ee98b4280916e55c0645e39ec04a1e1cb9cb932"
+    },
+    {
+      "file": "sales_2017-11.csv",
+      "month": "2017-11",
+      "source_rows": 366,
+      "sha256": "06eed1ac6f7d1f32460cdc515b13956b083d4dfede7ec19aeefbfa9954b4420d"
+    },
+    {
+      "file": "sales_2017-12.csv",
+      "month": "2017-12",
+      "source_rows": 338,
+      "sha256": "05f0690ed16c2b7c43bd8a728912764534edc7ddd2d86a41d17ae289706b845b"
+    },
+    {
+      "file": "sales_2018-01.csv",
+      "month": "2018-01",
+      "source_rows": 143,
+      "sha256": "57315f46bccb4c71cb17321d1ca320ad21a88ea196465d984e4acd0ec9207c09"
+    },
+    {
+      "file": "sales_2018-02.csv",
+      "month": "2018-02",
+      "source_rows": 104,
+      "sha256": "6d83b1723ffb7194104d57a980506c701adb00cc3a2d985dce82d812054f8a92"
+    },
+    {
+      "file": "sales_2018-03.csv",
+      "month": "2018-03",
+      "source_rows": 237,
+      "sha256": "eb5bbdb2c0b77cf2aa4467475522fa4a21a465cac96c681546f71f18c5b3c6da"
+    },
+    {
+      "file": "sales_2018-04.csv",
+      "month": "2018-04",
+      "source_rows": 200,
+      "sha256": "841e18c26dec54295f71b4c59d064ffb4d2b5ec5c022c0397cb8ea3042b5ac6f"
+    },
+    {
+      "file": "sales_2018-05.csv",
+      "month": "2018-05",
+      "source_rows": 240,
+      "sha256": "f1366ecc5bf7e1fc0e40fe011c92636ad896bfb9b29af86a69987b15ae243a3d"
+    },
+    {
+      "file": "sales_2018-06.csv",
+      "month": "2018-06",
+      "source_rows": 235,
+      "sha256": "ad891f717332af43f45394fbb55d96523d90c293ff9d57b5f15b375db35616bf"
+    },
+    {
+      "file": "sales_2018-07.csv",
+      "month": "2018-07",
+      "source_rows": 223,
+      "sha256": "4c60be9d864acaa90b61422fe37c2fdd1ec1de1f085b9993ad32c930eb69b77c"
+    },
+    {
+      "file": "sales_2018-08.csv",
+      "month": "2018-08",
+      "source_rows": 214,
+      "sha256": "62f43734573d3ab4814fe572440acaed99a593abdeeb03bbdd313ac7ab06dc8a"
+    },
+    {
+      "file": "sales_2018-09.csv",
+      "month": "2018-09",
+      "source_rows": 453,
+      "sha256": "dce4c0ef52a584d1126781047fcce58cb3174ae5cd1855bd1263b0c784e4eced"
+    },
+    {
+      "file": "sales_2018-10.csv",
+      "month": "2018-10",
+      "source_rows": 294,
+      "sha256": "c991eda91c7100b758e774bb310db2577c24a5700937ac4d09f5239298b049c7"
+    },
+    {
+      "file": "sales_2018-11.csv",
+      "month": "2018-11",
+      "source_rows": 456,
+      "sha256": "0d6196f9b80cef99eb380c2d880f42ae2527293d4105af72fb0e5c6932fa4378"
+    },
+    {
+      "file": "sales_2018-12.csv",
+      "month": "2018-12",
+      "source_rows": 459,
+      "sha256": "449abd845bed4dfa9f9398f839f393144c1eb015a03ca105bfc74f6ca2a2fb91"
+    }
+  ],
+  "note": "Export-only validation; native Power BI model and visual QA remain required."
+}

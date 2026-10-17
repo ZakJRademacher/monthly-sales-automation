@@ -1,0 +1,15 @@
+EVALUATE ROW(
+"Rows", COUNTROWS('Sales') = 9800,
+"Dates", COUNTROWS('Dates') = 1461,
+"Orders", [Orders] = 4922,
+"AllSales", ABS([Sales] - 2261536.7827) < 0.00001,
+"MatchedSales", ABS([Matched Sales] - 83030.3888) < 0.00001,
+"PriorSales", ABS([Prior Matched Sales] - 95007.3530) < 0.00001,
+"MatchedOrders", [Matched Orders] = 223,
+"PriorOrders", [Prior Matched Orders] = 167,
+"Bridge", ABS([Order Volume Effect]+[Average Order Effect]-[Sales Change]) < 0.00001,
+"EastChange", ABS(CALCULATE([Sales Change], 'Sales'[Region]="East") + 7961.583) < 0.01,
+"OfficeSales", ABS(CALCULATE([Matched Sales], 'Sales'[Category]="Office Supplies") - 29638.01) < 0.01,
+"StableCutoff", CALCULATE([Cutoff Date], 'Sales'[ProductID]="OFF-BI-10000545") = DATE(2018,12,30),
+"MissingPrior", CALCULATE(NOT [Prior Delivery Available], TREATAS({DATE(2015,1,1)}, 'DeliveryCoverage'[Month]))
+)

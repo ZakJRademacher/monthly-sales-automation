@@ -1,0 +1,432 @@
+{
+  "name": "SalesExplorer",
+  "compatibilityLevel": 1600,
+  "model": {
+    "culture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DataFolder",
+        "kind": "m",
+        "expression": "\"C:/Users/zakjr/Documents/Codex/2026-10-14/i-x20/work/portfolio-quality-review/monthly-sales-automation/powerbi/sample-data\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      }
+    ],
+    "tables": [
+      {
+        "name": "Sales",
+        "columns": [
+          {
+            "name": "LineID",
+            "sourceColumn": "LineID",
+            "dataType": "string",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "OrderID",
+            "sourceColumn": "OrderID",
+            "dataType": "string",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "OrderDate",
+            "sourceColumn": "OrderDate",
+            "dataType": "dateTime",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "ShipDate",
+            "sourceColumn": "ShipDate",
+            "dataType": "dateTime",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Category",
+            "sourceColumn": "Category",
+            "dataType": "string",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Region",
+            "sourceColumn": "Region",
+            "dataType": "string",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductID",
+            "sourceColumn": "ProductID",
+            "dataType": "string",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SalesUnits",
+            "sourceColumn": "SalesUnits",
+            "dataType": "int64",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "SourceFile",
+            "sourceColumn": "SourceFile",
+            "dataType": "string",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SourceRow",
+            "sourceColumn": "SourceRow",
+            "dataType": "int64",
+            "summarizeBy": "none",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Sales",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataFolder & \"/latest.json\")),",
+                "    Snapshot = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"/snapshots/\" & Snapshot & \"/Sales.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"LineID\", type text}, {\"OrderID\", type text}, {\"OrderDate\", type date}, {\"ShipDate\", type date}, {\"Category\", type text}, {\"Region\", type text}, {\"ProductID\", type text}, {\"SalesUnits\", Int64.Type}, {\"SourceFile\", type text}, {\"SourceRow\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Sales",
+            "expression": "COALESCE(DIVIDE(SUM(Sales[SalesUnits]), 10000), 0)",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Orders",
+            "expression": "COALESCE(DISTINCTCOUNT(Sales[OrderID]), 0)",
+            "formatString": "#,0",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "AOV",
+            "expression": "DIVIDE([Sales], [Orders])",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Report Month",
+            "expression": "SELECTEDVALUE(DeliveryCoverage[Month], MAXX(ALL(DeliveryCoverage), DeliveryCoverage[Month]))",
+            "formatString": "yyyy-MM-dd",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "As Of Date",
+            "expression": "VAR StartDate = [Report Month]\n    VAR LastDay = EOMONTH(StartDate, 0)\n    VAR Observed = MAXX(\n        FILTER(ALL(Sales), Sales[OrderDate] >= StartDate && Sales[OrderDate] <= LastDay),\n        Sales[OrderDate])\n    RETURN COALESCE(Observed, LastDay)",
+            "formatString": "yyyy-MM-dd",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Cutoff Date",
+            "expression": "VAR Anchor = [As Of Date]\n    VAR PriorLastDay = DAY(EOMONTH(DATE(YEAR(Anchor) - 1, MONTH(Anchor), 1), 0))\n    RETURN DATE(YEAR(Anchor), MONTH(Anchor), MIN(DAY(Anchor), PriorLastDay))",
+            "formatString": "yyyy-MM-dd",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Prior Delivery Available",
+            "expression": "VAR PriorMonth = EDATE([Report Month], -12)\n    RETURN COUNTROWS(FILTER(ALL(DeliveryCoverage),\n        DeliveryCoverage[Month] = PriorMonth && DeliveryCoverage[Coverage] = \"Imported\")) > 0",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Matched Sales",
+            "expression": "VAR StartDate = [Report Month]\n    VAR EndDate = [Cutoff Date]\n    RETURN CALCULATE([Sales], FILTER(ALL(Dates), Dates[Date] >= StartDate && Dates[Date] <= EndDate))",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Matched Orders",
+            "expression": "VAR StartDate = [Report Month]\n    VAR EndDate = [Cutoff Date]\n    RETURN CALCULATE([Orders], FILTER(ALL(Dates), Dates[Date] >= StartDate && Dates[Date] <= EndDate))",
+            "formatString": "#,0",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Prior Matched Sales",
+            "expression": "VAR StartDate = EDATE([Report Month], -12)\n    VAR EndDate = EDATE([Cutoff Date], -12)\n    RETURN IF([Prior Delivery Available],\n        CALCULATE([Sales], FILTER(ALL(Dates), Dates[Date] >= StartDate && Dates[Date] <= EndDate)), BLANK())",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Prior Matched Orders",
+            "expression": "VAR StartDate = EDATE([Report Month], -12)\n    VAR EndDate = EDATE([Cutoff Date], -12)\n    RETURN IF([Prior Delivery Available],\n        CALCULATE([Orders], FILTER(ALL(Dates), Dates[Date] >= StartDate && Dates[Date] <= EndDate)), BLANK())",
+            "formatString": "#,0",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Matched AOV",
+            "expression": "DIVIDE([Matched Sales], [Matched Orders])",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Prior Matched AOV",
+            "expression": "DIVIDE([Prior Matched Sales], [Prior Matched Orders])",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Sales Change",
+            "expression": "IF([Prior Delivery Available], [Matched Sales] - [Prior Matched Sales], BLANK())",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Sales Change %",
+            "expression": "DIVIDE([Sales Change], [Prior Matched Sales])",
+            "formatString": "0.0%",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Orders Change %",
+            "expression": "IF([Prior Delivery Available], DIVIDE([Matched Orders] - [Prior Matched Orders], [Prior Matched Orders]), BLANK())",
+            "formatString": "0.0%",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "AOV Change %",
+            "expression": "IF(NOT ISBLANK([Matched AOV]) && NOT ISBLANK([Prior Matched AOV]),\n    DIVIDE([Matched AOV] - [Prior Matched AOV], [Prior Matched AOV]), BLANK())",
+            "formatString": "0.0%",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Period Caption",
+            "expression": "FORMAT([Report Month], \"yyyy-MM-dd\") & \" to \" & FORMAT([Cutoff Date], \"yyyy-MM-dd\") &\n    \" versus \" & FORMAT(EDATE([Report Month], -12), \"yyyy-MM-dd\") & \" to \" &\n    FORMAT(EDATE([Cutoff Date], -12), \"yyyy-MM-dd\") &\n    IF([Prior Delivery Available], \" | Historical sample; source units\", \" | Prior-year delivery missing\")",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Headline",
+            "expression": "IF(NOT [Prior Delivery Available], \"Prior-year delivery missing\", IF(ISBLANK([Sales Change %]), \"Prior sales baseline is zero\", FORMAT(ABS([Sales Change %]), \"0.0%\") & IF([Sales Change] < 0, \" less sales\", IF([Sales Change] > 0,\" more sales\",\" change in sales\")) & \" | \" & FORMAT([Matched Orders], \"#,0\") & \" orders in the selected view\"))",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Filter Context",
+            "expression": "\"Region: \" & IF(ISFILTERED('Sales'[Region]), CONCATENATEX(VALUES('Sales'[Region]), 'Sales'[Region], \", \"), \"All\") & \"   /   Category: \" & IF(ISFILTERED('Sales'[Category]), CONCATENATEX(VALUES('Sales'[Category]), 'Sales'[Category], \", \"), \"All\")",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Window Sales",
+            "expression": "VAR AxisDate = MAX('Dates'[Date]) VAR AxisMonth = DATE(YEAR(AxisDate), MONTH(AxisDate), 1) VAR Anchor = [Report Month] VAR Available = COUNTROWS(FILTER(ALL('DeliveryCoverage'), 'DeliveryCoverage'[Month] = AxisMonth && 'DeliveryCoverage'[Coverage] = \"Imported\")) > 0 RETURN IF(AxisMonth >= EDATE(Anchor,-11) && AxisMonth <= Anchor && Available, [Sales])",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Order Volume Effect",
+            "expression": "IF([Prior Delivery Available] && [Prior Matched Orders] > 0, ([Matched Orders]-[Prior Matched Orders])*[Prior Matched AOV])",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Average Order Effect",
+            "expression": "IF([Prior Delivery Available] && [Prior Matched Orders] > 0 && [Matched Orders] > 0, [Matched Orders]*([Matched AOV]-[Prior Matched AOV]))",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Product Review Change",
+            "expression": "IF([Prior Delivery Available] && ( [Matched Sales] <> 0 || [Prior Matched Sales] <> 0), [Sales Change])",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Current sales",
+            "expression": "IF([Matched Sales] <> 0 || [Prior Matched Sales] <> 0, [Matched Sales])",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          },
+          {
+            "name": "Prior sales",
+            "expression": "IF([Matched Sales] <> 0 || [Prior Matched Sales] <> 0, [Prior Matched Sales])",
+            "formatString": "#,0.00",
+            "description": "Interactive calculation. See powerbi/README.md for period and filter semantics."
+          }
+        ]
+      },
+      {
+        "name": "Dates",
+        "columns": [
+          {
+            "name": "Date",
+            "sourceColumn": "Date",
+            "dataType": "dateTime",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Year",
+            "sourceColumn": "Year",
+            "dataType": "int64",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MonthNumber",
+            "sourceColumn": "MonthNumber",
+            "dataType": "int64",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MonthLabel",
+            "sourceColumn": "MonthLabel",
+            "dataType": "string",
+            "summarizeBy": "none",
+            "sortByColumn": "MonthNumber"
+          },
+          {
+            "name": "YearMonth",
+            "sourceColumn": "YearMonth",
+            "dataType": "string",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dates",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataFolder & \"/latest.json\")),",
+                "    Snapshot = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"/snapshots/\" & Snapshot & \"/Dates.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Date\", type date}, {\"Year\", Int64.Type}, {\"MonthNumber\", Int64.Type}, {\"MonthLabel\", type text}, {\"YearMonth\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DeliveryCoverage",
+        "columns": [
+          {
+            "name": "Month",
+            "sourceColumn": "Month",
+            "dataType": "dateTime",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Coverage",
+            "sourceColumn": "Coverage",
+            "dataType": "string",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DeliveryCoverage",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataFolder & \"/latest.json\")),",
+                "    Snapshot = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"/snapshots/\" & Snapshot & \"/DeliveryCoverage.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Month\", type date}, {\"Coverage\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Quality",
+        "columns": [
+          {
+            "name": "Metric",
+            "sourceColumn": "Metric",
+            "dataType": "string",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Value",
+            "sourceColumn": "Value",
+            "dataType": "int64",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Quality",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataFolder & \"/latest.json\")),",
+                "    Snapshot = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"/snapshots/\" & Snapshot & \"/Quality.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Metric\", type text}, {\"Value\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "Sales_Dates",
+        "fromTable": "Sales",
+        "fromColumn": "OrderDate",
+        "toTable": "Dates",
+        "toColumn": "Date",
+        "crossFilteringBehavior": "oneDirection"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DataFolder\", \"Sales\", \"Dates\", \"DeliveryCoverage\", \"Quality\"]"
+      }
+    ]
+  }
+}
