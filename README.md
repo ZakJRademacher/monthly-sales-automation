@@ -1,133 +1,54 @@
-# Fieldnotes / Interactive Sales Explorer
+# Monthly Sales Explorer
 
-**Explore monthly sales inside Power BI. Filter the business, inspect what changed, and trace products back to source records.**
+**Why did sales fall while orders increased, and where should the next review focus?**
 
-A native four-page Power BI report backed by Python/SQLite validation: **9,800 historical Kaggle sales lines, 4,922 orders and 48 monthly files**. Includes a category ribbon, synchronized month/category/region selectors, responsive KPI comparisons, interacting change bars and product-to-source exploration.
+A repeatable monthly performance review using **Power BI, Python and SQLite**: 9,800 historical sales lines, 4,922 orders and 48 monthly CSV files.
 
-![Actual Power BI opening view](deliverables/powerbi-overview.png)
+![Power BI sales overview](deliverables/powerbi-overview.png)
 
-- [Download the interactive PBIX](deliverables/Monthly%20Sales%20Explorer.pbix) — open in Power BI Desktop; imported sample included.
-- [Preview all four pages as PDF](deliverables/Monthly%20Sales%20Explorer.pdf) — static native export.
-- [Open, explore and refresh](powerbi/README.md) — data contract, parameters, definitions and limitations.
-- [Native validation evidence](powerbi/NATIVE_QA.md) — 13 DAX checks, interactions and an actual November-to-December refresh.
-- [Editable Power BI project](powerbi/SalesExplorer.pbip) — keep the Report and SemanticModel folders alongside it.
+[Preview the four-page report](deliverables/Monthly%20Sales%20Explorer.pdf) · [Download the interactive PBIX](deliverables/Monthly%20Sales%20Explorer.pbix) · [Read the two-page briefing](deliverables/case-study.pdf)
 
-## Update the dashboard
+## Findings
 
-Add or replace matching monthly CSVs in `data/incoming`, retain history, then run:
+For **Dec 1–30, 2018 versus Dec 1–30, 2017**:
 
-```sh
-python powerbi/export_data.py
-```
+- Sales fell **12.6%**, from 95,007.35 to 83,030.39 in source monetary units.
+- Orders rose **33.5%**, while average order value fell **34.6%**.
+- East (−7,961.58) and Office Supplies (−7,265.53) are the largest regional and category decline leads. These overlapping views must not be added together.
 
-Set Power BI's `DataFolder` parameter to your local `powerbi/sample-data` folder once, then **Home > Refresh**. Clear the month selector to follow the newest month. Validation publishes an immutable snapshot and changes `latest.json` only after export succeeds. Do not export during a Desktop refresh. This is a repeatable local workflow; unattended cloud scheduling is not configured.
+The next investigation is product mix and source coverage within those segments. [Ranked follow-ups](deliverables/review_actions.csv) identify source product IDs to inspect; the data does not establish a cause.
 
-![Actual Power BI drivers page, native PDF export](deliverables/powerbi-drivers.png)
+## Explore or reproduce
 
-## Supporting Excel and written reports
+**Power BI:** Open the PBIX with its imported sample. Use synchronized month, category and region filters, then inspect drivers and product-to-source detail. [Open and refresh guide](powerbi/README.md).
 
-The same source deliveries also produce an editable workbook, a responsive HTML review, a generated two-page briefing and ranked product follow-ups. These remain separate outputs, with their own refresh command below.
-
-## What it returns
-
-For **Dec 1–30, 2018 vs Dec 1–30, 2017**, sales declined **12.6%** (95,007.35 → 83,030.39), although orders increased **33.5%** (167 → 223). Average order value fell **34.6%** (568.91 → 372.33). Values use source monetary units.
-
-The report identifies **East (−7,961.58)** and **Office Supplies (−7,265.53)** as the leading regional/category review leads. The generated CSV ranks five declining segments and lists source product IDs with the largest losses in each. These overlapping views must not be added together. This is a traceable starting point for investigation, not an invented recommendation to cut staff or reorder stock.
-
-- [Open the sales review](deliverables/sales-review.html) — download and open locally; GitHub displays HTML source.
-- [Prioritized follow-up CSV](deliverables/review_actions.csv)
-- [Actual Excel business-review preview](deliverables/excel-sales-review.png)
-
-**A fresh clone produces these useful outputs using only Python 3.10+:**
+**Python-only review:** From the repository root, with Python 3.10+:
 
 ```sh
 python refresh.py --summary-only
 ```
 
-Read `runs/latest.json`, then open `sales-review.html` in the referenced run folder. The CSV sits beside it. No package installation, account, Node runtime or spreadsheet dependency is needed for this path. SQL extracts, a SQLite database and input hashes accompany each run.
+Open the HTML report in the run folder referenced by `runs/latest.json`. SQL extracts, a SQLite database, input hashes and the follow-up CSV accompany the report.
 
-The report uses the latest recorded day of the latest input month as a common day-of-month cutoff for both years (limited to their common calendar days). Missing prior-year delivery means unavailable; an explicitly empty file means zero. Equal cutoffs do not prove equal source coverage or an accounting close.
+**Supporting Excel output:** [Ready-to-open workbook](deliverables/monthly-sales_2018-12.xlsx) · [Excel preview](deliverables/excel-sales-review.png). Rebuilding Excel requires the optional authoring runtime documented in [setup](docs/SETUP.md).
 
-## Inspect the deliverables
+## How it works
 
-- [Ready-to-open workbook](deliverables/monthly-sales_2018-12.xlsx)
-- [Generated two-page sales briefing](deliverables/case-study.pdf)
-- [Actual refresh replay evidence](docs/refresh-demonstration.json)
-- [Independent verification](docs/independent-verification.json)
-- [Excel preview](deliverables/excel-monthly-report.png)
-- [Refresh guide](docs/REFRESH_GUIDE.md), [setup](docs/SETUP.md), [method](docs/METHOD.md), [source and license](docs/SOURCES.md)
+Monthly CSVs → Python validation → SQLite/SQL comparisons → a validated snapshot for Power BI. A separate reporting command creates HTML/CSV outputs and optional Excel/PDF files. Duplicate conflicts stop publication, repeated runs do not accumulate totals, and saved review notes rejoin by business key.
 
-## Optional Excel generation
+[SQL comparisons](sql/review_drivers.sql) · [Python analysis](src/business_review.py) · [Editable Power BI project](powerbi/SalesExplorer.pbip) · [Model measures](powerbi/native-measures.dax)
 
-The 48 selected-column CSV inputs are included, so a fresh download is not required. No customer names or addresses are bundled. With Python 3.10+, Node.js and the documented compatible spreadsheet runtime:
+## Technical detail
 
-```sh
-python refresh.py --render --pdf
-```
+- [Operating, reproduction and validation guide](docs/PROJECT_GUIDE.md)
+- [Refresh and review-note handoff](docs/REFRESH_GUIDE.md)
+- [Method and comparison definitions](docs/METHOD.md)
+- [Native Power BI checks and refresh replay](powerbi/NATIVE_QA.md)
+- [Tests](tests) · [Independent verification](docs/independent-verification.json)
+- [Source and licensing](docs/SOURCES.md) · [Visual design](docs/DESIGN.md)
 
-The Excel path adds a workbook to the same business-review outputs. `--pdf` adds a matching two-page briefing (install `requirements-visuals.txt`); `--render` adds six actual workbook previews. Every requested output must succeed before the new version becomes current. The program creates a unique folder in `runs/` containing `monthly-sales_YYYY-MM.xlsx`, a SQLite database, SQL extracts, input hashes, processing log and formula-verification evidence. `runs/latest.json` points to the last fully generated workbook. Older successful runs remain available. See [SETUP.md](docs/SETUP.md) for the actual authoring dependency and environment variables; this is a local workflow, not a hosted service.
+## Scope
 
-## What is automated
+Independent portfolio demonstration using historical Kaggle Superstore data (2015–2018), replayed as monthly deliveries. Comparisons use a common day-of-month cutoff; this does not establish complete source coverage. Currency is unspecified, and sales are not profit or a forecast. Refresh is a local workflow; cloud scheduling is not configured.
 
-1. Validate required columns, stable Row IDs, day/month/year dates, filename months and supported amounts.
-2. Skip identical repeat IDs; reject conflicts rather than silently choosing a record.
-3. Rebuild SQLite and SQL aggregates from the current delivery-folder snapshot. Repeated runs do not accumulate prior totals.
-4. Build a four-sheet workbook with live KPI cards, three native charts, typed period dates and a review-status dropdown. Match-period calculations sit in **Monthly detail O:S**; the first sheet links to them.
-5. Generate the responsive HTML report and, with `--pdf`, the two-page briefing from that same validated run.
-6. Rejoin saved review notes by **month + category**, regardless of row position.
-7. Publish a new version only after workbook generation succeeds. A rejected import keeps the previous successful pointer and workbook.
-
-## Proof that a new month works
-
-| Replay step | Monthly files | Sales lines | Observed sales, source units |
-|---|---:|---:|---:|
-| Through November 2018 | 47 | 9,341 | 2,178,506.3939 |
-| Add December 2018 | 48 | 9,800 | 2,261,536.7827 |
-| Run the same input again | 48 | 9,800 | 2,261,536.7827 |
-
-The real spreadsheet engine ran all three refreshes. A temporary demonstration note survived. A conflicting-row test then preserved the last successful version. [Fifteen replay assertions passed](docs/refresh-demonstration.json). The delivered workbook starts with blank review annotations; it contains no invented completed reviews.
-
-## Review notes
-
-Edit the yellow Owner, Review status and Review note cells in **Category review**. Save that sheet as CSV UTF-8, then import it before refreshing:
-
-```sh
-python src/import_notes.py exported-review.csv
-python refresh.py
-```
-
-Saved notes live in the separate, Git-ignored `data/notes/review_notes.csv`. Untouched template rows do not erase notes, and old keys remain stored. Reviewed requires an owner and note. Refresh does not read edits from a prior XLSX automatically. Detailed instructions and a troubleshooting table are in the [refresh guide](docs/REFRESH_GUIDE.md).
-
-## Tests and verification
-
-```sh
-python -m unittest discover -s tests -v
-pip install -r requirements-qa.txt
-python tools/demo_refresh.py
-python tools/verify_outputs.py
-```
-
-The 38 standard-library tests run without Node or the authoring package; publication tests use a clearly identified writer test double. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
-
-To reproduce the briefing from the published evidence and build the compact bundle:
-
-```sh
-pip install -r requirements-visuals.txt
-python tools/build_presentation.py
-# For fresh data, prefer refresh.py --render --pdf so the PDF belongs to its run.
-python tools/package_project.py
-```
-
-See [visual design and interpretation](docs/DESIGN.md) for chart choices, palette, design references and refresh behavior.
-
-## Relevant remote work
-
-Recurring spreadsheet updates; CSV cleanup and merging; SQL summaries; exception handling; lightweight Python automation; clear refresh documentation. This is a personal portfolio demonstration, not a claimed client engagement or production deployment.
-
-## Data context
-
-Kaggle [Superstore Sales Dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting), uploader Rohit Sahoo, downloaded October 15, 2026. The data card labels it **GPL 2**. It is a historical sample, not verified transactions from a current retailer. The input CSVs replay one frozen source file as monthly deliveries; Kaggle lists its update frequency as Never. Dates span Jan 3, 2015–Dec 30, 2018. File presence does not prove a complete calendar month's business activity.
-
-Currency is unspecified by the mirror. Sales remain in source monetary units, with four-decimal precision preserved in integer ten-thousandths; Excel displays two decimals. Sales are not profit, cash receipts or a forecast.
-
-Original project code and documentation: MIT, [LICENSE](LICENSE). Included dataset values and data-derived reports retain the Kaggle source's GPL 2 label; see [data/LICENSE](data/LICENSE) and [NOTICE](NOTICE). Original file SHA-256: `dbb0f167b27ccf02d7ff8cb0446a9abc6dbc3522e83cf9daa6939801acfdd196`.
+Original code/documentation: [MIT](LICENSE). Data-derived files retain the source's GPL 2 label: [data license](data/LICENSE), [NOTICE](NOTICE).
