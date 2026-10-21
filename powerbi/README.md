@@ -70,3 +70,7 @@ The sample contains 9,800 accepted lines, 4,922 distinct orders and 48 monthly f
 - [Power BI slicers](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-slicers)
 - [Power BI project files](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview)
 - [Visual inspiration: Spend Analytics Dashboard](https://www.informationisbeautifulawards.com/showcase/6585-spend-analytics-dashboard). Its restrained palette and exploratory hierarchy informed the direction; no assets were copied.
+
+## Existing snapshot integrity
+
+A repeated export compares all four existing CSV tables and export-verification.json with the newly validated output before reusing a snapshot. A missing or changed file raises an error and leaves latest.json unchanged. Restore the damaged snapshot from a verified copy before retrying; the exporter does not silently repair or certify changed files.

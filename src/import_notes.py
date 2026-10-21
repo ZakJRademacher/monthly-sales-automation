@@ -20,16 +20,22 @@ def merge(source, destination):
     notes = read_notes(destination)
     seen = set()
     with Path(source).open(encoding="utf-8-sig", newline="") as stream:
-        reader = csv.reader(stream)
+        reader = csv.reader(stream, strict=True)
         for row in reader:
             headers = [ALIASES.get(x.strip(), x.strip()) for x in row]
             if set(NOTE_FIELDS) <= set(headers):
+                if len(headers) != len(set(headers)):
+                    raise ValueError("Duplicate mapped note column headers")
                 break
         else:
             raise ValueError(
                 "Expected Month key, Category, Owner, Review status, Review note columns"
             )
         for row in reader:
+            if not any(value.strip() for value in row):
+                continue
+            if len(row) != len(headers):
+                raise ValueError(f"Malformed note row {reader.line_num}: expected {len(headers)} fields, got {len(row)}")
             record = dict(zip(headers, row))
             if not any(str(v).strip() for v in record.values()):
                 continue

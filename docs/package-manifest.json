@@ -1,4 +1,13 @@
 {
+  "package_schema": 2,
+  "project": "monthly-sales-automation",
+  "release": {
+    "release": "2026-10-21-reliability-fixes",
+    "base_commit": "2f8b06cd700c551494ffc2634843716a796c0cdc",
+    "publication": "GitHub portfolio release",
+    "scope": "Failure-safe refresh, annotation validation, export verification and packaging"
+  },
+  "results_layout": "Included input deliveries and validated Power BI sample",
   "files": [
     {
       "path": ".gitattributes",
@@ -14,6 +23,26 @@
       "path": ".gitignore",
       "bytes": 190,
       "sha256": "18fc0f7c47c65f7e7daafece02e2ff575afafb842859e65e880eb9c1f2d1fdb8"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1250,
+      "sha256": "6d4352bc0419c013021133ba28ad6f8ea3585d4245daffd0d5ba577481dd5576"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 563,
+      "sha256": "414af3ea0aa4b2b475de596d1808f629673581f3d7592934e861a302a2e7736f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3346,
+      "sha256": "95c4b5dc00a8e8bc2bec75c9563ca6d2bf0efa941accfa42de8a4dd81b9edab3"
+    },
+    {
+      "path": "data/LICENSE",
+      "bytes": 17984,
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
     },
     {
       "path": "data/incoming/README.md",
@@ -261,14 +290,24 @@
       "sha256": "449abd845bed4dfa9f9398f839f393144c1eb015a03ca105bfc74f6ca2a2fb91"
     },
     {
-      "path": "data/LICENSE",
-      "bytes": 17984,
-      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
-    },
-    {
       "path": "data/notes/review_notes.example.csv",
       "bytes": 33,
       "sha256": "9679b6c3fa31bd6dc41d3c00d751cf3de2679379feb1f10a20f8c06e8e489013"
+    },
+    {
+      "path": "deliverables/Monthly Sales Explorer.pbix",
+      "bytes": 463987,
+      "sha256": "efe37352fb8712d918422abefcc2cae304de5c1d0420c0315f2a97f2e192ea24"
+    },
+    {
+      "path": "deliverables/Monthly Sales Explorer.pdf",
+      "bytes": 411291,
+      "sha256": "3b1f8c477b637186b16ec8f142076d36b20387dd45954327ccef35bde6a2fbe5"
+    },
+    {
+      "path": "deliverables/README.md",
+      "bytes": 1406,
+      "sha256": "f0032aca6b544cdc7c4b06a4a2f61645bef3a62ec86fd60a1819dbc108bbfaa6"
     },
     {
       "path": "deliverables/case-study.pdf",
@@ -306,16 +345,6 @@
       "sha256": "550267582729c5bcda961b2c644a003659094cc4eb5695a97516667ee40338d1"
     },
     {
-      "path": "deliverables/Monthly Sales Explorer.pbix",
-      "bytes": 463987,
-      "sha256": "efe37352fb8712d918422abefcc2cae304de5c1d0420c0315f2a97f2e192ea24"
-    },
-    {
-      "path": "deliverables/Monthly Sales Explorer.pdf",
-      "bytes": 411291,
-      "sha256": "3b1f8c477b637186b16ec8f142076d36b20387dd45954327ccef35bde6a2fbe5"
-    },
-    {
       "path": "deliverables/monthly-sales-trend.png",
       "bytes": 47933,
       "sha256": "b4acd621726a122a41189efe0f1f7473ca4fb73c38190fcda0539ac245947fea"
@@ -351,11 +380,6 @@
       "sha256": "2523edb86a2b656b3cc9b92e5a4d6c4653dfe6011ec02c9eb61a4aa6a9e081ed"
     },
     {
-      "path": "deliverables/README.md",
-      "bytes": 1406,
-      "sha256": "f0032aca6b544cdc7c4b06a4a2f61645bef3a62ec86fd60a1819dbc108bbfaa6"
-    },
-    {
       "path": "deliverables/review_actions.csv",
       "bytes": 1452,
       "sha256": "b8c22d101edcdc9d8132fa16368a8704c4dba7a98869fb165b7fe322ebf6434b"
@@ -371,44 +395,39 @@
       "sha256": "67fd848195d95217c0186049075c4a648ad96c33607f9b1e6f7b8692176b8bf8"
     },
     {
-      "path": "docs/independent-verification.json",
-      "bytes": 1922,
-      "sha256": "a0b46ac2517efcc2a7a79ede6b16e86ca75459667cf87fc851728375ca1bfefe"
-    },
-    {
       "path": "docs/METHOD.md",
       "bytes": 4544,
       "sha256": "df99a79310f5fb032d596178199101ae1df2ccd449afb599a9ee455c007ed7c1"
     },
     {
+      "path": "docs/PROJECT_GUIDE.md",
+      "bytes": 8573,
+      "sha256": "512708a8b363c1450e7e94a7a5f584eda913de78ee54436377a75c12eed24c81"
+    },
+    {
       "path": "docs/PROJECT_WALKTHROUGH.md",
       "bytes": 2269,
-      "sha256": "909424ee56fcc1f5f1fd7412a8385bc709f6470ef66caa271c050361771e4597"
+      "sha256": "678c632e89401a9f37e74beb46cf884a046ecc042e9fa8cb034bc69621828fb7"
     },
     {
       "path": "docs/QA_REPORT.md",
-      "bytes": 3460,
-      "sha256": "2d9faec6a4d778d6ebeaadb371e5047827f896ef04014498cb9fc5e2740e99a4"
-    },
-    {
-      "path": "docs/refresh-demonstration.json",
-      "bytes": 1642,
-      "sha256": "976a4fa7106d9c5cd7659114ea9c9e9b25b50ed982967cfb1d61e39d1bb405c0"
+      "bytes": 3773,
+      "sha256": "947c1242ee29ae852bb2d2c1830da0f181f2b8630c2dd5664f983c908613ff4b"
     },
     {
       "path": "docs/REFRESH_GUIDE.md",
-      "bytes": 6007,
-      "sha256": "fd91383a58c2661efd2658d943c7a5395a1946e82c0c479b0b6a253768fa760e"
+      "bytes": 6288,
+      "sha256": "8b16909ff5a47830266936196962fa1ca485865d30c0d668aaed61400de34abe"
+    },
+    {
+      "path": "docs/RELIABILITY_UPDATE.md",
+      "bytes": 1213,
+      "sha256": "2bb5d371852e6570a3a32afbd8750b5df8bcd3bd7106792de31a4ec5e39e40fc"
     },
     {
       "path": "docs/SETUP.md",
       "bytes": 3625,
-      "sha256": "cde3b5ead23acebcfbed98018a1f3f21194af93e384cb61af01e9c815b611d68"
-    },
-    {
-      "path": "docs/source-provenance.json",
-      "bytes": 542,
-      "sha256": "2c7eedadf175689571f8ed79c3a231782b69c88796b8e0ec165006e523bf6933"
+      "sha256": "d71762397a6d1a249c390f70f25c8630d0305d26d9c94652e7975e2effa25e9f"
     },
     {
       "path": "docs/SOURCES.md",
@@ -417,8 +436,23 @@
     },
     {
       "path": "docs/UPWORK_LISTING.md",
-      "bytes": 865,
-      "sha256": "21ecdb57fdd5c2513d8de5fefd01a1c26ccce270cb6225d35d16e95a0380e152"
+      "bytes": 915,
+      "sha256": "bb2fd2f5626aa0fe9a1da8652c07e73e8929787331a214f747638a3862e56b5d"
+    },
+    {
+      "path": "docs/independent-verification.json",
+      "bytes": 1922,
+      "sha256": "a0b46ac2517efcc2a7a79ede6b16e86ca75459667cf87fc851728375ca1bfefe"
+    },
+    {
+      "path": "docs/refresh-demonstration.json",
+      "bytes": 1642,
+      "sha256": "976a4fa7106d9c5cd7659114ea9c9e9b25b50ed982967cfb1d61e39d1bb405c0"
+    },
+    {
+      "path": "docs/source-provenance.json",
+      "bytes": 542,
+      "sha256": "2c7eedadf175689571f8ed79c3a231782b69c88796b8e0ec165006e523bf6933"
     },
     {
       "path": "evidence/analysis.json",
@@ -511,64 +545,14 @@
       "sha256": "5d1921d65edbd24a5b90eb605376b7663dc01c372433c2c68cbf225ed852524d"
     },
     {
-      "path": "LICENSE",
-      "bytes": 1250,
-      "sha256": "6d4352bc0419c013021133ba28ad6f8ea3585d4245daffd0d5ba577481dd5576"
-    },
-    {
-      "path": "NOTICE",
-      "bytes": 563,
-      "sha256": "414af3ea0aa4b2b475de596d1808f629673581f3d7592934e861a302a2e7736f"
-    },
-    {
-      "path": "powerbi/export_data.py",
-      "bytes": 6027,
-      "sha256": "f917d6c30b238b965ee58f4ccea7733ab01c37f4087afc5fd17a1bbbe2019e3d"
-    },
-    {
-      "path": "powerbi/measures.dax",
-      "bytes": 3324,
-      "sha256": "3dbeae5526535c1dd93e98a33bf67e79a3db3f7f746c9134bce1a91b5bdd007a"
-    },
-    {
-      "path": "powerbi/native-measures.dax",
-      "bytes": 4461,
-      "sha256": "15ac9163edef6a29fb2da2856528ac68fd04ab0a8d70fb4c6776d73b44549a21"
-    },
-    {
       "path": "powerbi/NATIVE_QA.md",
-      "bytes": 3490,
-      "sha256": "0ff1ce6b05a7a9f3519d40a44830032a0d81df0ee57d368b96f8b435c3a86207"
-    },
-    {
-      "path": "powerbi/queries/DataFolder.pq",
-      "bytes": 110,
-      "sha256": "36dafa77a88d43b6d8c3c8ba075562edae6f8436934127c1f8d9113e3de28258"
-    },
-    {
-      "path": "powerbi/queries/Dates.pq",
-      "bytes": 619,
-      "sha256": "55c96c901b40a7c34b65cbd7863c54c9a9e0667a0a83aaa98837832344912b9a"
-    },
-    {
-      "path": "powerbi/queries/DeliveryCoverage.pq",
-      "bytes": 552,
-      "sha256": "1b113714f939bbff521a8fd70ff9d5dcde16719b78cb05162b65be4c4d187bc3"
-    },
-    {
-      "path": "powerbi/queries/Quality.pq",
-      "bytes": 542,
-      "sha256": "596aa7386f158fd2664183a3b4114c22b46a6287934471b7b8cbe78358647cd3"
-    },
-    {
-      "path": "powerbi/queries/Sales.pq",
-      "bytes": 748,
-      "sha256": "6c505f791565f8037aa71bacdb9c41d2b57b5da6196ff92feccb9445abb94fa9"
+      "bytes": 3817,
+      "sha256": "fb663e1229797831ceec9bfc54dc4e59a9a2a973d04484efd94d759ca322e1d4"
     },
     {
       "path": "powerbi/README.md",
-      "bytes": 7090,
-      "sha256": "306fcf31690df0e1dc023191810f8502f7cff50848c4342b90e4ebd37bf3c4c2"
+      "bytes": 7474,
+      "sha256": "6b07761d164e14ae6af20f3936fb28b32dd2c1123cca1f8d42b6d6e0f78abe57"
     },
     {
       "path": "powerbi/REPORT_LAYOUT.md",
@@ -576,14 +560,19 @@
       "sha256": "0ec6ca5f5d799b46369b6c47d928cc2a24d1aaa7f6a82cca9683c1862049036a"
     },
     {
-      "path": "powerbi/SalesExplorer.pbip",
-      "bytes": 132,
-      "sha256": "c72f81b338888368e7d2f39ef2c7a8926af3c116fd3239f2949557ab4b8f91ea"
-    },
-    {
       "path": "powerbi/SalesExplorer.Report/.platform",
       "bytes": 307,
       "sha256": "59aa2db55730274318e08965a7f253565d304a718a427531571f5d3eb7af34de"
+    },
+    {
+      "path": "powerbi/SalesExplorer.Report/StaticResources/RegisteredResources/SalesTheme.json",
+      "bytes": 536,
+      "sha256": "3bf491e2c323ef913a7c2d0e2a97ea2000291fbaa006b2a5dd8d33e609513ee1"
+    },
+    {
+      "path": "powerbi/SalesExplorer.Report/definition.pbir",
+      "bytes": 249,
+      "sha256": "a5b2dd851287608c268f1e29711e164eeb4f263d33c9a3f0d8a3cc350e2ffbe2"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/page.json",
@@ -891,16 +880,6 @@
       "sha256": "79141fb0e4ed866953772344c3fc65ec1e5a10beac56fedbad151518396dccfb"
     },
     {
-      "path": "powerbi/SalesExplorer.Report/definition.pbir",
-      "bytes": 249,
-      "sha256": "a5b2dd851287608c268f1e29711e164eeb4f263d33c9a3f0d8a3cc350e2ffbe2"
-    },
-    {
-      "path": "powerbi/SalesExplorer.Report/StaticResources/RegisteredResources/SalesTheme.json",
-      "bytes": 536,
-      "sha256": "3bf491e2c323ef913a7c2d0e2a97ea2000291fbaa006b2a5dd8d33e609513ee1"
-    },
-    {
       "path": "powerbi/SalesExplorer.SemanticModel/.platform",
       "bytes": 314,
       "sha256": "72dc5e4b8b8c768fca47b7adcbc6025b61749d3b08fa8b6945e10e6c863909d2"
@@ -921,6 +900,51 @@
       "sha256": "246044725cda872f9381977747af1c61d4035cb29e7cc459cb02f9b542b89344"
     },
     {
+      "path": "powerbi/SalesExplorer.pbip",
+      "bytes": 132,
+      "sha256": "c72f81b338888368e7d2f39ef2c7a8926af3c116fd3239f2949557ab4b8f91ea"
+    },
+    {
+      "path": "powerbi/export_data.py",
+      "bytes": 6610,
+      "sha256": "6a66ab19aca7cb39de8a48c082b80c18a4634e314ee4e37c2b1a2f2a6fd2445a"
+    },
+    {
+      "path": "powerbi/measures.dax",
+      "bytes": 3324,
+      "sha256": "3dbeae5526535c1dd93e98a33bf67e79a3db3f7f746c9134bce1a91b5bdd007a"
+    },
+    {
+      "path": "powerbi/native-measures.dax",
+      "bytes": 4461,
+      "sha256": "15ac9163edef6a29fb2da2856528ac68fd04ab0a8d70fb4c6776d73b44549a21"
+    },
+    {
+      "path": "powerbi/queries/DataFolder.pq",
+      "bytes": 110,
+      "sha256": "36dafa77a88d43b6d8c3c8ba075562edae6f8436934127c1f8d9113e3de28258"
+    },
+    {
+      "path": "powerbi/queries/Dates.pq",
+      "bytes": 619,
+      "sha256": "55c96c901b40a7c34b65cbd7863c54c9a9e0667a0a83aaa98837832344912b9a"
+    },
+    {
+      "path": "powerbi/queries/DeliveryCoverage.pq",
+      "bytes": 552,
+      "sha256": "1b113714f939bbff521a8fd70ff9d5dcde16719b78cb05162b65be4c4d187bc3"
+    },
+    {
+      "path": "powerbi/queries/Quality.pq",
+      "bytes": 542,
+      "sha256": "596aa7386f158fd2664183a3b4114c22b46a6287934471b7b8cbe78358647cd3"
+    },
+    {
+      "path": "powerbi/queries/Sales.pq",
+      "bytes": 748,
+      "sha256": "6c505f791565f8037aa71bacdb9c41d2b57b5da6196ff92feccb9445abb94fa9"
+    },
+    {
       "path": "powerbi/sample-data/latest.json",
       "bytes": 410,
       "sha256": "7ad7347522f52b3716c8ff5da9a9530b315d4a489420aded595ad590fca582c9"
@@ -936,11 +960,6 @@
       "sha256": "78a502b842159206d9bf8c7b4d3a029bb9b18f87a17d6f20c01d488115ca80c8"
     },
     {
-      "path": "powerbi/sample-data/snapshots/55fe239142bbae45/export-verification.json",
-      "bytes": 9307,
-      "sha256": "0599b2e86a81d7a637abfc6da85d68aa592cfdd729f823d56ba81cd398d32383"
-    },
-    {
       "path": "powerbi/sample-data/snapshots/55fe239142bbae45/Quality.csv",
       "bytes": 124,
       "sha256": "ba2fce1ad416650db67b62bd6862d40471de82ef59dc791770a5447d3d7e715b"
@@ -949,6 +968,11 @@
       "path": "powerbi/sample-data/snapshots/55fe239142bbae45/Sales.csv",
       "bytes": 1002635,
       "sha256": "4ab1971b2c5924888dc9bd0db36050bce4c5a916642f2ee9da776c7c495168cf"
+    },
+    {
+      "path": "powerbi/sample-data/snapshots/55fe239142bbae45/export-verification.json",
+      "bytes": 9307,
+      "sha256": "0599b2e86a81d7a637abfc6da85d68aa592cfdd729f823d56ba81cd398d32383"
     },
     {
       "path": "powerbi/sample-data/snapshots/aa9c70b67f36a2be/Dates.csv",
@@ -961,11 +985,6 @@
       "sha256": "f5ab2971b3fb6b72d310bddd0297c728f2e48fb1545fc0398824ff9678ed240d"
     },
     {
-      "path": "powerbi/sample-data/snapshots/aa9c70b67f36a2be/export-verification.json",
-      "bytes": 9490,
-      "sha256": "8a1679fe272ad8861effb9e20e111d95d9c0725d25f9d5374b60b298d771e5cb"
-    },
-    {
       "path": "powerbi/sample-data/snapshots/aa9c70b67f36a2be/Quality.csv",
       "bytes": 124,
       "sha256": "35b81473918aa44b8e60cec20bc91d0ace6855959e3382ff7fbabc7e70a6409e"
@@ -976,19 +995,24 @@
       "sha256": "2101ac3072ef46e5c904aaebcfeea10bd478aa70f6289aa8626b08756e920045"
     },
     {
+      "path": "powerbi/sample-data/snapshots/aa9c70b67f36a2be/export-verification.json",
+      "bytes": 9490,
+      "sha256": "8a1679fe272ad8861effb9e20e111d95d9c0725d25f9d5374b60b298d771e5cb"
+    },
+    {
       "path": "powerbi/theme.json",
       "bytes": 536,
       "sha256": "3bf491e2c323ef913a7c2d0e2a97ea2000291fbaa006b2a5dd8d33e609513ee1"
     },
     {
-      "path": "README.md",
-      "bytes": 9490,
-      "sha256": "2cc6ec921cab76528aa9fb3b9239d0187823d514b84214dae6de7d3872c7777a"
-    },
-    {
       "path": "refresh.py",
       "bytes": 6463,
       "sha256": "b60d292bc63a999b3694b1def3dc46805f4d3209a123f20372b3989ceda62e1e"
+    },
+    {
+      "path": "release.json",
+      "bytes": 253,
+      "sha256": "8affb91b9cb102dab2a037668d9f462f9b4c4d553c56a7ce1099628f7eca6dfb"
     },
     {
       "path": "requirements-qa.txt",
@@ -1042,8 +1066,8 @@
     },
     {
       "path": "src/import_notes.py",
-      "bytes": 2378,
-      "sha256": "fb8576bef719663feb936e2be8c3beaefccb470593f4e75eb746a119e2fe1e39"
+      "bytes": 2766,
+      "sha256": "b6bde1246154798b03dfe5f6023fcd9b8d74dc8a065b7ad7d140a4bdbc1ac0a4"
     },
     {
       "path": "src/prepare_demo.py",
@@ -1061,14 +1085,19 @@
       "sha256": "d68baca2497b5a33e4d9039e184815523c6534021c1af155cb4ca46672bb4ec8"
     },
     {
+      "path": "tests/test_packaging.py",
+      "bytes": 2550,
+      "sha256": "96bae297573e3c492480860343ac0b7506c53e51471d7f20aa172a53762202df"
+    },
+    {
       "path": "tests/test_powerbi_export.py",
-      "bytes": 3200,
-      "sha256": "03f3779650d7c74adadd53050d95ac71fcd1ecb132581422a0d8a4bc5cab13bf"
+      "bytes": 4318,
+      "sha256": "d98cf38909832dc8264b53343fa0d557eb46da67d8a06ad58093e83b610a20dd"
     },
     {
       "path": "tests/test_refresh.py",
-      "bytes": 15341,
-      "sha256": "5435b6a739c6a9375cc740be6c53b25c0be6dcfeb8c8cc5ed67340ee96b7cecd"
+      "bytes": 16853,
+      "sha256": "fc9464dcc74269aadfd7f9e9de7350bf267948f031ea41a19133c35cdf2c89fa"
     },
     {
       "path": "tools/build_briefing.py",
@@ -1097,8 +1126,8 @@
     },
     {
       "path": "tools/package_project.py",
-      "bytes": 2885,
-      "sha256": "dbee08ff3bddc7b8ab1413bdb8fcf1c243a15a4429dbf709b37459a463bdf3b5"
+      "bytes": 5984,
+      "sha256": "c06df48f1a787b38cdbf327337677db176a152e8a01519d5b9dc0cfdf5fce363"
     },
     {
       "path": "tools/verify_outputs.py",
@@ -1107,12 +1136,12 @@
     }
   ],
   "omitted": [
-    "data/raw/*",
-    "data/notes/review_notes.csv",
-    "runs/*",
-    "tmp/*",
-    "__pycache__/*",
-    "**/.pbi/*"
+    "raw downloads",
+    "generated databases",
+    "complete row-level outputs",
+    "private review notes",
+    "local caches",
+    "older ZIPs"
   ],
-  "runtime": "Power BI Desktop for PBIX exploration; Python 3.10+ for data export. Optional XLSX generation also requires Node.js and compatible artifact-tool; see docs/SETUP.md and powerbi/README.md"
+  "rebuild": "See README.md and docs"
 }

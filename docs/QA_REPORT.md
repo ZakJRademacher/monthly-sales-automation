@@ -1,11 +1,11 @@
 # Verification report
 
 ## Business-output checks
-Nine additional tests cover equal day cutoffs, leap-year handling, zero and missing baselines, the exact arithmetic bridge, ranked segment declines, source product IDs, HTML escaping and the Python-only refresh. The suite now has 34 tests. Seven full-data business reconciliations check category/region current, prior and change totals and the arithmetic bridge. Independent verification recomputes the matched comparison from the original source CSV and inspects cached workbook results.
+Nine additional tests cover equal day cutoffs, leap-year handling, zero and missing baselines, the exact arithmetic bridge, ranked segment declines, source product IDs, HTML escaping and the Python-only refresh. The suite now has 42 tests. Seven full-data business reconciliations check category/region current, prior and change totals and the arithmetic bridge. Independent verification recomputes the matched comparison from the original source CSV and inspects cached workbook results.
 
 Redesigned and revalidated October 16, 2026, using all 9,800 original source lines and all 48 monthly input partitions.
 
-- **34 automated tests:** day-first dates; four-decimal precision; zero/invalid amounts; invalid/wrong-month dates; shipping before order; repeated/conflicting IDs; distinct order counts; inconsistent order dates; missing versus explicit-zero months; malformed headers/filenames; stable note keys; unmatched notes; CSV preface; atomic invalid-note import; failed refresh preserving prior output; workbook failure; overlap lock; idempotent rerun.
+- **42 automated tests:** day-first dates; four-decimal precision; zero/invalid amounts; invalid/wrong-month dates; shipping before order; repeated/conflicting IDs; distinct order counts; inconsistent order dates; missing versus explicit-zero months; malformed headers/filenames; stable note keys; unmatched notes; CSV preface; atomic invalid-note import; failed refresh preserving prior output; workbook failure; overlap lock; idempotent rerun.
 - **Six full-data reconciliations:** source row partition, monthly sales, monthly order count, category sales, region sales and SQLite integrity.
 - **Fifteen real-engine refresh checks:** 47 files to 48, added lines, month advancement, changed current-period value, retained demonstration annotation, identical rerun, rejected conflicting ID and retained last successful pointer/workbook. See refresh-demonstration.json. Core publication unit tests separately use an explicitly identified test double; they are not presented as spreadsheet-engine verification.
 - **Independent output verification:** recomputation from the original train.csv, selected-column equality, typed dates, formula caches, YoY, chart binding/color, review dropdown and blank delivered notes. See independent-verification.json.
@@ -20,3 +20,7 @@ The two added tests reject failed or missing requested PDFs before publication. 
 ## Native Power BI dashboard
 
 The interactive report is `deliverables/Monthly Sales Explorer.pbix` from the repository root. See [Power BI setup, exploration and refresh](../powerbi/README.md) and [native verification](../powerbi/NATIVE_QA.md). Its four-page PDF and PNG previews are static native exports; the PBIX contains the interactive report and imported public sample.
+
+## October 21 reliability update
+
+The current local suite has 42 passing tests. Regression coverage includes the affected failure paths and portable bundle verification. Native Excel and Power BI checks were not repeated for this code update. See docs/RELIABILITY_UPDATE.md for the change and validation record.

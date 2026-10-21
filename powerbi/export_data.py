@@ -127,8 +127,17 @@ def export(input_folder, output_folder):
         if snapshot.exists():
             import shutil
 
-            snapshot_stage.resolve().relative_to(output_folder)
-            shutil.rmtree(snapshot_stage)
+            try:
+                # A matching directory name does not prove its files are intact.
+                for filename in [name + ".csv" for name in tables] + ["export-verification.json"]:
+                    existing = snapshot / filename
+                    if not existing.is_file() or existing.read_bytes() != (snapshot_stage / filename).read_bytes():
+                        raise ValueError(
+                            f"Existing snapshot is missing or changed: {filename}. Restore the snapshot before retrying."
+                        )
+            finally:
+                snapshot_stage.resolve().relative_to(output_folder)
+                shutil.rmtree(snapshot_stage)
         else:
             snapshot_stage.rename(snapshot)
         pointer = output_folder / ("latest_" + uuid.uuid4().hex + ".tmp")

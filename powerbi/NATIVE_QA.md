@@ -23,7 +23,7 @@ After adding the original December file and exporting all 48 files, Home > Refre
 
 ## Export and delivery checks
 
-The standard-library suite has **38 passing tests**, including exact integer sales units/source lineage, repeat export reuse, rejected-input preservation and failed-pointer-publication preservation. These Python tests do not execute DAX. Snapshot export-verification JSON records exporter checks only; this document records the separate native observations.
+The October 16–17 native validation used a standard-library suite with **38 passing tests**, including exact integer sales units/source lineage, repeat export reuse, rejected-input preservation and failed-pointer-publication preservation. These Python tests do not execute DAX. Snapshot export-verification JSON records exporter checks only; this document records the separate native observations.
 
 All four pages were exported through Desktop to `deliverables/Monthly Sales Explorer.pdf`, rendered and visually inspected for clipping and legibility. PDF and PNG previews are static representations; the PBIX provides interaction.
 
@@ -32,3 +32,7 @@ All four pages were exported through Desktop to `deliverables/Monthly Sales Expl
 Power BI Service publication, a gateway and unattended scheduling are not configured or tested. Concurrent exports or pointer changes during Desktop refresh are unsupported. An explicitly empty prior-month delivery was covered by core logic tests, but was not separately exercised through the native UI. A comprehensive keyboard/screen-reader audit and native Microsoft Excel recalculation were not performed.
 
 The final PBIX was saved, closed and reopened in Desktop on October 17. The custom category palette, typography, imported December totals and all four page tabs persisted. [Reopened Desktop screenshot](../evidence/powerbi/reopened-desktop.png).
+
+## October 21 code update
+
+The local reliability update adds regression tests for damaged or missing snapshot files, annotation-import structure and bundle contents. The full suite now has 42 tests. This update does not repeat or extend the historical Desktop/DAX observations above.

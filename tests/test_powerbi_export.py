@@ -68,6 +68,27 @@ class PowerBIExportTests(unittest.TestCase):
         self.assertEqual(before, self.pointer())
         self.assertEqual(len(list((self.output / "snapshots").iterdir())), 1)
 
+    def test_changed_or_missing_snapshot_file_is_rejected(self):
+        for name in ["Sales.csv", "Dates.csv", "DeliveryCoverage.csv", "Quality.csv", "export-verification.json"]:
+            for missing in [False, True]:
+                with self.subTest(file=name, missing=missing):
+                    export(self.inputs, self.output)
+                    before = self.pointer()
+                    snapshot = self.output / "snapshots" / json.loads(before)["snapshot"]
+                    path = snapshot / name
+                    original = path.read_bytes()
+                    if missing:
+                        path.unlink()
+                    else:
+                        path.write_bytes(b"damaged contents")
+                    try:
+                        with self.assertRaisesRegex(ValueError, "Existing snapshot"):
+                            export(self.inputs, self.output)
+                        self.assertEqual(before, self.pointer())
+                        self.assertFalse(list(self.output.glob("staging_*")))
+                    finally:
+                        path.write_bytes(original)
+
     def test_invalid_input_preserves_last_good(self):
         export(self.inputs, self.output)
         before = self.pointer()

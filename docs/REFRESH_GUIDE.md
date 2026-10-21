@@ -45,3 +45,7 @@ The first sheet compares matched day cutoffs. Monthly report shows full observed
 ## Native Power BI dashboard
 
 The interactive report is `deliverables/Monthly Sales Explorer.pbix` from the repository root. See [Power BI setup, exploration and refresh](../powerbi/README.md) and [native verification](../powerbi/NATIVE_QA.md). Its four-page PDF and PNG previews are static native exports; the PBIX contains the interactive report and imported public sample.
+
+## Annotation CSV structure
+
+Imports reject missing or extra fields, duplicate mapped headers and malformed quoting before replacing saved notes. A structurally complete valid row can intentionally clear note text. Completely untouched template rows still preserve existing work.
