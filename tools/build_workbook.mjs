@@ -1,3 +1,4 @@
+import {execFileSync} from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createRequire} from 'node:module';
@@ -173,4 +174,5 @@ if(render)for(const [s,range,file] of [[business,`A1:P${lastReviewRow}`,'excel-s
  const blob=await wb.render({sheetName:s.name,range,scale:1.5,format:'png'});await fs.writeFile(path.join(stage,file),new Uint8Array(await blob.arrayBuffer()));
 }
 const xlsx=await SpreadsheetFile.exportXlsx(wb);await xlsx.save(path.join(stage,`monthly-sales_${m.last_month}.xlsx`));
+execFileSync(process.env.PYTHON || 'python', [path.join(root,'tools/normalize_workbook.py'), path.join(stage,`monthly-sales_${m.last_month}.xlsx`)]);
 console.log(JSON.stringify({sales:baseline,lastMonth:m.last_month,rows:m.lines,formulaErrorScan:errors.ndjson}));

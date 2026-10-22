@@ -7,11 +7,12 @@ Run `python refresh.py --summary-only` with Python 3.10+ alone. No pip install o
 Python 3.10+ runs ingestion, SQLite, note import and the 42 tests with the standard library. Selected monthly source files are already included. Run from this repository's root.
 
 ## Excel generation
-`refresh.py` invokes `tools/build_workbook.mjs`. It requires Node.js and **@oai/artifact-tool**, supplied by a compatible Codex desktop dependency runtime. This dependency is not bundled in the repository and is not assumed to be publicly installable from npm. The ready-made XLSX can be opened independently; generating new workbooks requires that runtime or a separately implemented replacement writer.
+`refresh.py` invokes `tools/build_workbook.mjs`. It requires Node.js and **@oai/artifact-tool**, supplied by a compatible spreadsheet authoring runtime. This dependency is not bundled in the repository and is not assumed to be publicly installable from npm. The ready-made XLSX can be opened independently; generating new workbooks requires that runtime or a separately implemented replacement writer.
 
-The wrapper first uses `SALES_NODE`, then Node on PATH, then the documented runtime binary path. `ARTIFACT_RUNTIME_ROOT` points to the runtime's Node dependency root (the directory containing node_modules). On a standard Codex desktop setup, the default is `~/.cache/codex-runtimes/codex-primary-runtime/dependencies/node`. Set the variables explicitly if installed elsewhere:
+The wrapper uses `SALES_NODE` or Node on PATH. Set `ARTIFACT_RUNTIME_ROOT` to an installed authoring runtime's Node dependency root (the directory containing node_modules), or make the package resolvable from this project. Set `PYTHON` if the workbook metadata helper should use a Python executable other than `python`:
 
 ```powershell
+$env:PYTHON='C:/path/to/python.exe'
 $env:SALES_NODE='C:/path/to/dependencies/node/bin/node.exe'
 $env:ARTIFACT_RUNTIME_ROOT='C:/path/to/dependencies/node'
 python refresh.py --render --pdf
@@ -32,3 +33,5 @@ The `--render` previews require the spreadsheet runtime. PDF rendering into port
 ## Native Power BI dashboard
 
 The interactive report is `deliverables/Monthly Sales Explorer.pbix` from the repository root. See [Power BI setup, exploration and refresh](../powerbi/README.md) and [native verification](../powerbi/NATIVE_QA.md). Its four-page PDF and PNG previews are static native exports; the PBIX contains the interactive report and imported public sample.
+
+Workbook authoring also uses Python 3.10+ for display-only theme metadata normalization. Set `PYTHON` to its executable if `python` is unavailable. This helper preserves native workbook parts and does not recalculate formulas.

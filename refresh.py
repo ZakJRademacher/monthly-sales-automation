@@ -16,17 +16,16 @@ from sales import analyze, write_json
 
 
 def workbook_writer(stage, render=False):
-    dependency = (
-        Path.home() / ".cache/codex-runtimes/codex-primary-runtime/dependencies"
-    )
-    runtime = Path(os.environ.get("ARTIFACT_RUNTIME_ROOT", str(dependency / "node")))
+    runtime_root = os.environ.get("ARTIFACT_RUNTIME_ROOT")
     node = (
         os.environ.get("SALES_NODE")
         or shutil.which("node")
-        or str(runtime / "bin/node.exe")
+        or (str(Path(runtime_root) / "bin/node.exe") if runtime_root else None)
     )
     env = os.environ.copy()
-    env["ARTIFACT_RUNTIME_ROOT"] = str(runtime)
+    if not node:
+        raise RuntimeError("Node.js is required for optional workbook generation; set SALES_NODE or add Node to PATH")
+    env.setdefault("PYTHON", sys.executable)
     command = [node, str(ROOT / "tools/build_workbook.mjs"), str(stage)]
     if render:
         command.append("--render")

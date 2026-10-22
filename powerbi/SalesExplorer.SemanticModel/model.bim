@@ -8,7 +8,7 @@
       {
         "name": "DataFolder",
         "kind": "m",
-        "expression": "\"C:/Users/zakjr/Documents/Codex/2026-10-14/i-x20/work/portfolio-quality-review/monthly-sales-automation/powerbi/sample-data\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+        "expression": "\"C:/Users/zakjr/OneDrive/Data Analytics Projects/01 Portfolio Projects/monthly-sales-automation/powerbi/sample-data\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
       }
     ],
     "tables": [

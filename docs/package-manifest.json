@@ -351,8 +351,8 @@
     },
     {
       "path": "deliverables/monthly-sales_2018-12.xlsx",
-      "bytes": 37847,
-      "sha256": "4325f8481c3e3d1dda0398a8d81ba5e4e6bda95112adc8a01b4db3310658a797"
+      "bytes": 37765,
+      "sha256": "313d6e37fced81ef85890216813201e2275cf2ce90b8d604ef7e9aaa6a158e6b"
     },
     {
       "path": "deliverables/portfolio-cover.png",
@@ -426,8 +426,8 @@
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 3625,
-      "sha256": "d71762397a6d1a249c390f70f25c8630d0305d26d9c94652e7975e2effa25e9f"
+      "bytes": 3829,
+      "sha256": "6866d2a6c49163f6b0f1d5715bc3b4c88467870e958614b3b8e3dbc427211a42"
     },
     {
       "path": "docs/SOURCES.md",
@@ -896,8 +896,8 @@
     },
     {
       "path": "powerbi/SalesExplorer.SemanticModel/model.bim",
-      "bytes": 19949,
-      "sha256": "246044725cda872f9381977747af1c61d4035cb29e7cc459cb02f9b542b89344"
+      "bytes": 19941,
+      "sha256": "b50707e680642cdaa0ed3ca8a5834fd41f4e0c3286320255cdbc9dd89a88d63f"
     },
     {
       "path": "powerbi/SalesExplorer.pbip",
@@ -1006,8 +1006,8 @@
     },
     {
       "path": "refresh.py",
-      "bytes": 6463,
-      "sha256": "b60d292bc63a999b3694b1def3dc46805f4d3209a123f20372b3989ceda62e1e"
+      "bytes": 6502,
+      "sha256": "08238acdb5d1372ea91c49cd170436002fd40aa0d1f7e1d13d0f0f2f4bf1eb90"
     },
     {
       "path": "release.json",
@@ -1116,13 +1116,18 @@
     },
     {
       "path": "tools/build_workbook.mjs",
-      "bytes": 18898,
-      "sha256": "f7279ea68a9e475a4c5a2051c9a19ea695bd83a464543883a2d2012398c8f244"
+      "bytes": 19097,
+      "sha256": "265e617d6d368793003ad47c1a358de28e762806f2307208a51b89ab2b03570f"
     },
     {
       "path": "tools/demo_refresh.py",
       "bytes": 5286,
       "sha256": "161bcd8426e4e9e3af1ed532f94d202f77293376824d6ab40189b9af6bc0506e"
+    },
+    {
+      "path": "tools/normalize_workbook.py",
+      "bytes": 1192,
+      "sha256": "5c7fe1e83d7240c32c6a0b8e55d87d96f45eef0ec70c0c1e10e1e58293bd8895"
     },
     {
       "path": "tools/package_project.py",
