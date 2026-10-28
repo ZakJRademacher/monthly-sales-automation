@@ -1,5 +1,7 @@
 # Monthly Sales Explorer
 
+![Power BI](https://img.shields.io/badge/Power%20BI-C5A42C?style=flat-square) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) ![SQLite](https://img.shields.io/badge/SQLite-31566D?style=flat-square) ![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square)
+
 **Why did sales fall while orders increased, and where should the next review focus?**
 
 A repeatable monthly performance review using **Power BI, Python and SQLite**: 9,800 historical sales lines, 4,922 orders and 48 monthly CSV files.
