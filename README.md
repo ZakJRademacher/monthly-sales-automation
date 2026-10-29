@@ -1,12 +1,14 @@
-# Monthly Sales Explorer
+# Monthly Sales Review
 
-![Power BI](https://img.shields.io/badge/Power%20BI-C5A42C?style=flat-square) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) ![SQLite](https://img.shields.io/badge/SQLite-31566D?style=flat-square) ![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square)
+![Tableau](https://img.shields.io/badge/Tableau-147D80?style=flat-square) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) ![SQLite](https://img.shields.io/badge/SQLite-31566D?style=flat-square) ![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square)
 
 **Why did sales fall while orders increased, and where should the next review focus?**
 
-A repeatable monthly performance review using **Power BI, Python and SQLite**: 9,800 historical sales lines, 4,922 orders and 48 monthly CSV files.
+A repeatable monthly performance review using **Python and SQLite**, with a focused **Tableau** decision brief: 9,800 historical sales lines, 4,922 orders and 48 monthly CSV files.
 
-![Power BI sales overview](deliverables/powerbi-overview.png)
+**Updated Tableau decision brief:** [View the full-size preview](deliverables/tableau-sales-preview.png) · [Definitions and scope](docs/TABLEAU_REVIEW.md). The workbook remains local; it is not included in this repository.
+
+![Tableau sales decision brief](deliverables/tableau-sales-preview.png)
 
 [Preview the four-page report](deliverables/Monthly%20Sales%20Explorer.pdf) · [Download the interactive PBIX](deliverables/Monthly%20Sales%20Explorer.pbix) · [Read the two-page briefing](deliverables/case-study.pdf)
 
@@ -54,3 +56,4 @@ Monthly CSVs → Python validation → SQLite/SQL comparisons → a validated sn
 Independent portfolio demonstration using historical Kaggle Superstore data (2015–2018), replayed as monthly deliveries. Comparisons use a common day-of-month cutoff; this does not establish complete source coverage. Currency is unspecified, and sales are not profit or a forecast. Refresh is a local workflow; cloud scheduling is not configured.
 
 Original code/documentation: [MIT](LICENSE). Data-derived files retain the source's GPL 2 label: [data license](data/LICENSE), [NOTICE](NOTICE).
+
