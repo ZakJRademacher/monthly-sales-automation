@@ -6,7 +6,7 @@
 
 A repeatable monthly performance review using **Python and SQLite**, with a focused **Tableau** decision brief: 9,800 historical sales lines, 4,922 orders and 48 monthly CSV files.
 
-**Updated Tableau decision brief:** [View the full-size preview](deliverables/tableau-sales-preview.png) · [Definitions and scope](docs/TABLEAU_REVIEW.md). The workbook remains local; it is not included in this repository.
+**Updated Tableau decision brief:** [View the full-size preview](deliverables/tableau-sales-preview.png) · [Definitions and scope](docs/TABLEAU_REVIEW.md). [Download the packaged Tableau workbook](deliverables/Monthly%20Sales%20Review.twbx) · [Editable source and opening guide](tableau/README.md).
 
 ![Tableau sales decision brief](deliverables/tableau-sales-preview.png)
 

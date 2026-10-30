@@ -1,0 +1,10 @@
+{
+  "source": "Kaggle Superstore / 9,800 validated lines / Source monetary units; currency unspecified / Sales are not profit / Zak Rademacher",
+  "rows": 67,
+  "csv_sha256": "b611fdeba8ad726bfc4a06b3c68bbc8f3dc7006cfce1451655b0d2e085e2cb6a",
+  "report": "Monthly Sales Review",
+  "scope": "Historical snapshot analysis; native charts use prepared aggregate records; KPI and interpretation text are regenerated together with data.",
+  "native_review": "Tableau Desktop Free Edition 2026.3; all three charts rendered; portable package opened",
+  "publication": "local only",
+  "reproduced_aggregate_records": 67
+}

@@ -1,0 +1,68 @@
+﻿View,Label,Series,Value,Sort,Note
+category,Furniture,Decline,-5197.4982,0,"Current 31,407.47; prior 36,604.96. Category and region views overlap."
+category,Office Supplies,Decline,-7265.534,1,"Current 29,638.01; prior 36,903.55. Category and region views overlap."
+category,Technology,Increase,486.068,2,"Current 21,984.91; prior 21,498.84. Category and region views overlap."
+region,Central,Decline,-6452.2502,0,"Current 18,883.07; prior 25,335.32. Category and region views overlap."
+region,East,Decline,-7961.582,1,"Current 19,285.49; prior 27,247.07. Category and region views overlap."
+region,South,Increase,4383.811,2,"Current 15,209.74; prior 10,825.93. Category and region views overlap."
+region,West,Decline,-1946.943,3,"Current 29,652.10; prior 31,599.04. Category and region views overlap."
+trend,01 Dec,Current,5331.178,1,Current cumulative sales; December 1–30 only.
+trend,02 Dec,Current,15282.36,2,Current cumulative sales; December 1–30 only.
+trend,03 Dec,Current,16686.202,3,Current cumulative sales; December 1–30 only.
+trend,04 Dec,Current,19325.84,4,Current cumulative sales; December 1–30 only.
+trend,05 Dec,Current,20778.976,5,Current cumulative sales; December 1–30 only.
+trend,06 Dec,Current,20789.656,6,Current cumulative sales; December 1–30 only.
+trend,07 Dec,Current,23706.17,7,Current cumulative sales; December 1–30 only.
+trend,08 Dec,Current,31349.211,8,Current cumulative sales; December 1–30 only.
+trend,09 Dec,Current,36819.601,9,Current cumulative sales; December 1–30 only.
+trend,10 Dec,Current,40693.16,10,Current cumulative sales; December 1–30 only.
+trend,11 Dec,Current,42718.195,11,Current cumulative sales; December 1–30 only.
+trend,12 Dec,Current,42718.195,12,Current cumulative sales; December 1–30 only.
+trend,13 Dec,Current,43299.131,13,Current cumulative sales; December 1–30 only.
+trend,14 Dec,Current,47196.845,14,Current cumulative sales; December 1–30 only.
+trend,15 Dec,Current,47503.733,15,Current cumulative sales; December 1–30 only.
+trend,16 Dec,Current,48362.435,16,Current cumulative sales; December 1–30 only.
+trend,17 Dec,Current,50390.193,17,Current cumulative sales; December 1–30 only.
+trend,18 Dec,Current,54036.104,18,Current cumulative sales; December 1–30 only.
+trend,19 Dec,Current,55932.03,19,Current cumulative sales; December 1–30 only.
+trend,20 Dec,Current,56309.766,20,Current cumulative sales; December 1–30 only.
+trend,21 Dec,Current,58450.706,21,Current cumulative sales; December 1–30 only.
+trend,22 Dec,Current,65892.727,22,Current cumulative sales; December 1–30 only.
+trend,23 Dec,Current,67819.503,23,Current cumulative sales; December 1–30 only.
+trend,24 Dec,Current,74052.557,24,Current cumulative sales; December 1–30 only.
+trend,25 Dec,Current,76751.484,25,Current cumulative sales; December 1–30 only.
+trend,26 Dec,Current,77566.078,26,Current cumulative sales; December 1–30 only.
+trend,27 Dec,Current,77743.714,27,Current cumulative sales; December 1–30 only.
+trend,28 Dec,Current,79401.0648,28,Current cumulative sales; December 1–30 only.
+trend,29 Dec,Current,82316.5988,29,Current cumulative sales; December 1–30 only.
+trend,30 Dec,Current,83030.3888,30,Current cumulative sales; December 1–30 only.
+trend,01 Dec,Prior,7365.455,1,Prior cumulative sales; December 1–30 only.
+trend,02 Dec,Prior,12050.071,2,Prior cumulative sales; December 1–30 only.
+trend,03 Dec,Prior,17319.887,3,Prior cumulative sales; December 1–30 only.
+trend,04 Dec,Prior,18264.173,4,Prior cumulative sales; December 1–30 only.
+trend,05 Dec,Prior,23403.107,5,Prior cumulative sales; December 1–30 only.
+trend,06 Dec,Prior,26263.081,6,Prior cumulative sales; December 1–30 only.
+trend,07 Dec,Prior,26263.081,7,Prior cumulative sales; December 1–30 only.
+trend,08 Dec,Prior,30972.176,8,Prior cumulative sales; December 1–30 only.
+trend,09 Dec,Prior,32827.659,9,Prior cumulative sales; December 1–30 only.
+trend,10 Dec,Prior,36280.889,10,Prior cumulative sales; December 1–30 only.
+trend,11 Dec,Prior,42383.139,11,Prior cumulative sales; December 1–30 only.
+trend,12 Dec,Prior,44257.184,12,Prior cumulative sales; December 1–30 only.
+trend,13 Dec,Prior,45451.272,13,Prior cumulative sales; December 1–30 only.
+trend,14 Dec,Prior,46279.926,14,Prior cumulative sales; December 1–30 only.
+trend,15 Dec,Prior,48917.013,15,Prior cumulative sales; December 1–30 only.
+trend,16 Dec,Prior,49545.555,16,Prior cumulative sales; December 1–30 only.
+trend,17 Dec,Prior,61730.689,17,Prior cumulative sales; December 1–30 only.
+trend,18 Dec,Prior,68782.039,18,Prior cumulative sales; December 1–30 only.
+trend,19 Dec,Prior,69597.151,19,Prior cumulative sales; December 1–30 only.
+trend,20 Dec,Prior,69731.691,20,Prior cumulative sales; December 1–30 only.
+trend,21 Dec,Prior,69731.691,21,Prior cumulative sales; December 1–30 only.
+trend,22 Dec,Prior,70774.819,22,Prior cumulative sales; December 1–30 only.
+trend,23 Dec,Prior,77740.676,23,Prior cumulative sales; December 1–30 only.
+trend,24 Dec,Prior,79678.936,24,Prior cumulative sales; December 1–30 only.
+trend,25 Dec,Prior,90166.991,25,Prior cumulative sales; December 1–30 only.
+trend,26 Dec,Prior,91996.409,26,Prior cumulative sales; December 1–30 only.
+trend,27 Dec,Prior,92955.899,27,Prior cumulative sales; December 1–30 only.
+trend,28 Dec,Prior,92955.899,28,Prior cumulative sales; December 1–30 only.
+trend,29 Dec,Prior,94233.579,29,Prior cumulative sales; December 1–30 only.
+trend,30 Dec,Prior,95007.353,30,Prior cumulative sales; December 1–30 only.
