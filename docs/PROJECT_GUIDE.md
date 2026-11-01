@@ -12,7 +12,7 @@ Add or replace matching monthly CSVs in `data/incoming`, retain history, then ru
 python powerbi/export_data.py
 ```
 
-Set Power BI's `DataFolder` parameter to your local `powerbi/sample-data` folder once, then **Home > Refresh**. Clear the month selector to follow the newest month. Validation publishes an immutable snapshot and changes `latest.json` only after export succeeds. Do not export during a Desktop refresh. This is a repeatable local workflow; unattended cloud scheduling is not configured.
+Set Power BI's `DataFolder` parameter to your local `powerbi/sample-data` folder once, then **Home > Refresh**. Clear the month selector to follow the newest month. Validation publishes a separate snapshot and changes `latest.json` only after export succeeds. Keep published files unchanged; the filesystem does not make them read-only. Do not export during a Desktop refresh. This is a repeatable local workflow; unattended cloud scheduling is not configured.
 
 ![Actual Power BI drivers page, native PDF export](../deliverables/powerbi-drivers.png)
 
@@ -57,7 +57,7 @@ The 48 selected-column CSV inputs are included, so a fresh download is not requi
 python refresh.py --render --pdf
 ```
 
-The Excel path adds a workbook to the same business-review outputs. `--pdf` adds a matching two-page briefing (install `requirements-visuals.txt`); `--render` adds six actual workbook previews. Every requested output must succeed before the new version becomes current. The program creates a unique folder in `runs/` containing `monthly-sales_YYYY-MM.xlsx`, a SQLite database, SQL extracts, input hashes, processing log and formula-verification evidence. `runs/latest.json` points to the last fully generated workbook. Older successful runs remain available. See [SETUP.md](../docs/SETUP.md) for the actual authoring dependency and environment variables; this is a local workflow, not a hosted service.
+The Excel path adds a workbook to the same business-review outputs. `--pdf` adds a matching two-page briefing (install `requirements-visuals.txt`); `--render` adds six actual workbook previews. Every requested output must succeed before the new version becomes current. The program creates a unique folder in `runs/` containing `monthly-sales_YYYY-MM.xlsx`, a SQLite database, SQL extracts, input hashes, processing log and formula-verification evidence. `runs/latest.json` points to the last successful run. Its `workbook` field names the XLSX when Excel was requested, and is `null` for a `--summary-only` run. Older successful runs remain available. See [SETUP.md](../docs/SETUP.md) for the actual authoring dependency and environment variables; this is a local workflow, not a hosted service.
 
 ## What is automated
 
@@ -99,7 +99,7 @@ python tools/demo_refresh.py
 python tools/verify_outputs.py
 ```
 
-The 42 standard-library tests run without Node or the authoring package. Publication tests use a writer test double, so they are separate from the actual spreadsheet-engine replay. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
+The 42 standard-library tests run without Node or the authoring package. The separate `demo_refresh.py` replay needs the optional authoring runtime; `verify_outputs.py` also needs the original downloaded `train.csv`, as described in [setup](SETUP.md). Publication tests use a writer test double, so they are separate from the actual spreadsheet-engine replay. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
 
 To reproduce the briefing from the published evidence and build the compact bundle:
 
