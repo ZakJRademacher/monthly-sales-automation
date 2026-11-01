@@ -11,12 +11,12 @@ from reportlab.platypus import Paragraph
 
 ROOT = Path(__file__).resolve().parents[1]
 INK, MUTED, PAPER, RED, TEAL, LINE = (
-    "#20323C",
-    "#647579",
-    "#F8F6F1",
-    "#B74732",
-    "#126F69",
-    "#D6D8D2",
+    "#132342",
+    "#596883",
+    "#F5F7FC",
+    "#C92C74",
+    "#2458DB",
+    "#E1E7F3",
 )
 W, H, M = 1000, 740, 48
 
@@ -76,7 +76,7 @@ def build(stage, output):
     pct = lambda x: "n.a." if x is None else f"{x:+.1%}"
     tone = lambda x: RED if x is not None and x < 0 else TEAL if x else MUTED
     base(1)
-    text(M, H - 98, "The monthly sales review", 35, font="Times-Roman")
+    text(M, H - 98, "The monthly sales review", 35, font="Helvetica")
     text(
         M,
         H - 123,
@@ -115,7 +115,7 @@ def build(stage, output):
         text(x + 18, 512, value, 30)
         text(x + 18, 480, pct(delta), 18, tone(delta), "Helvetica-Bold")
         text(x + 18, 461, "Prior: " + previous + " / same period", 9, MUTED)
-    para(M, 422, r["headline"], W - 2 * M, 23, INK, "Times-Roman", 26)
+    para(M, 422, r["headline"], W - 2 * M, 23, INK, "Helvetica", 26)
     para(M, 382, r["interpretation"], W - 2 * M, 11)
     shared_maximum = (
         max(
@@ -176,7 +176,7 @@ def build(stage, output):
     )
     c.showPage()
     base(2)
-    text(M, H - 94, "From movement to a review list", 30, font="Times-Roman")
+    text(M, H - 94, "From movement to a review list", 30, font="Helvetica")
     text(M, H - 120, "01 / EXPLAIN THE TOTAL", 10, MUTED, "Helvetica-Bold")
     bridge = [
         ("Order-volume effect", s["order_volume_effect"]),

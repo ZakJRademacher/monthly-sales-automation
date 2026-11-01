@@ -1,17 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "sourceLines",
   "position": {
     "x": 776,
     "y": 585,
-    "width": 472,
-    "height": 207,
     "z": 0,
+    "height": 207,
+    "width": 472,
     "tabOrder": 6626
   },
   "visual": {
     "visualType": "tableEx",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -90,8 +89,7 @@
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "visualContainerObjects": {
@@ -110,7 +108,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#121F2D'"
+                      "Value": "'#FFFFFF'"
                     }
                   }
                 }
@@ -161,7 +159,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EFF4F7'"
+                      "Value": "'#132342'"
                     }
                   }
                 }
@@ -184,6 +182,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

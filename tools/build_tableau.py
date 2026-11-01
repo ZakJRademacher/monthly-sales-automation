@@ -10,6 +10,10 @@ import zipfile
 import xml.etree.ElementTree as E
 import textwrap
 from datetime import date
+try:
+    from .apply_visual_theme import apply_theme
+except ImportError:
+    from apply_visual_theme import apply_theme
 
 PROJECT = Path(__file__).resolve().parents[1]
 INK, MUTED, TEAL, CORAL, GOLD, PAPER = '#203B43', '#60757B', '#147D80', '#BE5D50', '#BA852D', '#F6F5F0'
@@ -121,6 +125,7 @@ def tableau(folder, filename, rows, title, subtitle, kpis, charts, takeaway, sou
         node(node(sw,'viewpoint'),'zoom',type='entire-view')
     node(book,'thumbnails')
     path=folder/(filename+'.twb');E.indent(book);E.ElementTree(book).write(path,encoding='utf-8',xml_declaration=True)
+    if filename=='Monthly Sales Review':apply_theme(path)
     manifest={'source':source,'rows':len(rows),'csv_sha256':hashlib.sha256(data.read_bytes()).hexdigest(),'report':filename,'scope':'Historical snapshot analysis; native charts use prepared aggregate records; KPI and interpretation text are regenerated together with data.'}
     (folder/'verification.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
     return path

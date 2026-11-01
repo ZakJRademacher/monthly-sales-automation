@@ -1,4 +1,4 @@
-# Monthly Sales Review — Tableau guide
+# Monthly Sales Review — local Tableau guide
 
 **Business question:** Why did sales fall while orders rose?
 

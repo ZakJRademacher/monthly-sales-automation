@@ -1,5 +1,12 @@
 # Monthly Sales Review
 
+![Current project presentation](deliverables/portfolio-cover-wide.png)
+
+[Motion cover preview](deliverables/portfolio-motion.webm) · [Presentation maintenance guide](docs/VISUAL_DESIGN.md)
+
+The October 2026 presentation refresh retains the existing calculations, source policies and report contracts. Cover animation is separate from native desktop report behavior.
+
+
 ![Tableau](https://img.shields.io/badge/Tableau-147D80?style=flat-square) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) ![SQLite](https://img.shields.io/badge/SQLite-31566D?style=flat-square) ![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square)
 
 **Why did sales fall while orders increased, and where should the next review focus?**

@@ -7,12 +7,17 @@ COLORS={'Current':'#147d80','Prior':'#8fa4a5','Decline':'#be5d50','Increase':'#1
 def package(project,name):
     source=project/'tableau'/(name+'.twb')
     tree=E.parse(source)
+    colors=dict(COLORS)
+    theme=project/'tableau/design-tokens.json'
+    if name.startswith('Monthly') and theme.exists():
+        c=json.loads(theme.read_text(encoding='utf-8'))['colors']
+        colors.update({'Current':c['primary'],'Prior':c['prior'],'Decline':c['accent'],'Increase':c['primary']})
     for encoding in tree.findall('.//encoding'):
         if encoding.get('attr')=='color':
             for mapping in encoding.findall('map'):
                 try: member=json.loads(mapping.findtext('bucket'))
                 except (ValueError,TypeError):continue
-                if member in COLORS:mapping.set('to',COLORS[member])
+                if member in colors:mapping.set('to',colors[member])
     if name.startswith('Monthly'):
         for rule in tree.findall('.//worksheet/table/style/style-rule'):
             if rule.get('element')=='axis':

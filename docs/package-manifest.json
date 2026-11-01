@@ -36,8 +36,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3346,
-      "sha256": "95c4b5dc00a8e8bc2bec75c9563ca6d2bf0efa941accfa42de8a4dd81b9edab3"
+      "bytes": 4414,
+      "sha256": "e41bb4625040c9cf5a3d2a4b067df21a5570736bf38b7e7f6451e341134d8771"
     },
     {
       "path": "data/LICENSE",
@@ -296,13 +296,23 @@
     },
     {
       "path": "deliverables/Monthly Sales Explorer.pbix",
-      "bytes": 463987,
-      "sha256": "efe37352fb8712d918422abefcc2cae304de5c1d0420c0315f2a97f2e192ea24"
+      "bytes": 453743,
+      "sha256": "d299eb6e7d804ace528238befc77a3bd177467e015159b505d6a934609acfc74"
     },
     {
       "path": "deliverables/Monthly Sales Explorer.pdf",
-      "bytes": 411291,
-      "sha256": "3b1f8c477b637186b16ec8f142076d36b20387dd45954327ccef35bde6a2fbe5"
+      "bytes": 369245,
+      "sha256": "c74bc76813b0fed0c0e553193c30b4be292a5fad9fd6596ea94b6ac2fd2325de"
+    },
+    {
+      "path": "deliverables/Monthly Sales Interactive.html",
+      "bytes": 27615,
+      "sha256": "076f4609cb27ad9934f905bab2cffc75aa4cf6ffc6608be4877b953a5d82b6ce"
+    },
+    {
+      "path": "deliverables/Monthly Sales Review.twbx",
+      "bytes": 33586,
+      "sha256": "ba1994dede0252b55696c9d2e61ef7a360667afdb6e40ee88b2b9fa2369d1a1e"
     },
     {
       "path": "deliverables/README.md",
@@ -311,38 +321,38 @@
     },
     {
       "path": "deliverables/case-study.pdf",
-      "bytes": 5858,
-      "sha256": "75df38d052b0096a72c24d29aa2e2a5a024c77501a9764c8b3c84e40c92b3073"
+      "bytes": 5693,
+      "sha256": "908503767e20ec5aa26588d2be306bd8cb65064a76460344976fc99fa8fd0381"
     },
     {
       "path": "deliverables/excel-category-review.png",
-      "bytes": 117910,
-      "sha256": "4e9af93dfbc6be020c8ed717dcaee812c5e7c9dd35e47483b64d35e73651de97"
+      "bytes": 117915,
+      "sha256": "c8248174a29697bb198a6bc4bf86fc6c7e63575ae49396b5977f83f07fd6ce74"
     },
     {
       "path": "deliverables/excel-matched-calculations.png",
-      "bytes": 141043,
-      "sha256": "9c7c4140ed8ea50e5fad0192aaaa5e5f02fbed09a607ca86aa3d38021dda2bb8"
+      "bytes": 141158,
+      "sha256": "746d9f7cfeb14d64f2324feecf2eef88777c83728b01d54c756e6d112f5ca384"
     },
     {
       "path": "deliverables/excel-monthly-detail.png",
-      "bytes": 175726,
-      "sha256": "6a24da261dc864c8b2b7defe790ff85a5209825b75a92d3117327d050281abf5"
+      "bytes": 173666,
+      "sha256": "733a414fd556ba51a2ddef3c3f2e02a11737c419ae1b6c204ad66aed409c2999"
     },
     {
       "path": "deliverables/excel-monthly-report.png",
-      "bytes": 231378,
-      "sha256": "3da6adf6681a3b038a69964385679e3855cd32a33592851149b2d83222440292"
+      "bytes": 231055,
+      "sha256": "3369089713eb2c5130b6076cddab82ffb261d2ded064099b97de53fc4d6a5b95"
     },
     {
       "path": "deliverables/excel-sales-overview.png",
-      "bytes": 127273,
-      "sha256": "c2bdf221c650683f14157905e62f3ffb67615ecf21895768741881bc41f47453"
+      "bytes": 127378,
+      "sha256": "5e60a6309c82bd2cfcd3bf5140f54ea0afbc43a80ac1a4d0a59941c48491e454"
     },
     {
       "path": "deliverables/excel-sales-review.png",
-      "bytes": 269428,
-      "sha256": "550267582729c5bcda961b2c644a003659094cc4eb5695a97516667ee40338d1"
+      "bytes": 264427,
+      "sha256": "ba25bec8384c74c6494bce0003d230fded87fc37d493998629b8c1c5766a7f9f"
     },
     {
       "path": "deliverables/monthly-sales-trend.png",
@@ -351,33 +361,43 @@
     },
     {
       "path": "deliverables/monthly-sales_2018-12.xlsx",
-      "bytes": 37765,
-      "sha256": "313d6e37fced81ef85890216813201e2275cf2ce90b8d604ef7e9aaa6a158e6b"
+      "bytes": 45852,
+      "sha256": "b045de166487e33a95bdf25a1fa1e659b9efd03a73bc701babfc5b843dfc43a3"
+    },
+    {
+      "path": "deliverables/portfolio-cover-wide.png",
+      "bytes": 287476,
+      "sha256": "104ffd24aa0778d277508a62cd5eca01b045e34786b552161589f945b0414f86"
     },
     {
       "path": "deliverables/portfolio-cover.png",
-      "bytes": 178730,
-      "sha256": "bb83b298eabebc43b8e98124e326ae5a64c257ff061644074a2c331216270224"
+      "bytes": 354260,
+      "sha256": "a11c99b0f34bb09f93652e3d5da09f24913512672eb31e93c91cb232482e5056"
+    },
+    {
+      "path": "deliverables/portfolio-motion.webm",
+      "bytes": 343940,
+      "sha256": "a156c71eb0f171ba37fcb0406c5ef3227e3925576e2ad647b390d68223b5d06f"
     },
     {
       "path": "deliverables/powerbi-drivers.png",
-      "bytes": 111647,
-      "sha256": "74ad19ea3e1dd32bf37d423b47c86dc886c2cc78aed355b88fb6ba1d0d6e936b"
+      "bytes": 122125,
+      "sha256": "2b25c3f6301dc9f2841e704eefdccd403b05e8ed6882e785a49ce19f5182e129"
     },
     {
       "path": "deliverables/powerbi-overview.png",
-      "bytes": 130972,
-      "sha256": "1a93c1061a40f948ac03fb41504b4dc9fc5e57223bfa5bc30449239633dc147d"
+      "bytes": 144085,
+      "sha256": "e401c9775c6f33d8d996e2f30688478e3daea264af1126a7481fec6275bd695b"
     },
     {
       "path": "deliverables/powerbi-products.png",
-      "bytes": 205910,
-      "sha256": "377f7748252771557fed1e492c134afcc8f07a01cf0e3ccd27068e4ebce9334b"
+      "bytes": 235268,
+      "sha256": "7430452d1869bed17b0e843cfa49468c88827363936e46068c5c52af46b15e6e"
     },
     {
       "path": "deliverables/powerbi-quality.png",
-      "bytes": 216797,
-      "sha256": "2523edb86a2b656b3cc9b92e5a4d6c4653dfe6011ec02c9eb61a4aa6a9e081ed"
+      "bytes": 235589,
+      "sha256": "0608caaf3469551eba824a35d207a8bac5f0ae6e5a8b9befa96093b1bf630111"
     },
     {
       "path": "deliverables/review_actions.csv",
@@ -386,8 +406,18 @@
     },
     {
       "path": "deliverables/sales-review.html",
-      "bytes": 9297,
-      "sha256": "31b89151e588f8a0a8cbc4ce12dbc66c3e72febba95d83e5678be59213cf6dec"
+      "bytes": 9325,
+      "sha256": "9b5962b2dd56ed82b060b3ecdc0ab5ffe5391d5d8ef299266fcc97d94558fcde"
+    },
+    {
+      "path": "deliverables/tableau-sales-preview.png",
+      "bytes": 159839,
+      "sha256": "e50252a11bb800c28cd3f9fc5c91648eb6d28b9bf6fc1beb312701db37538f8f"
+    },
+    {
+      "path": "design-tokens.json",
+      "bytes": 1280,
+      "sha256": "975a8acbade2bf54fcefbbd399565bc393e047a82033a9abdad570c737c642b1"
     },
     {
       "path": "docs/DESIGN.md",
@@ -435,9 +465,19 @@
       "sha256": "d668047dd42de167631103eb06e1a9664871f008a3a597fec35ed52a625a643d"
     },
     {
+      "path": "docs/TABLEAU_REVIEW.md",
+      "bytes": 1116,
+      "sha256": "6e3d0025d4f180e73572138c9e83398577532057eeaff4762b548d79125aeaa4"
+    },
+    {
       "path": "docs/UPWORK_LISTING.md",
       "bytes": 915,
       "sha256": "bb2fd2f5626aa0fe9a1da8652c07e73e8929787331a214f747638a3862e56b5d"
+    },
+    {
+      "path": "docs/VISUAL_DESIGN.md",
+      "bytes": 2347,
+      "sha256": "ee0fe0c000f1e54d5765e9f3b8c18d2308e3affb4ba14059f61f01c615e3c483"
     },
     {
       "path": "docs/independent-verification.json",
@@ -566,8 +606,8 @@
     },
     {
       "path": "powerbi/SalesExplorer.Report/StaticResources/RegisteredResources/SalesTheme.json",
-      "bytes": 536,
-      "sha256": "3bf491e2c323ef913a7c2d0e2a97ea2000291fbaa006b2a5dd8d33e609513ee1"
+      "bytes": 540,
+      "sha256": "7901b3a10af2c34330ed8f377a73707d5fd61893ba194ce6b8875b30e131564d"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition.pbir",
@@ -576,308 +616,308 @@
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/page.json",
-      "bytes": 1862,
-      "sha256": "01e835c8f7e2df9b62acb5798e70f1c3031ce64ccfbcd2dcef0334234aeb6a45"
+      "bytes": 1860,
+      "sha256": "9ba059147908d744884b083a9a58127bb6e33c05e75e4119263ad2c9755dd1b1"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/brand/visual.json",
-      "bytes": 2977,
-      "sha256": "692f82f5ac0fa03c88af99ce9ae647fa27a2cc226fedb48b4e3daaecb48f5bb2"
+      "bytes": 2975,
+      "sha256": "a2e691d6f1268afd219bd34bb7ea420c845584743033f88603874984b00d2224"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/bridgeHelp/visual.json",
-      "bytes": 3119,
-      "sha256": "3885c2ce5bb7ffacb6ae4db4b83c6767b78b8c2a6d8f758175d95783a52cc0bb"
+      "bytes": 3117,
+      "sha256": "d6fb77c395e4d0aa4cdd14bdce1d0a503138ed79db0626245d417b8cb5ff4ae7"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/category/visual.json",
-      "bytes": 4932,
-      "sha256": "2134de18527d38fcfb347f4661053952b3f0a6ce03e5d1ce6e85421d67f188a3"
+      "bytes": 4962,
+      "sha256": "b915857ff782d7b4c720c8c6ed6eb5a19b733a2168ff9421ed01d990bccb4173"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/categoryChart/visual.json",
-      "bytes": 9015,
-      "sha256": "6e392a6bc5bf1b2e663af831339f7141920cd24d897037497ec8009aaa7eefc5"
+      "bytes": 9012,
+      "sha256": "5b0a41aace38c66488ab56c0838a822077e0a5a3ea804990feccc1392efe92c9"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/effect0/visual.json",
-      "bytes": 4215,
-      "sha256": "5fcab8e868512ed5c62af4ed92da4d8593ed03ffb75a454e1d9707264066e272"
+      "bytes": 4046,
+      "sha256": "e75d7eb74b8b1022e2dfaec59b03305a6700ce73a89c01eef180f65cbcf7e30f"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/effect1/visual.json",
-      "bytes": 4221,
-      "sha256": "cd226e3b7c60dc4d659b8900ca4b401453db7307593e9ee643887bcc1af009c3"
+      "bytes": 4052,
+      "sha256": "986cfce0b50a28304469e417aaac487a2278acf25f2aa5414ee875378c2b9b31"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/effect2/visual.json",
-      "bytes": 4171,
-      "sha256": "3d5efca936a3c44ca792e2e3400c368d70a460939d513ee66932a3ec6ba18367"
+      "bytes": 4002,
+      "sha256": "9a3a9bb866e221f3210e468cb603d1bcda5cbfb049e8ea0697e32c8bf3fa4118"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/footer/visual.json",
-      "bytes": 3041,
-      "sha256": "32da9cd82e1d92c4c4439f09af4920b68b1905dcefd9afc7cb5b8ad770c9c0ee"
+      "bytes": 3036,
+      "sha256": "a8f735957924dfbdc5cf5d136ad9ac72960eb281a2af3a5e1ed3dad941c491ba"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/headline/visual.json",
-      "bytes": 4141,
-      "sha256": "afd902badd5582bb441f9df881942467d8165577c2c389357b747ca0fd2fffbd"
+      "bytes": 3972,
+      "sha256": "479f0f35f3dfa25dac088519ce6f43781e587e99cec543b34767f40db743a13c"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/period/visual.json",
-      "bytes": 4157,
-      "sha256": "96020ad44aee62be9267d5e94da039b12c887c0ebcafa9c693191e5e7a498b49"
+      "bytes": 3988,
+      "sha256": "40bf8afd071166a5bfc7e7ba73b4b8fc3afba7e15eaef0c3875d89e3cc31a200"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/region/visual.json",
-      "bytes": 4920,
-      "sha256": "52ecb087a7e2437e26e059189d21446769b76521d6c55475778bc64633f444e0"
+      "bytes": 5030,
+      "sha256": "62d0eea0d558642a3c66bb33c93b58e2b2c90fdaccf7e944a425c2382d6c61bc"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/regionChart/visual.json",
-      "bytes": 9006,
-      "sha256": "fc4171e118d3644cad4cb13379222bfe986f2bcfa547bb0e5b94f90e6c2cd919"
+      "bytes": 9003,
+      "sha256": "22fa1562e3933a4c5a1ee534389ae182a2522a236ca2a8d52fa144ae2d01a7a0"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/reportMonth/visual.json",
-      "bytes": 4948,
-      "sha256": "1929acb8d4d275a0b1f245cfa2a8b76811e5f7d474388ffef151489adb9174a4"
+      "bytes": 4978,
+      "sha256": "052e2383bb3f14332e5b8c9ab82553e108a85b5b10f29cbb5a72299ff84321be"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/subtitle/visual.json",
-      "bytes": 3028,
-      "sha256": "f3c41ce42e95b0518ba7e82016fe50f37fcdf6b6419dfcdd7a7d00cc90adb1a7"
+      "bytes": 3026,
+      "sha256": "c86c973da85a477f59b6293acb4c9f748653c0e38a8b370fbc41e27e6d72c2b7"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/drivers/visuals/title/visual.json",
-      "bytes": 2962,
-      "sha256": "3072416df0dcfe5972fd6fd68a8e63c500d6610f68e4d6add4b52a60cf8f3a4c"
+      "bytes": 2970,
+      "sha256": "0770356841ea04a1d711b3efefddb75af5899bfb8d6dbb01b61b0c5cbcc7a785"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/pages.json",
-      "bytes": 245,
-      "sha256": "760cf303f2b082e244b882b6659e114e0246f76682547d4aed70457768da2459"
+      "bytes": 243,
+      "sha256": "5d1fe0ff0f18eecea98606cf44ac4edd2155cae1ea7848686924a80f08ebe747"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/page.json",
-      "bytes": 1027,
-      "sha256": "2acc3bee93641b133e96abb2a32e9b5a65a9a0928944b6213d89952cd1c26a1a"
+      "bytes": 1025,
+      "sha256": "4306bb26d96cadb081460ada72101062813e96292a1f7a80b8dc9bb8ed438d32"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/brand/visual.json",
-      "bytes": 2977,
-      "sha256": "692f82f5ac0fa03c88af99ce9ae647fa27a2cc226fedb48b4e3daaecb48f5bb2"
+      "bytes": 2975,
+      "sha256": "a2e691d6f1268afd219bd34bb7ea420c845584743033f88603874984b00d2224"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/category/visual.json",
-      "bytes": 4932,
-      "sha256": "2134de18527d38fcfb347f4661053952b3f0a6ce03e5d1ce6e85421d67f188a3"
+      "bytes": 4962,
+      "sha256": "b915857ff782d7b4c720c8c6ed6eb5a19b733a2168ff9421ed01d990bccb4173"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/footer/visual.json",
-      "bytes": 3041,
-      "sha256": "32da9cd82e1d92c4c4439f09af4920b68b1905dcefd9afc7cb5b8ad770c9c0ee"
+      "bytes": 3036,
+      "sha256": "a8f735957924dfbdc5cf5d136ad9ac72960eb281a2af3a5e1ed3dad941c491ba"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/period/visual.json",
-      "bytes": 4157,
-      "sha256": "96020ad44aee62be9267d5e94da039b12c887c0ebcafa9c693191e5e7a498b49"
+      "bytes": 3988,
+      "sha256": "40bf8afd071166a5bfc7e7ba73b4b8fc3afba7e15eaef0c3875d89e3cc31a200"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/product/visual.json",
-      "bytes": 4482,
-      "sha256": "5a680a3c6482e0f7b422a7cbe98fed3e94179a1f03bc9c6b40151256823e35d0"
+      "bytes": 4512,
+      "sha256": "c2d2c3aed274431de7b10258b8c5898bb8dc9f19a6501ab879ad536adb6be64f"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/productHistory/visual.json",
-      "bytes": 6842,
-      "sha256": "da16faa1a6a08696caa4990bb18f658778d8e601aa92dce7d65631c07e0a6916"
+      "bytes": 6839,
+      "sha256": "b0c3d8782d6299bf16d007291c16ecf6f05e4f8382044dcf84b7f4e918b7b1f2"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/productReview/visual.json",
-      "bytes": 5205,
-      "sha256": "59f12dbfd1a07ac10c81c89cf02c0f57d205cb882d0ee4d649cb302526862bcb"
+      "bytes": 5171,
+      "sha256": "4886a8779da2ace2f86c5d7e06787912c9550b61fca5341cec48374fcab04aa2"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/region/visual.json",
-      "bytes": 4920,
-      "sha256": "52ecb087a7e2437e26e059189d21446769b76521d6c55475778bc64633f444e0"
+      "bytes": 5030,
+      "sha256": "62d0eea0d558642a3c66bb33c93b58e2b2c90fdaccf7e944a425c2382d6c61bc"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/reportMonth/visual.json",
-      "bytes": 4948,
-      "sha256": "1929acb8d4d275a0b1f245cfa2a8b76811e5f7d474388ffef151489adb9174a4"
+      "bytes": 4978,
+      "sha256": "052e2383bb3f14332e5b8c9ab82553e108a85b5b10f29cbb5a72299ff84321be"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/reviewHelp/visual.json",
-      "bytes": 3127,
-      "sha256": "f7fdeb9321e209f577ec455961428e9e3f082fe88d86e7be10a1859f9ae4ded8"
+      "bytes": 3125,
+      "sha256": "3049d9917afc739e1ff91c8adb7c2979d865057b0d66e6c636f4d2e4b27be04a"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/sourceLines/visual.json",
-      "bytes": 4697,
-      "sha256": "df17c0abe32d8616e267d2f66059b01c3430b61fdef8a0a18bedc15eb518de18"
+      "bytes": 4663,
+      "sha256": "fd23551993dbff5f943e2e85a69793f75641f97c8b3341c0a89e50f0aeeb5440"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/subtitle/visual.json",
-      "bytes": 3021,
-      "sha256": "f77a5c8f152098a025631a3cfb65daa3a5e14b45fa86bd501c8ae6180e301a6d"
+      "bytes": 3019,
+      "sha256": "d2fc0be3fb153a6422b5e68dae4598cbf425ddd8a70441f37164562eadebf721"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/products/visuals/title/visual.json",
-      "bytes": 2957,
-      "sha256": "df8efbc1771ad12a6c8cae8b9378b4e8b90f7cf5d1e3a269d15970b8cc4f19f0"
+      "bytes": 2965,
+      "sha256": "5c82ca368e9160481080db31e060d6b89575ef71603223ac5b72cc60795addc9"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/quality/page.json",
-      "bytes": 770,
-      "sha256": "5540beaabf8f1759b54238afac790b099fd4f51420b9b5ac0f955aa351163c3d"
+      "bytes": 768,
+      "sha256": "650a0c50b78a60bac4a84b85ab7574ad77aa8a3ef42902386f682605d20e2cb9"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/quality/visuals/basis/visual.json",
-      "bytes": 3262,
-      "sha256": "0d456ef8530ae9269ea8828410944da7a66ab0b2db2bcd5171118c3cd2a81777"
+      "bytes": 3260,
+      "sha256": "0a193c5002cc8432b6a3b606885e3932f062305d7aa5f6c960d293f6e3a1a04e"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/quality/visuals/brand/visual.json",
-      "bytes": 2977,
-      "sha256": "692f82f5ac0fa03c88af99ce9ae647fa27a2cc226fedb48b4e3daaecb48f5bb2"
+      "bytes": 2975,
+      "sha256": "a2e691d6f1268afd219bd34bb7ea420c845584743033f88603874984b00d2224"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/quality/visuals/coverage/visual.json",
-      "bytes": 3886,
-      "sha256": "7b7fcf41a68871be2daf7f80fdd0e2a67efef38a8dc98e5bd26065545ef8d540"
+      "bytes": 3852,
+      "sha256": "897b16f854303212efb9479b673ab73404e0b6c76d28105398f0483eac30c505"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/quality/visuals/footer/visual.json",
-      "bytes": 3041,
-      "sha256": "32da9cd82e1d92c4c4439f09af4920b68b1905dcefd9afc7cb5b8ad770c9c0ee"
+      "bytes": 3036,
+      "sha256": "a8f735957924dfbdc5cf5d136ad9ac72960eb281a2af3a5e1ed3dad941c491ba"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/quality/visuals/limits/visual.json",
-      "bytes": 3267,
-      "sha256": "a8bae3587af676ad366d83a0b2b6ea5aac4a6dabbb353dfbfe83e522b6db2bea"
+      "bytes": 3265,
+      "sha256": "3c24349d451acb744d7fded3fb5c50cb4b6140181304257450b78ab65ce5c005"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/quality/visuals/quality/visual.json",
-      "bytes": 3404,
-      "sha256": "0dd56ecb76622bbe06ee2ac9318e0c1ca1077fece2f06e2ff333e360057efa66"
+      "bytes": 3402,
+      "sha256": "c19885c8fb099f973dc102706ccfd6f0c6b89cc03450e6af112854b1201e8072"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/quality/visuals/refresh/visual.json",
-      "bytes": 3304,
-      "sha256": "6e7e36740a06eed9ad7e100df2b8ce7cd3baca1b54e40ad106a668dad4ee9469"
+      "bytes": 3302,
+      "sha256": "8ab12beea1f32896e42c107151da9374a124b7bf0181bd0224697f177a0dab87"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/quality/visuals/subtitle/visual.json",
-      "bytes": 3014,
-      "sha256": "a8bc502668f05374d84ccbcb76b341ac1eeffc8853d6f3a8d50393e018ef1cc8"
+      "bytes": 3012,
+      "sha256": "481792ad5f59e4b53b909ac9d82129499f58b322caa00626143280be28607e96"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/quality/visuals/title/visual.json",
-      "bytes": 2958,
-      "sha256": "3d50dd3956294bade31d96a3ea45ebd40cd682f0211d884649a5ed79b97d6502"
+      "bytes": 2966,
+      "sha256": "e8a607077d50c1ba129c0465bfefe9c456dd5ad7721ae7ee9591464f219d8195"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/page.json",
-      "bytes": 772,
-      "sha256": "826d5e05bb31f70857093f218d7829c41f351634ed2593613e6db1a1857d3f75"
+      "bytes": 770,
+      "sha256": "493b697734989c4c57a8a8724ce6971b4f4b6dc2b774cc845b6ad904cc794f22"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/brand/visual.json",
-      "bytes": 2977,
-      "sha256": "692f82f5ac0fa03c88af99ce9ae647fa27a2cc226fedb48b4e3daaecb48f5bb2"
+      "bytes": 2975,
+      "sha256": "a2e691d6f1268afd219bd34bb7ea420c845584743033f88603874984b00d2224"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/category/visual.json",
-      "bytes": 4932,
-      "sha256": "2134de18527d38fcfb347f4661053952b3f0a6ce03e5d1ce6e85421d67f188a3"
+      "bytes": 4962,
+      "sha256": "b915857ff782d7b4c720c8c6ed6eb5a19b733a2168ff9421ed01d990bccb4173"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/change0/visual.json",
-      "bytes": 4180,
-      "sha256": "230d582f864fb7a2139062f2a3f890dc50922cf9c01f6f983e3948f7a14e5471"
+      "bytes": 4011,
+      "sha256": "677b7a77e44d7c95b6f71d2c5d142717929c420cf4915ec4aa8a9910c60f6d29"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/change1/visual.json",
-      "bytes": 4184,
-      "sha256": "3814f9d604699ecf58843e7443f0182376787ebc3edd92741b5e0bbf9b71936e"
+      "bytes": 4015,
+      "sha256": "99c3839ad2df84703afd85e3061d8ae695d8c161a0f6ec387ca267c4f8f75662"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/change2/visual.json",
-      "bytes": 4175,
-      "sha256": "6b9555f004dc20668e387b541836f194e6eb75de46057fb7e560567ee5a7405e"
+      "bytes": 4006,
+      "sha256": "ef740a8be5a610c0c988de39fa5cfab7733d8b8d897899368231551f44515a0f"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/footer/visual.json",
-      "bytes": 3041,
-      "sha256": "32da9cd82e1d92c4c4439f09af4920b68b1905dcefd9afc7cb5b8ad770c9c0ee"
+      "bytes": 3036,
+      "sha256": "a8f735957924dfbdc5cf5d136ad9ac72960eb281a2af3a5e1ed3dad941c491ba"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/headline/visual.json",
-      "bytes": 4141,
-      "sha256": "8b43c14354ec8d8dca8bd2a72f4effe7e0f72e584326002e94323a3ec8ac32c2"
+      "bytes": 3972,
+      "sha256": "96eac709a979a23e8eb4a211941280701db0f147d31f09debba093246bc3aecd"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/kpi0/visual.json",
-      "bytes": 4155,
-      "sha256": "24bef8e69f418610fd7babae5cd44804dd2597dcc26e94ae5650d6c71fe5ff2a"
+      "bytes": 3986,
+      "sha256": "cf4e69c194ab5a8c438842e0c4833204455c041aa0bb44b8da54779e1eabf1f1"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/kpi1/visual.json",
-      "bytes": 4160,
-      "sha256": "85b8f84940b3bda5d6f1f44cfe99bdb58f5b13e2934b00faf3bb12f3dbd8fe8c"
+      "bytes": 3991,
+      "sha256": "b8871026d48cb7c18ca55830605056b014be09372b204ebd808029139cb2f849"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/kpi2/visual.json",
-      "bytes": 4158,
-      "sha256": "f345a152e9a6ba48e7cb430e79068fdac0b60749fc733dc49a0431c846db9e15"
+      "bytes": 3989,
+      "sha256": "3d4f61ba6501a591d155df12aba13a9802f2f75675fd22ea89944bd8262b27ad"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/period/visual.json",
-      "bytes": 4157,
-      "sha256": "96020ad44aee62be9267d5e94da039b12c887c0ebcafa9c693191e5e7a498b49"
+      "bytes": 3988,
+      "sha256": "40bf8afd071166a5bfc7e7ba73b4b8fc3afba7e15eaef0c3875d89e3cc31a200"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/region/visual.json",
-      "bytes": 4920,
-      "sha256": "52ecb087a7e2437e26e059189d21446769b76521d6c55475778bc64633f444e0"
+      "bytes": 5030,
+      "sha256": "62d0eea0d558642a3c66bb33c93b58e2b2c90fdaccf7e944a425c2382d6c61bc"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/reportMonth/visual.json",
-      "bytes": 4948,
-      "sha256": "1929acb8d4d275a0b1f245cfa2a8b76811e5f7d474388ffef151489adb9174a4"
+      "bytes": 4978,
+      "sha256": "052e2383bb3f14332e5b8c9ab82553e108a85b5b10f29cbb5a72299ff84321be"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/ribbon/visual.json",
-      "bytes": 8623,
-      "sha256": "6bb15e2cfcc44a3ce4b12c293f124996fb51a33545d298566a2ac1e95fdf80db"
+      "bytes": 8620,
+      "sha256": "54b0cba29e5dcd312209b65c4c7f389d74a288fbe2dd0c6287a08cf258f32381"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/ribbonHelp/visual.json",
-      "bytes": 3128,
-      "sha256": "d8a8e0d097371784f8ba98bed404146ded396b76387bdc93423eebf9e4ef8add"
+      "bytes": 3126,
+      "sha256": "b602e712b2635771ff4f35c15aed89b49181fd1579f013e5cb41a6c96b660f45"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/subtitle/visual.json",
-      "bytes": 3011,
-      "sha256": "96e668eccf3d92b6a52349aa30740fde70a11f59548012b26dd6754575370363"
+      "bytes": 3009,
+      "sha256": "21c16f76a2fb89d1a8cd54b01703e778d813dac583faf8a404b385688c28a77b"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/pages/shape/visuals/title/visual.json",
-      "bytes": 2958,
-      "sha256": "e0f6c996f2faa601fec26b04ff494623a52a07d736d3c413dfc94a1622c957c0"
+      "bytes": 2966,
+      "sha256": "a627863043fada735b12f48d49ff943227644caebcfeb686d4574d436f9440d2"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/report.json",
-      "bytes": 1072,
-      "sha256": "42d778a7d2ea007b839e3ff162fe9259d75813295193674a5f09c2c52b173242"
+      "bytes": 1174,
+      "sha256": "3442dacd95126e3fde310d54ebfa2ee39a71bee04260955e0e2316745f7f4d20"
     },
     {
       "path": "powerbi/SalesExplorer.Report/definition/version.json",
-      "bytes": 154,
-      "sha256": "79141fb0e4ed866953772344c3fc65ec1e5a10beac56fedbad151518396dccfb"
+      "bytes": 152,
+      "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7"
     },
     {
       "path": "powerbi/SalesExplorer.SemanticModel/.platform",
@@ -1005,6 +1045,21 @@
       "sha256": "3bf491e2c323ef913a7c2d0e2a97ea2000291fbaa006b2a5dd8d33e609513ee1"
     },
     {
+      "path": "presentation/build_cover.py",
+      "bytes": 2396,
+      "sha256": "2ac60de47b08a8a60fdffd01ad5b719dc8bc8cfed2d7a33f25d307128b5f6531"
+    },
+    {
+      "path": "presentation/cover-template.html",
+      "bytes": 4116,
+      "sha256": "a86b75770d581db473cf62dff6a2a3ed75b6278872773b47ab16a085dd517b52"
+    },
+    {
+      "path": "presentation/cover.json",
+      "bytes": 596,
+      "sha256": "36f9a20b04af752f51d3706e579058539dd177c95ab1680fa046ff7c50351f20"
+    },
+    {
       "path": "refresh.py",
       "bytes": 6502,
       "sha256": "08238acdb5d1372ea91c49cd170436002fd40aa0d1f7e1d13d0f0f2f4bf1eb90"
@@ -1076,13 +1131,38 @@
     },
     {
       "path": "src/report_style.py",
-      "bytes": 9150,
-      "sha256": "de7f94a39e3fd82dc882234acb4eec0d8da1741bf84aaff68880a62448cd7ec1"
+      "bytes": 9288,
+      "sha256": "bb24eaa54ddef0035d27a183f1b22452f3a319b48c8705cc4211a2e41b15e0d1"
     },
     {
       "path": "src/sales.py",
       "bytes": 11951,
       "sha256": "d68baca2497b5a33e4d9039e184815523c6534021c1af155cb4ca46672bb4ec8"
+    },
+    {
+      "path": "tableau/Data/analysis.csv",
+      "bytes": 5651,
+      "sha256": "b611fdeba8ad726bfc4a06b3c68bbc8f3dc7006cfce1451655b0d2e085e2cb6a"
+    },
+    {
+      "path": "tableau/Monthly Sales Review.twb",
+      "bytes": 64884,
+      "sha256": "38ee989f0a95a25a6a899d8c94d9870aad94c3344b7fd338d124db8c6a3a7bd6"
+    },
+    {
+      "path": "tableau/README.md",
+      "bytes": 3328,
+      "sha256": "9495ab1f47941e22e17228cb1150a9ae1e951a1eaa515070e16189c5a6591120"
+    },
+    {
+      "path": "tableau/VISUAL_DESIGN.md",
+      "bytes": 2372,
+      "sha256": "c5d7f8da8db2d14ece760ceada07086f816ca66d898efd46d290daa4e7b58257"
+    },
+    {
+      "path": "tableau/verification.json",
+      "bytes": 623,
+      "sha256": "1ef12caa5e95f244dffbbf06ba123d93faebd72c6d03b3ac53d6ef9ea8ab4428"
     },
     {
       "path": "tests/test_packaging.py",
@@ -1100,9 +1180,24 @@
       "sha256": "fc9464dcc74269aadfd7f9e9de7350bf267948f031ea41a19133c35cdf2c89fa"
     },
     {
+      "path": "tools/apply_native_theme.py",
+      "bytes": 5917,
+      "sha256": "c89d2e631dc69b6939509c60295f6e87edd0b7868b94417d1f22c667e2b6f5b0"
+    },
+    {
+      "path": "tools/apply_visual_theme.py",
+      "bytes": 4114,
+      "sha256": "09a43f46fb9562e4b832dc6b8ebc50533996deb94e1290aa3702be86ab257a5f"
+    },
+    {
       "path": "tools/build_briefing.py",
-      "bytes": 9395,
-      "sha256": "88050c7c77a480b9b5bd8edd1e5ebc5fdb3e315cb37c3739829cbfc68617eafd"
+      "bytes": 9663,
+      "sha256": "29d5061f06556f415078e35691fb81cdd9e6216add9a71452616f0158a69a376"
+    },
+    {
+      "path": "tools/build_interactive.py",
+      "bytes": 2355,
+      "sha256": "01317a379ee148061b1b3f9cdb76d02dc17713965c2ba3a4cbc638dcc4519680"
     },
     {
       "path": "tools/build_presentation.py",
@@ -1111,13 +1206,18 @@
     },
     {
       "path": "tools/build_sales_powerbi.py",
-      "bytes": 28697,
-      "sha256": "f7df8e9a20c459a4b453e8d8848b718dcbf37241d437f82d722d1336088ee84d"
+      "bytes": 29791,
+      "sha256": "04223531cbf80a35f31a37c18bfae93872160aab02c6fe7032372b3b3ec581fc"
+    },
+    {
+      "path": "tools/build_tableau.py",
+      "bytes": 14560,
+      "sha256": "e00ee008498c5d6b9da581d3d13e154831122542d790e276cd5dc7ef288bd059"
     },
     {
       "path": "tools/build_workbook.mjs",
-      "bytes": 19097,
-      "sha256": "265e617d6d368793003ad47c1a358de28e762806f2307208a51b89ab2b03570f"
+      "bytes": 19364,
+      "sha256": "39a9858fc3a9d560c1c4555bff0c150c7dc59d3010d72fbf7c03ff668aabb7bf"
     },
     {
       "path": "tools/demo_refresh.py",
@@ -1131,8 +1231,13 @@
     },
     {
       "path": "tools/package_project.py",
-      "bytes": 5984,
-      "sha256": "c06df48f1a787b38cdbf327337677db176a152e8a01519d5b9dc0cfdf5fce363"
+      "bytes": 6183,
+      "sha256": "ca3448f4f34747a9843e96ccf0c48b48d3600fab308d7e1434357e37bba8e228"
+    },
+    {
+      "path": "tools/package_tableau.py",
+      "bytes": 2666,
+      "sha256": "a5e86663ee965057e659c9b1bde720b773f71d6c49bf85471617c105e754f85a"
     },
     {
       "path": "tools/verify_outputs.py",

@@ -574,7 +574,7 @@ def report():
             9,
             MINT,
         )
-        text(page, "title", title, 32, 28, 1216, 58, 32, INK, "Georgia")
+        text(page, "title", title, 32, 28, 1216, 58, 26, INK, "Segoe UI Semibold")
         text(page, "subtitle", subtitle, 32, 80, 1216, 27, 11)
         text(
             page,
@@ -864,4 +864,7 @@ def report():
 if __name__ == "__main__":
     model()
     report()
+    # Reapply the source-controlled presentation after generation.
+    import subprocess,sys
+    subprocess.run([sys.executable,str(Path(__file__).resolve().parents[1]/"tools"/"apply_native_theme.py")],check=True)
     print(PBI / "SalesExplorer.pbip")

@@ -2,17 +2,18 @@ import {execFileSync} from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createRequire} from 'node:module';
-import {pathToFileURL} from 'node:url';
+import {pathToFileURL,fileURLToPath} from 'node:url';
 const require=createRequire(process.env.ARTIFACT_RUNTIME_ROOT ? path.join(process.env.ARTIFACT_RUNTIME_ROOT,'package.json') : import.meta.url);
 const {Workbook,SpreadsheetFile}=await import(pathToFileURL(require.resolve('@oai/artifact-tool')));
 const stage=path.resolve(process.argv[2]);
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const render=process.argv.includes('--render');
 const a=JSON.parse(await fs.readFile(path.join(stage,'analysis.json'),'utf8'));
 const m=a.metrics,months=a.reports.monthly,notes=a.reports.category_month;
 const wb=Workbook.create();
 const business=wb.worksheets.add('Sales review');
 const main=wb.worksheets.add('Monthly report'),detail=wb.worksheets.add('Monthly detail'),review=wb.worksheets.add('Category review');
-const navy='#20323C',blue='#126F69',muted='#647579',amber='#FFF2CD';
+const navy='#132342',blue='#2458DB',muted='#596883',amber='#FFF2CD';
 const fmt='#,##0.00;[Red](#,##0.00)';
 const date=key=>new Date(key+'-01T12:00:00Z');
 const literal=value=>typeof value==='string'&&value.startsWith('=')?"'"+value:value;
@@ -52,14 +53,14 @@ head(calc,`O${categoryHeader}:S${categoryHeader}`);head(calc,`O${regionHeader}:S
 
 const lastReviewRow=48+Math.max(br.actions.length,1)*3;
 business.showGridLines=false;business.tabColor=navy;
-business.getRange(`A1:P${lastReviewRow}`).format={fill:'#F8F6F1',font:{name:'Arial',size:10,color:navy},rowHeight:23,columnWidth:9,verticalAlignment:'center'};
+business.getRange(`A1:P${lastReviewRow}`).format={fill:'#F5F7FC',font:{name:'Arial',size:10,color:navy},rowHeight:23,columnWidth:9,verticalAlignment:'center'};
 business.getRange(`A1:A${lastReviewRow}`).format.columnWidth=3;
 business.getRange(`P1:P${lastReviewRow}`).format.columnWidth=3;
 function label(range,text,{size=10,color=navy,bold=false,fill=null}={}){
  const r=business.getRange(range);r.merge();r.values=[[text]];r.format.font={name:'Arial',size,color,bold};if(fill)r.format.fill=fill;return r;
 }
 function linked(range,formula,format,size=24){const r=label(range,'',{size,bold:true});r.formulas=[[formula]];r.setNumberFormat(format);return r;}
-function sign(r){r.conditionalFormats.add('cellIs',{operator:'lessThan',formula:0,format:{font:{color:'#B74732'}}});r.conditionalFormats.add('cellIs',{operator:'greaterThan',formula:0,format:{font:{color:'#126F69'}}});}
+function sign(r){r.conditionalFormats.add('cellIs',{operator:'lessThan',formula:0,format:{font:{color:'#C92C74'}}});r.conditionalFormats.add('cellIs',{operator:'greaterThan',formula:0,format:{font:{color:'#2458DB'}}});}
 label('B2:O2','FIELDNOTES / SALES',{size:10,color:muted,bold:true});
 label('B3:O4','The monthly sales review',{size:28});
 label('B5:O5',`${bs.current_start} to ${bs.current_end}  /  vs ${bs.prior_start} to ${bs.prior_end}`,{size:10,color:muted});
@@ -82,7 +83,7 @@ for(const [scope,header,from,to] of [['category',categoryHeader,'B20','H33'],['r
  chart.legend={position:'bottom',textStyle:{typeface:'Arial',fontSize:10}};
  chart.xAxis={axisType:'textAxis',textStyle:{typeface:'Arial',fontSize:10}};
  chart.yAxis={numberFormatCode:'#,##0,"k"',numberFormatSourceLinked:false,textStyle:{typeface:'Arial',fontSize:10}};
- chart.series.items[0].fill='#126F69';chart.series.items[1].fill='#B8C1C7';chart.setPosition(from,to);
+ chart.series.items[0].fill='#2458DB';chart.series.items[1].fill='#9BAAC5';chart.setPosition(from,to);
 }
 label('B34:O34','Sales in source monetary units. Historical sample; currency unspecified.',{size:9,color:muted});
 label('B36:O36','01 / HOW THE TOTAL CHANGED',{bold:true});
@@ -94,7 +95,7 @@ if(!br.actions.length)label('B47:O48',bs.prior?'No declining segments in this co
 for(const [i,r] of br.actions.entries()){
  const row=47+i*3;
  label(`B${row}:G${row}`,`${String(r.priority).padStart(2,'0')}  ${r.segment} / ${r.scope}`,{bold:true});
- const delta=label(`L${row}:O${row}`,r.sales_change,{bold:true,color:'#B74732',size:12});delta.setNumberFormat('+#,##0.00;-#,##0.00;0.00');delta.format.horizontalAlignment='right';
+ const delta=label(`L${row}:O${row}`,r.sales_change,{bold:true,color:'#C92C74',size:12});delta.setNumberFormat('+#,##0.00;-#,##0.00;0.00');delta.format.horizontalAlignment='right';
  label(`B${row+1}:O${row+1}`,r.reason,{size:10,color:muted});
  label(`B${row+2}:O${row+2}`,'Check: '+r.product_ids_to_check,{size:9,color:muted});
 }
@@ -151,7 +152,7 @@ for(let i=0;i<count;i++){
 }
 main.getRange(`A21:A${20+count}`).setNumberFormat('mmm yyyy');main.getRange(`B21:C${20+count}`).setNumberFormat('#,##0');main.getRange(`D21:D${20+count}`).setNumberFormat(fmt);main.getRange(`E21:F${20+count}`).setNumberFormat('0.0%');head(main,'A5:B5');head(main,'A20:G20');
 main.getRange('A35').values=[['Refresh creates a dated version. Review notes are stored separately and rejoined by month + category.']];main.getRange('A35').format.font={size:9,color:muted};
-const chart=main.charts.add('line',detail.getRange(`L${chartHeader}:M${chartHeader+count}`));chart.title='Last 12 observed months · sales';chart.hasLegend=false;chart.titleTextStyle.typeface='Arial';chart.titleTextStyle.fontSize=12;chart.xAxis={axisType:'textAxis',textStyle:{typeface:'Arial',fontSize:9}};chart.yAxis={numberFormatCode:'#,##0,"K"',numberFormatSourceLinked:false,textStyle:{typeface:'Arial',fontSize:10}};chart.series.items[0].line={fill:blue,style:'solid',width:2};chart.setPosition('D5','J13');
+const chart=main.charts.add('line',detail.getRange(`L${chartHeader}:M${chartHeader+count}`));chart.title='Last 12 observed months: sales';chart.hasLegend=false;chart.titleTextStyle.typeface='Arial';chart.titleTextStyle.fontSize=12;chart.xAxis={axisType:'textAxis',textStyle:{typeface:'Arial',fontSize:9}};chart.yAxis={numberFormatCode:'#,##0,"K"',numberFormatSourceLinked:false,textStyle:{typeface:'Arial',fontSize:10}};chart.series.items[0].line={fill:blue,style:'solid',width:2};chart.setPosition('D5','J13');
 wb.recalculate();
 if(bs.prior&&Math.abs(calc.getRange('P11').values[0][0]-bs.sales_change_units/10000)>0.000001)throw Error('Business review change mismatch');
 if(bs.prior&&bs.current.orders&&bs.prior.orders){

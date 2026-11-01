@@ -1,0 +1,19 @@
+{
+  "title": "Monthly Sales",
+  "eyebrow": "SALES PERFORMANCE",
+  "description": "A clear explanation of the month’s movement.",
+  "format": "Tableau · Power BI · Excel",
+  "image": "deliverables/tableau-sales-preview.png",
+  "tokens": "design-tokens.json",
+  "color_roles": {
+    "canvas": "canvas",
+    "surface": "surface",
+    "ink": "ink",
+    "muted": "muted",
+    "primary": "primary",
+    "accent": "accent"
+  },
+  "frame_label": "Monthly sales review",
+  "preview_note": "Historical sample; currency unspecified",
+  "footer": "PYTHON / SQL / BUSINESS REPORTING"
+}

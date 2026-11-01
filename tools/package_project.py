@@ -27,6 +27,7 @@ def build(root=ROOT, results=None):
         from publication import current_output
         selected = current_output(results if results is not None else root/"results")
         folders = ["src","sql","tools","tests","docs","deliverables","data/sample",".github"]
+    folders += ["presentation", "tableau", "powerbi-rebuild"]
     files = {}
     for folder in folders:
         for path in (root/folder).rglob("*"):
@@ -37,7 +38,7 @@ def build(root=ROOT, results=None):
                 or path.name == "package-manifest.json"):
                 continue
             files[rel.as_posix()] = path.read_bytes()
-    root_names = {"README.md","LICENSE","NOTICE",".gitignore",".gitattributes","refresh.py","release.json"}
+    root_names = {"README.md","LICENSE","NOTICE",".gitignore",".gitattributes","refresh.py","release.json","design-tokens.json"}
     for path in root.iterdir():
         if path.is_file() and (path.name in root_names or path.name.startswith("requirements") and path.suffix==".txt"):
             files[path.name] = path.read_bytes()
