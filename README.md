@@ -13,13 +13,13 @@ The November 2026 working-dashboard redesign adds a shared navy, blue and orange
 
 A repeatable monthly performance review using **Python and SQLite**, with a focused **Tableau** decision brief: 9,800 historical sales lines, 4,922 orders and 48 monthly CSV files.
 
-**Updated Tableau decision brief:** [View the full-size preview](deliverables/tableau-sales-preview.png) · [Definitions and scope](docs/TABLEAU_REVIEW.md). [Earlier packaged Tableau workbook (previous layout)](deliverables/Monthly%20Sales%20Review.twbx) · [Editable source and opening guide](tableau/README.md).
+**Updated Tableau decision brief:** [View the full-size preview](deliverables/tableau-sales-preview.png) · [Definitions and scope](docs/TABLEAU_REVIEW.md). [Download the redesigned Tableau workbook](deliverables/Monthly%20Sales%20Review.twbx) · [Editable source and opening guide](tableau/README.md).
 
 ![Tableau sales decision brief](deliverables/tableau-sales-preview.png)
 
 [Preview the four-page report](deliverables/Monthly%20Sales%20Explorer.pdf) · [Download the interactive PBIX](deliverables/Monthly%20Sales%20Explorer.pbix) · [Read the two-page briefing](deliverables/case-study.pdf)
 
-The redesigned Tableau workbook is retained locally; the current preview shows its working interface. Any earlier workbook links are preserved as historical downloads.
+The redesigned Tableau workbook and its editable source are now downloadable. The package includes its reporting CSV and source notices. [Earlier workbook layout](https://github.com/ZakJRademacher/monthly-sales-automation/blob/e885e9667301ddeeec8753f4f63c8b5b43a538ab/deliverables/Monthly%20Sales%20Review.twbx) remains in repository history.
 
 ## Findings
 

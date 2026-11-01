@@ -21,7 +21,7 @@
     <style-rule element="worksheet">
       <format attr="font-family" value="Segoe UI" />
       <format attr="font-size" value="11" />
-      <format attr="color" value="#132342" />
+      <format attr="color" value="#EAF0FC" />
     </style-rule>
     <style-rule element="animation">
       <format attr="animation-on" value="ao-off" />
@@ -158,16 +158,16 @@
       <style>
         <style-rule element="mark">
           <encoding attr="color" field="[none:Series:nk]" type="palette">
-            <map to="#2458DB">
+            <map to="#66A0FF">
               <bucket>"Current"</bucket>
             </map>
-            <map to="#2458DB">
+            <map to="#66A0FF">
               <bucket>"Increase"</bucket>
             </map>
-            <map to="#9BAAC5">
+            <map to="#7891B6">
               <bucket>"Prior"</bucket>
             </map>
-            <map to="#C92C74">
+            <map to="#FFAD72">
               <bucket>"Decline"</bucket>
             </map>
           </encoding>
@@ -201,7 +201,7 @@
       <layout-options>
         <title>
           <formatted-text>
-            <run bold="true" fontcolor="#132342" fontname="Segoe UI" fontsize="14">02  Category contribution to sales change</run>
+            <run bold="true" fontcolor="#EAF0FC" fontname="Segoe UI" fontsize="14">02  Category contribution to sales change</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -235,31 +235,61 @@
           <style-rule element="axis">
             <format attr="font-family" value="Segoe UI" />
             <format attr="font-size" value="10" />
-            <format attr="color" value="#596883" />
+            <format attr="color" value="#A2B2CC" />
             <format attr="title" scope="cols" value="Sales change" />
           </style-rule>
           <style-rule element="cell">
             <format attr="font-family" value="Segoe UI" />
             <format attr="font-size" value="11" />
-            <format attr="color" value="#132342" />
+            <format attr="color" value="#EAF0FC" />
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="header">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
           </style-rule>
           <style-rule element="label">
             <format attr="font-family" value="Segoe UI" />
             <format attr="font-size" value="10" />
-            <format attr="color" value="#596883" />
+            <format attr="color" value="#A2B2CC" />
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="table">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
           </style-rule>
           <style-rule element="worksheet">
-            <format attr="background-color" value="#FFFFFF" />
+            <format attr="background-color" value="#142339" />
             <format attr="display-field-labels" scope="rows" value="false" />
             <format attr="display-field-labels" scope="cols" value="false" />
           </style-rule>
           <style-rule element="gridline">
-            <format attr="stroke-color" value="#E6ECF7" />
+            <format attr="stroke-color" value="#263B57" />
             <format attr="stroke-size" value="1" />
           </style-rule>
           <style-rule element="zeroline">
-            <format attr="stroke-color" value="#ABB8D1" />
+            <format attr="stroke-color" value="#7891B6" />
             <format attr="stroke-size" value="1" />
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="table">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="header">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="cell">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
           </style-rule>
         </style>
         <panes>
@@ -284,7 +314,17 @@
               <style-rule element="mark">
                 <format attr="mark-labels-show" value="true" />
                 <format attr="mark-labels-cull" value="true" />
-                <format attr="color" value="#2458DB" />
+                <format attr="color" value="#66A0FF" />
+                <format attr="color" value="#EAF0FC" />
+              </style-rule>
+              <style-rule element="pane">
+                <format attr="background-color" value="#142339" />
+              </style-rule>
+              <style-rule element="pane">
+                <format attr="background-color" value="#142339" />
+              </style-rule>
+              <style-rule element="mark">
+                <format attr="color" value="#EAF0FC" />
               </style-rule>
             </style>
           </pane>
@@ -298,7 +338,7 @@
       <layout-options>
         <title>
           <formatted-text>
-            <run bold="true" fontcolor="#132342" fontname="Segoe UI" fontsize="14">03  Regional contribution to sales change</run>
+            <run bold="true" fontcolor="#EAF0FC" fontname="Segoe UI" fontsize="14">03  Regional contribution to sales change</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -332,31 +372,61 @@
           <style-rule element="axis">
             <format attr="font-family" value="Segoe UI" />
             <format attr="font-size" value="10" />
-            <format attr="color" value="#596883" />
+            <format attr="color" value="#A2B2CC" />
             <format attr="title" scope="cols" value="Sales change" />
           </style-rule>
           <style-rule element="cell">
             <format attr="font-family" value="Segoe UI" />
             <format attr="font-size" value="11" />
-            <format attr="color" value="#132342" />
+            <format attr="color" value="#EAF0FC" />
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="header">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
           </style-rule>
           <style-rule element="label">
             <format attr="font-family" value="Segoe UI" />
             <format attr="font-size" value="10" />
-            <format attr="color" value="#596883" />
+            <format attr="color" value="#A2B2CC" />
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="table">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
           </style-rule>
           <style-rule element="worksheet">
-            <format attr="background-color" value="#FFFFFF" />
+            <format attr="background-color" value="#142339" />
             <format attr="display-field-labels" scope="rows" value="false" />
             <format attr="display-field-labels" scope="cols" value="false" />
           </style-rule>
           <style-rule element="gridline">
-            <format attr="stroke-color" value="#E6ECF7" />
+            <format attr="stroke-color" value="#263B57" />
             <format attr="stroke-size" value="1" />
           </style-rule>
           <style-rule element="zeroline">
-            <format attr="stroke-color" value="#ABB8D1" />
+            <format attr="stroke-color" value="#7891B6" />
             <format attr="stroke-size" value="1" />
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="table">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="header">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="cell">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
           </style-rule>
         </style>
         <panes>
@@ -381,7 +451,17 @@
               <style-rule element="mark">
                 <format attr="mark-labels-show" value="true" />
                 <format attr="mark-labels-cull" value="true" />
-                <format attr="color" value="#2458DB" />
+                <format attr="color" value="#66A0FF" />
+                <format attr="color" value="#EAF0FC" />
+              </style-rule>
+              <style-rule element="pane">
+                <format attr="background-color" value="#142339" />
+              </style-rule>
+              <style-rule element="pane">
+                <format attr="background-color" value="#142339" />
+              </style-rule>
+              <style-rule element="mark">
+                <format attr="color" value="#EAF0FC" />
               </style-rule>
             </style>
           </pane>
@@ -395,7 +475,7 @@
       <layout-options>
         <title>
           <formatted-text>
-            <run bold="true" fontcolor="#132342" fontname="Segoe UI" fontsize="14">01  The gap emerges across the month</run>
+            <run bold="true" fontcolor="#EAF0FC" fontname="Segoe UI" fontsize="14">01  The gap emerges across the month</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -428,31 +508,61 @@
           <style-rule element="axis">
             <format attr="font-family" value="Segoe UI" />
             <format attr="font-size" value="10" />
-            <format attr="color" value="#596883" />
+            <format attr="color" value="#A2B2CC" />
             <format attr="title" scope="rows" value="Cumulative sales" />
           </style-rule>
           <style-rule element="cell">
             <format attr="font-family" value="Segoe UI" />
             <format attr="font-size" value="11" />
-            <format attr="color" value="#132342" />
+            <format attr="color" value="#EAF0FC" />
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="header">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
           </style-rule>
           <style-rule element="label">
             <format attr="font-family" value="Segoe UI" />
             <format attr="font-size" value="10" />
-            <format attr="color" value="#596883" />
+            <format attr="color" value="#A2B2CC" />
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="table">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
           </style-rule>
           <style-rule element="worksheet">
-            <format attr="background-color" value="#FFFFFF" />
+            <format attr="background-color" value="#142339" />
             <format attr="display-field-labels" scope="rows" value="false" />
             <format attr="display-field-labels" scope="cols" value="false" />
           </style-rule>
           <style-rule element="gridline">
-            <format attr="stroke-color" value="#E6ECF7" />
+            <format attr="stroke-color" value="#263B57" />
             <format attr="stroke-size" value="1" />
           </style-rule>
           <style-rule element="zeroline">
-            <format attr="stroke-color" value="#ABB8D1" />
+            <format attr="stroke-color" value="#7891B6" />
             <format attr="stroke-size" value="1" />
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="table">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="header">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
+          </style-rule>
+          <style-rule element="cell">
+            <format attr="background-color" value="#142339" />
+            <format attr="color" value="#EAF0FC" />
           </style-rule>
         </style>
         <panes>
@@ -476,7 +586,17 @@
               <style-rule element="mark">
                 <format attr="mark-labels-show" value="false" />
                 <format attr="mark-labels-cull" value="true" />
-                <format attr="color" value="#2458DB" />
+                <format attr="color" value="#66A0FF" />
+                <format attr="color" value="#EAF0FC" />
+              </style-rule>
+              <style-rule element="pane">
+                <format attr="background-color" value="#142339" />
+              </style-rule>
+              <style-rule element="pane">
+                <format attr="background-color" value="#142339" />
+              </style-rule>
+              <style-rule element="mark">
+                <format attr="color" value="#EAF0FC" />
               </style-rule>
             </style>
           </pane>
@@ -491,7 +611,7 @@
     <dashboard name="01  Decision brief">
       <style>
         <style-rule element="dashboard">
-          <format attr="background-color" value="#FFFFFF" />
+          <format attr="background-color" value="#142339" />
         </style-rule>
         <style-rule element="dash-text">
           <format attr="wrap" id="dash-text_2" value="on" />
@@ -511,199 +631,322 @@
           <format attr="wrap" id="dash-text_20" value="on" />
         </style-rule>
       </style>
-      <size maxheight="1040" maxwidth="1400" minheight="1040" minwidth="1400" />
+      <size maxheight="1000" maxwidth="1600" minheight="1000" minwidth="1600" />
       <zones>
         <zone h="100000" id="1" type-v2="layout-basic" w="100000" x="0" y="0">
-          <zone h="2967" id="2" type-v2="text" w="100000" x="0" y="0">
+          <zone id="9000" type-v2="text" x="0" y="0" w="13500" h="100000">
             <formatted-text>
-              <run bold="true" fontcolor="#2458db" fontname="Segoe UI" fontsize="10">ZAK RADEMACHER  /  MONTHLY SALES</run>
+              <run fontname="Segoe UI" fontsize="1" fontcolor="#FFFFFF" bold="false" />
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
-              <format attr="border-style" value="none" />
-              <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#FFFFFF" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#111D33" />
             </zone-style>
           </zone>
-          <zone h="6330" id="3" type-v2="text" w="100000" x="0" y="4352">
+          <zone id="9001" type-v2="text" x="1500" y="2400" w="10500" h="6000">
             <formatted-text>
-              <run bold="true" fontcolor="#132342" fontname="Segoe UI" fontsize="32">Why did sales fall while orders rose?</run>
+              <run fontname="Segoe UI" fontsize="30" fontcolor="#8BACFF" bold="true">ZR /</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
-              <format attr="border-style" value="none" />
-              <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#FFFFFF" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#111D33" />
             </zone-style>
           </zone>
-          <zone h="4352" id="4" type-v2="text" w="100000" x="0" y="10880">
+          <zone id="9002" type-v2="text" x="1500" y="10600" w="11000" h="4200">
             <formatted-text>
-              <run bold="false" fontcolor="#596883" fontname="Segoe UI" fontsize="11">December 1–30, 2018 vs the same dates in 2017  /  Matched historical periods  /  Hover over marks for detail</run>
+              <run fontname="Segoe UI" fontsize="16" fontcolor="#FFFFFF" bold="true">MONTHLY</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
-              <format attr="border-style" value="none" />
-              <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#FFFFFF" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#111D33" />
             </zone-style>
           </zone>
-          <zone h="3363" id="5" type-v2="text" w="32335" x="0" y="17012">
+          <zone id="9008" type-v2="text" x="1500" y="14800" w="11000" h="4200">
             <formatted-text>
-              <run bold="true" fontcolor="#596883" fontname="Segoe UI" fontsize="10">RECORDED SALES</run>
+              <run fontname="Segoe UI" fontsize="14" fontcolor="#FFFFFF" bold="true">SALES</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
-              <format attr="border-style" value="none" />
-              <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#edf3ff" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#111D33" />
             </zone-style>
           </zone>
-          <zone h="6528" id="6" type-v2="text" w="32335" x="0" y="20375">
+          <zone id="9003" type-v2="text" x="1500" y="20000" w="11000" h="4200">
             <formatted-text>
-              <run bold="true" fontcolor="#132342" fontname="Segoe UI" fontsize="36">83,030.39</run>
+              <run fontname="Segoe UI" fontsize="9" fontcolor="#99A9C4" bold="false">PERFORMANCE REVIEW</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
-              <format attr="border-style" value="none" />
-              <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#edf3ff" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#111D33" />
             </zone-style>
           </zone>
-          <zone h="3956" id="7" type-v2="text" w="32335" x="0" y="26904">
+          <zone id="9004" type-v2="text" x="1500" y="81000" w="11000" h="16500">
             <formatted-text>
-              <run bold="false" fontcolor="#596883" fontname="Segoe UI" fontsize="11">−12.6% vs matched prior period</run>
+              <run fontname="Segoe UI" fontsize="10" fontcolor="#A7B6CE" bold="false">HISTORICAL ANALYSIS
+
+Compare like periods.
+Keep the population visible.
+
+Zak Rademacher</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
-              <format attr="border-style" value="none" />
-              <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#edf3ff" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#111D33" />
             </zone-style>
           </zone>
-          <zone h="3363" id="8" type-v2="text" w="32335" x="33831" y="17012">
+          <zone id="9005" type-v2="text" x="1500" y="28200" w="10500" h="4200">
             <formatted-text>
-              <run bold="true" fontcolor="#596883" fontname="Segoe UI" fontsize="10">DISTINCT ORDERS</run>
+              <run fontname="Segoe UI" fontsize="12" fontcolor="#FFFFFF" bold="true">DECEMBER 2018</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
-              <format attr="border-style" value="none" />
-              <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#f4f6fb" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#111D33" />
             </zone-style>
           </zone>
-          <zone h="6528" id="9" type-v2="text" w="32335" x="33831" y="20375">
+          <zone id="9006" type-v2="text" x="1500" y="34000" w="10500" h="15400">
             <formatted-text>
-              <run bold="true" fontcolor="#2458db" fontname="Segoe UI" fontsize="36">223</run>
+              <run fontname="Segoe UI" fontsize="13" fontcolor="#A7B6CE" bold="false">MATCHED WINDOW
+01–30 DEC
+
+2018 versus 2017</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
-              <format attr="border-style" value="none" />
-              <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#f4f6fb" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#111D33" />
             </zone-style>
           </zone>
-          <zone h="3956" id="10" type-v2="text" w="32335" x="33831" y="26904">
+          <zone id="9007" type-v2="text" x="1500" y="54600" w="10500" h="18800">
             <formatted-text>
-              <run bold="false" fontcolor="#596883" fontname="Segoe UI" fontsize="11">+33.5% vs 167 prior orders</run>
+              <run fontname="Segoe UI" fontsize="11" fontcolor="#A7B6CE" bold="false">READING ORDER
+
+01  Performance
+02  Contributions
+03  Next check</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
-              <format attr="border-style" value="none" />
-              <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#f4f6fb" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#111D33" />
             </zone-style>
           </zone>
-          <zone h="3363" id="11" type-v2="text" w="32335" x="67663" y="17012">
+          <zone h="3000" id="2" type-v2="text" w="82250" x="15750" y="2200">
             <formatted-text>
-              <run bold="true" fontcolor="#596883" fontname="Segoe UI" fontsize="10">SALES PER ORDER</run>
+              <run fontname="Segoe UI" fontsize="10" fontcolor="#66A0FF" bold="true">MONTHLY SALES  /  DECISION STUDIO</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
+              <format attr="border-color" value="#a2b2cc" />
               <format attr="border-style" value="none" />
               <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#fff0f7" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#142339" />
             </zone-style>
           </zone>
-          <zone h="6528" id="12" type-v2="text" w="32335" x="67663" y="20375">
+          <zone h="7000" id="3" type-v2="text" w="82250" x="15750" y="5800">
             <formatted-text>
-              <run bold="true" fontcolor="#c92c74" fontname="Segoe UI" fontsize="36">372.33</run>
+              <run bold="true" fontcolor="#EAF0FC" fontname="Segoe UI" fontsize="29">Why did sales fall while orders rose?</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
+              <format attr="border-color" value="#a2b2cc" />
               <format attr="border-style" value="none" />
               <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#fff0f7" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#142339" />
             </zone-style>
           </zone>
-          <zone h="3956" id="13" type-v2="text" w="32335" x="67663" y="26904">
+          <zone h="4400" id="4" type-v2="text" w="82250" x="15750" y="12600">
             <formatted-text>
-              <run bold="false" fontcolor="#596883" fontname="Segoe UI" fontsize="11">−34.6%; arithmetic, not a causal explanation</run>
+              <run bold="false" fontcolor="#A2B2CC" fontname="Segoe UI" fontsize="11">December 1–30, 2018 vs the same dates in 2017  /  Matched historical periods  /  Hover over marks for detail</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
+              <format attr="border-color" value="#a2b2cc" />
               <format attr="border-style" value="none" />
               <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#fff0f7" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#142339" />
             </zone-style>
           </zone>
-          <zone h="21563" id="14" name="Sales accumulation" w="84879" x="0" y="34223" />
-          <zone h="10683" id="15" name="Sales accumulation" pane-specification-id="0" param="[analysis].[none:Series:nk]" type-v2="color" w="13323" x="86675" y="37388" />
-          <zone h="23541" id="16" name="Category changes" w="48652" x="0" y="58160" />
-          <zone h="23541" id="17" name="Regional changes" w="48653" x="51347" y="58160" />
-          <zone h="2968" id="18" type-v2="text" w="100000" x="0" y="84470">
+          <zone h="3800" id="5" type-v2="text" w="32500" x="15750" y="19000">
             <formatted-text>
-              <run bold="true" fontcolor="#2458db" fontname="Segoe UI" fontsize="10">THE NEXT CHECK  /  INVESTIGATE THE GAP</run>
+              <run bold="true" fontcolor="#D4DFF4" fontname="Segoe UI" fontsize="10">RECORDED SALES</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
+              <format attr="border-color" value="#a2b2cc" />
               <format attr="border-style" value="none" />
               <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#FFFFFF" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#234E96" />
             </zone-style>
           </zone>
-          <zone h="7121" id="19" type-v2="text" w="100000" x="0" y="88032">
+          <zone h="7800" id="6" type-v2="text" w="32500" x="15750" y="22800">
             <formatted-text>
-              <run bold="false" fontcolor="#132342" fontname="Segoe UI" fontsize="12">Prioritize East and Office Supplies for source-record review; these are overlapping views. More orders did not offset lower sales per order. Request quantity and unit-price detail
-before attributing the change to pricing or product mix.</run>
+              <run bold="true" fontcolor="#FFFFFF" fontname="Segoe UI" fontsize="44">83,030.39</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
+              <format attr="border-color" value="#a2b2cc" />
               <format attr="border-style" value="none" />
               <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#edf3ff" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#234E96" />
             </zone-style>
           </zone>
-          <zone h="3166" id="20" type-v2="text" w="100000" x="0" y="96834">
+          <zone h="4400" id="7" type-v2="text" w="32500" x="15750" y="30600">
             <formatted-text>
-              <run bold="false" fontcolor="#596883" fontname="Segoe UI" fontsize="9">Kaggle Superstore / 9,800 validated lines / Source monetary units; currency unspecified / Sales are not profit / Zak Rademacher</run>
+              <run bold="false" fontcolor="#D4DFF4" fontname="Segoe UI" fontsize="10">−12.6% vs matched prior period</run>
             </formatted-text>
             <zone-style>
-              <format attr="border-color" value="#596883" />
+              <format attr="border-color" value="#a2b2cc" />
               <format attr="border-style" value="none" />
               <format attr="border-width" value="0" />
-              <format attr="padding" value="10" />
-              <format attr="background-color" value="#FFFFFF" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#234E96" />
+            </zone-style>
+          </zone>
+          <zone h="3800" id="8" type-v2="text" w="23125" x="49750" y="19000">
+            <formatted-text>
+              <run bold="true" fontcolor="#A2B2CC" fontname="Segoe UI" fontsize="10">DISTINCT ORDERS</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="border-color" value="#a2b2cc" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#142339" />
+            </zone-style>
+          </zone>
+          <zone h="7800" id="9" type-v2="text" w="23125" x="49750" y="22800">
+            <formatted-text>
+              <run bold="true" fontcolor="#EAF0FC" fontname="Segoe UI" fontsize="36">223</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="border-color" value="#a2b2cc" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#142339" />
+            </zone-style>
+          </zone>
+          <zone h="4400" id="10" type-v2="text" w="23125" x="49750" y="30600">
+            <formatted-text>
+              <run bold="false" fontcolor="#A2B2CC" fontname="Segoe UI" fontsize="10">+33.5% vs 167 prior orders</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="border-color" value="#a2b2cc" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#142339" />
+            </zone-style>
+          </zone>
+          <zone h="3800" id="11" type-v2="text" w="23625" x="74375" y="19000">
+            <formatted-text>
+              <run bold="true" fontcolor="#A2B2CC" fontname="Segoe UI" fontsize="10">SALES PER ORDER</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="border-color" value="#a2b2cc" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#142339" />
+            </zone-style>
+          </zone>
+          <zone h="7800" id="12" type-v2="text" w="23625" x="74375" y="22800">
+            <formatted-text>
+              <run bold="true" fontcolor="#EAF0FC" fontname="Segoe UI" fontsize="36">372.33</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="border-color" value="#a2b2cc" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#142339" />
+            </zone-style>
+          </zone>
+          <zone h="4400" id="13" type-v2="text" w="23625" x="74375" y="30600">
+            <formatted-text>
+              <run bold="false" fontcolor="#A2B2CC" fontname="Segoe UI" fontsize="10">−34.6%; arithmetic, not a causal explanation</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="border-color" value="#a2b2cc" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#142339" />
+            </zone-style>
+          </zone>
+          <zone h="29600" id="14" name="Sales accumulation" w="53250" x="15750" y="38600">
+            <zone-style>
+              <format attr="border-color" value="#A2B2CC" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="16" />
+              <format attr="background-color" value="#142339" />
+            </zone-style>
+          </zone>
+          <zone h="7000" id="15" name="Sales accumulation" pane-specification-id="0" param="[analysis].[none:Series:nk]" type-v2="color" w="8750" x="59500" y="42200">
+            <zone-style>
+              <format attr="border-color" value="#A2B2CC" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="background-color" value="#142339" />
+            </zone-style>
+          </zone>
+          <zone h="23600" id="16" name="Category changes" w="53250" x="15750" y="71400">
+            <zone-style>
+              <format attr="border-color" value="#A2B2CC" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="16" />
+              <format attr="background-color" value="#142339" />
+            </zone-style>
+          </zone>
+          <zone h="29600" id="17" name="Regional changes" w="27250" x="70750" y="38600">
+            <zone-style>
+              <format attr="border-color" value="#A2B2CC" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="16" />
+              <format attr="background-color" value="#142339" />
+            </zone-style>
+          </zone>
+          <zone h="4800" id="18" type-v2="text" w="25750" x="71500" y="72800">
+            <formatted-text>
+              <run fontname="Segoe UI" fontsize="10" fontcolor="#FFAD72" bold="true">03 / THE NEXT CHECK</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="border-color" value="#a2b2cc" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#1A3252" />
+            </zone-style>
+          </zone>
+          <zone h="17400" id="19" type-v2="text" w="25750" x="71500" y="77600">
+            <formatted-text>
+              <run fontname="Segoe UI" fontsize="12" fontcolor="#EAF0FC" bold="false">Prioritize East and Office Supplies for source-record review; these are overlapping views. More orders did not offset lower sales per order. Request quantity and unit-price detail before attributing the change to pricing or product mix.</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="border-color" value="#a2b2cc" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#1A3252" />
+            </zone-style>
+          </zone>
+          <zone h="2800" id="20" type-v2="text" w="82250" x="15750" y="97000">
+            <formatted-text>
+              <run bold="false" fontcolor="#A2B2CC" fontname="Segoe UI" fontsize="8">Kaggle Superstore / 9,800 validated lines / Source monetary units; currency unspecified / Sales are not profit / Zak Rademacher</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="border-color" value="#a2b2cc" />
+              <format attr="border-style" value="none" />
+              <format attr="border-width" value="0" />
+              <format attr="padding" value="12" />
+              <format attr="background-color" value="#142339" />
             </zone-style>
           </zone>
           <zone-style>
-            <format attr="border-color" value="#596883" />
+            <format attr="border-color" value="#a2b2cc" />
             <format attr="border-style" value="none" />
             <format attr="border-width" value="0" />
-            <format attr="background-color" value="#FFFFFF" />
+            <format attr="background-color" value="#0B1423" />
           </zone-style>
         </zone>
       </zones>
@@ -808,325 +1051,323 @@ before attributing the change to pricing or product mix.</run>
   <thumbnails>
     <thumbnail height="192" name="01  Decision brief" width="192">
       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
-      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
+      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
     </thumbnail>
   </thumbnails>
 </workbook>

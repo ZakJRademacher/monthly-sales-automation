@@ -36,8 +36,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4920,
-      "sha256": "ac178f05d49881870e40afd5a4de7cad591742daf4481a5380f995f08856c9a5"
+      "bytes": 5014,
+      "sha256": "299bd50cab368304ef0e983ae1f19f33c7d002a3e2dc3cbfbe446e35df8463ff"
     },
     {
       "path": "data/LICENSE",
@@ -311,8 +311,8 @@
     },
     {
       "path": "deliverables/Monthly Sales Review.twbx",
-      "bytes": 33586,
-      "sha256": "ba1994dede0252b55696c9d2e61ef7a360667afdb6e40ee88b2b9fa2369d1a1e"
+      "bytes": 34085,
+      "sha256": "0dd65acc027ce25aac1af34132be0198305d68b3ba67a597909423ee02713ca6"
     },
     {
       "path": "deliverables/README.md",
@@ -421,8 +421,8 @@
     },
     {
       "path": "docs/DASHBOARD_RELEASE.md",
-      "bytes": 2212,
-      "sha256": "169b5d1dde14fb125434f4fbda6fb2257eb0d3f16226e707d0a99a55b230dfe9"
+      "bytes": 2809,
+      "sha256": "6b480c432c9159cf19152651505f251b791d9280b5bc7866d17c62220adebae3"
     },
     {
       "path": "docs/DESIGN.md",
@@ -1251,8 +1251,8 @@
     },
     {
       "path": "tableau/Monthly Sales Review.twb",
-      "bytes": 64884,
-      "sha256": "38ee989f0a95a25a6a899d8c94d9870aad94c3344b7fd338d124db8c6a3a7bd6"
+      "bytes": 74423,
+      "sha256": "2f979004da5246ced4db1b13b911b965124c10363587b6531fb3cee85216e638"
     },
     {
       "path": "tableau/README.md",
