@@ -3,8 +3,8 @@
   "name": "products",
   "displayName": "03  Follow the signal",
   "displayOption": "FitToPage",
-  "height": 900,
-  "width": 1280,
+  "height": 1000,
+  "width": 1600,
   "objects": {
     "background": [
       {
@@ -14,7 +14,7 @@
               "color": {
                 "expr": {
                   "Literal": {
-                    "Value": "'#F5F7FC'"
+                    "Value": "'#0B1423'"
                   }
                 }
               }

@@ -4,7 +4,7 @@
 
 [Motion cover preview](deliverables/portfolio-motion.webm) · [Presentation maintenance guide](docs/VISUAL_DESIGN.md)
 
-The October 2026 presentation refresh retains the existing calculations, source policies and report contracts. Cover animation is separate from native desktop report behavior.
+The November 2026 working-dashboard redesign adds a shared navy, blue and orange layout with clearer navigation and larger analytical panels. Calculations, source policies and report contracts are preserved. Cover motion is separate from native desktop report behavior. [Visual-release verification](docs/DASHBOARD_RELEASE.md).
 
 
 ![Tableau](https://img.shields.io/badge/Tableau-147D80?style=flat-square) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) ![SQLite](https://img.shields.io/badge/SQLite-31566D?style=flat-square) ![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square)
@@ -13,11 +13,13 @@ The October 2026 presentation refresh retains the existing calculations, source 
 
 A repeatable monthly performance review using **Python and SQLite**, with a focused **Tableau** decision brief: 9,800 historical sales lines, 4,922 orders and 48 monthly CSV files.
 
-**Updated Tableau decision brief:** [View the full-size preview](deliverables/tableau-sales-preview.png) · [Definitions and scope](docs/TABLEAU_REVIEW.md). [Download the packaged Tableau workbook](deliverables/Monthly%20Sales%20Review.twbx) · [Editable source and opening guide](tableau/README.md).
+**Updated Tableau decision brief:** [View the full-size preview](deliverables/tableau-sales-preview.png) · [Definitions and scope](docs/TABLEAU_REVIEW.md). [Earlier packaged Tableau workbook (previous layout)](deliverables/Monthly%20Sales%20Review.twbx) · [Editable source and opening guide](tableau/README.md).
 
 ![Tableau sales decision brief](deliverables/tableau-sales-preview.png)
 
 [Preview the four-page report](deliverables/Monthly%20Sales%20Explorer.pdf) · [Download the interactive PBIX](deliverables/Monthly%20Sales%20Explorer.pbix) · [Read the two-page briefing](deliverables/case-study.pdf)
+
+The redesigned Tableau workbook is retained locally; the current preview shows its working interface. Any earlier workbook links are preserved as historical downloads.
 
 ## Findings
 
@@ -28,6 +30,8 @@ For **Dec 1–30, 2018 versus Dec 1–30, 2017**:
 - East (−7,961.58) and Office Supplies (−7,265.53) are the largest regional and category decline leads. These overlapping views must not be added together.
 
 The next investigation is product mix and source coverage within those segments. [Ranked follow-ups](deliverables/review_actions.csv) identify source product IDs to inspect; the data does not establish a cause.
+
+[Download the working browser dashboard](deliverables/Monthly%20Sales%20Interactive.html) for the daily comparison, keyboard controls and reduced-motion-aware replay.
 
 ## Explore or reproduce
 

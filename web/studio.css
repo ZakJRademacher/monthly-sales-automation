@@ -1,0 +1,30 @@
+/* Editorial scorecard. Geometry is decorative; all chart coordinates come from data. */
+body{background:radial-gradient(ellipse at 90% 2%,#E8EDFF 0,transparent 38%),radial-gradient(ellipse at 0 40%,#FAEAF2 0,transparent 38%),#F5F7FC}
+main{max-width:1536px;padding:24px 48px 0}
+.masthead{padding:18px 24px;min-height:80px;border:1px solid #FFFFFF;border-radius:18px;background:#FFFFFFB8;box-shadow:0 2px 3px #1D3E7610,0 18px 60px #344A7610;backdrop-filter:blur(20px)}
+.monogram{border-radius:13px;background:linear-gradient(135deg,#5C89F7,#244DD3);box-shadow:inset 0 1px #FFFFFF80,0 6px 18px #2458DB30;transform:rotate(-4deg)}
+.period{padding:9px 13px;border:1px solid #DDE5F5;border-radius:20px;background:#F6F8FE}
+.overview{grid-template-columns:minmax(310px,.83fr) minmax(0,1.5fr);gap:44px;padding:60px 0 54px;perspective:1200px}
+.headline{padding:0 10px;animation:editorial-arrive .9s cubic-bezier(.16,.8,.2,1) both}
+h1{font-size:clamp(48px,4.8vw,72px);letter-spacing:-3.5px;font-weight:600;line-height:1.04}
+h1>span{color:#2458DB}.standfirst{font-size:15px;margin-bottom:30px;line-height:1.7}
+.section-number{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:8px;background:#E5ECFF;border:1px solid #CBD9FB;margin-right:9px;letter-spacing:0}
+.sales-label{letter-spacing:1.4px}.sales-value{font-size:58px;letter-spacing:-2.8px;font-weight:500}
+.change{border-radius:20px;padding:7px 11px;background:#F8E4EE;border:1px solid #F0C5D9}
+.support-metrics{gap:0;padding-top:22px;margin-top:25px}.support-metrics strong{font-size:32px}
+.trend-card{border:1px solid #FFFFFF;border-radius:24px;padding:30px 30px 24px;background:linear-gradient(145deg,#FFFFFF,#FDFEFF);box-shadow:inset 0 1px #FFFFFF,0 3px 7px #18356308,0 26px 64px #243E771C;position:relative;animation:chart-land 1s .12s cubic-bezier(.16,.8,.2,1) both}
+.trend-card:before{content:'';position:absolute;inset:-8px 12px 8px;border:1px solid #FFFFFFA8;border-radius:26px;z-index:-1;background:#FFFFFF4D;transform:rotate(1.5deg)}
+.trend-current{stroke-width:3.5;filter:drop-shadow(0 4px 4px #2458DB22)}
+.replay{width:40px;height:40px;background:#F1F5FF;border-color:#DCE5FC;box-shadow:inset 0 1px white}
+.scrub{background:#F5F7FD;margin:10px -12px 0;padding:14px 12px;border:1px solid #E6EBF7;border-radius:12px}
+.day-detail{margin-top:18px}.day-detail b{font-size:21px}.chart-note{font-size:10px}
+.section-intro{padding:30px 6px 0}.driver-grid{gap:22px}.driver-panel{border:1px solid white;border-radius:20px;padding:26px 28px;box-shadow:0 10px 40px #243E770C;transition:transform .35s,border-color .35s,box-shadow .35s}
+.driver-panel:hover{transform:translateY(-4px);border-color:#C6D5FA;box-shadow:0 20px 45px #243E771A}
+.driver-track{height:10px;border-radius:4px;background:#EEF1F8}.driver-track>span{border-radius:4px}.driver-top{font-size:13px}.driver-meta{font-size:10px}
+.decision{border-radius:20px;padding:30px 32px;background:linear-gradient(120deg,#E9EFFF,#F3EEFC);box-shadow:inset 0 1px white;border-color:#D8E1F9}
+@keyframes editorial-arrive{from{opacity:0;transform:translateY(22px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+@keyframes chart-land{from{opacity:0;transform:translateY(34px) rotateX(8deg) rotateY(-3deg) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:1050px){main{padding:20px 28px 0}.overview{gap:28px;grid-template-columns:minmax(270px,.8fr) minmax(0,1.3fr)}h1{font-size:52px;letter-spacing:-2.4px}.trend-card{padding:24px 22px}.sales-value{font-size:48px}.masthead{padding:16px 20px}.period{font-size:8px}}
+@media(max-width:760px){main{padding:14px 18px 0}.masthead{padding:18px;gap:20px;min-height:0;border-radius:17px}.period{font-size:8px;padding:7px 10px}.overview{grid-template-columns:1fr;padding:34px 0;gap:30px}.headline{padding:0 4px}h1{font-size:55px;letter-spacing:-2.7px}.sales-value{font-size:52px}.trend-card{padding:24px 20px;border-radius:20px}.trend-card:before{inset:-6px 8px 6px;border-radius:22px}.day-detail b{font-size:17px}.driver-panel{padding:24px}.decision{padding:25px}.chart-heading h2{font-size:21px}.section-intro{padding-left:4px}}
+@media(prefers-reduced-motion:reduce){.headline,.trend-card{animation:none}.driver-panel{transition:none}.driver-panel:hover{transform:none}}
+@media print{body{background:white}main{padding:0}.masthead,.trend-card,.driver-panel,.decision{box-shadow:none;backdrop-filter:none}.trend-card:before{display:none}.headline,.trend-card{animation:none}}

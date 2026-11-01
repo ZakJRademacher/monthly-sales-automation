@@ -1,29 +1,29 @@
 {
-  "name": "Cobalt & Rose",
+  "name": "Midnight / Blue / Orange",
   "dataColors": [
-    "#2458DB",
-    "#C92C74",
-    "#9BAAC5"
+    "#66A0FF",
+    "#FFAD72",
+    "#7891B6"
   ],
-  "background": "#F5F7FC",
-  "foreground": "#132342",
-  "tableAccent": "#2458DB",
+  "background": "#0B1423",
+  "foreground": "#EAF0FC",
+  "tableAccent": "#66A0FF",
   "textClasses": {
     "title": {
       "fontFace": "Segoe UI",
-      "color": "#132342"
+      "color": "#EAF0FC"
     },
     "header": {
       "fontFace": "Segoe UI",
-      "color": "#132342"
+      "color": "#EAF0FC"
     },
     "label": {
       "fontFace": "Segoe UI",
-      "color": "#596883"
+      "color": "#A2B2CC"
     },
     "callout": {
       "fontFace": "Segoe UI",
-      "color": "#132342"
+      "color": "#EAF0FC"
     }
   }
 }

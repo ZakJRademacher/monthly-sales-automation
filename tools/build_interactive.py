@@ -29,7 +29,7 @@ def build():
         assert sum(observed.values())==summary['sales_change_units']
     payload={'summary':summary,'drivers':review['drivers'],'trend':trend,'source_csv_sha256':hashlib.sha256(source.read_bytes()).hexdigest()}
     template=(ROOT/'web/report.html').read_text(encoding='utf-8')
-    styles=(ROOT/'web/report.css').read_text(encoding='utf-8')+'\n'+(ROOT/'web/studio.css').read_text(encoding='utf-8')
+    styles='\n'.join((ROOT/'web'/name).read_text(encoding='utf-8') for name in ['report.css','studio.css','workspace.css'])
     page=template.replace('/* REPORT_CSS */',styles).replace('/* REPORT_JS */',(ROOT/'web/report.js').read_text(encoding='utf-8'))
     page=page.replace('REPORT_DATA_JSON',json.dumps(payload,separators=(',',':')).replace('<','\\u003c'))
     output=ROOT/'deliverables/Monthly Sales Interactive.html';output.write_text(page,encoding='utf-8')

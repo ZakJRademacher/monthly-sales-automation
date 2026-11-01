@@ -27,7 +27,7 @@ def build(root=ROOT, results=None):
         from publication import current_output
         selected = current_output(results if results is not None else root/"results")
         folders = ["src","sql","tools","tests","docs","deliverables","data/sample",".github"]
-    folders += ["presentation", "tableau", "powerbi-rebuild"]
+    folders += ["presentation", "tableau", "powerbi-rebuild", "web"]
     files = {}
     for folder in folders:
         for path in (root/folder).rglob("*"):
