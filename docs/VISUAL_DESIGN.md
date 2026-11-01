@@ -35,3 +35,9 @@ Keep source attribution and analytical qualifications in the report. A new scree
 In a disposable copy, change one accent in `design-tokens.json`, apply the layout, and verify the control example. Test a supported interaction, then reset it. The appearance should change while the figures and filter definitions stay consistent. Restore the shared palette before portfolio use.
 
 The separate browser report has a daily comparison replay, keyboard controls, and reduced-motion support. Its source is `web/`; rebuild it with `python tools/build_interactive.py`. Those transitions do not run inside Tableau or Power BI.
+
+## Portfolio thumbnails
+
+The shared cover uses a large title, a short tool line and a straight-on project screenshot. `presentation/cover.json` selects the existing source image and its scope label; `presentation/cover-template.html` controls the layout. `portfolio-cover.png` is the 1280 × 960 cover used on the GitHub profile and Upwork. `portfolio-cover-wide.png` is the 1280 × 720 variant. The repository README keeps its larger original report or app preview.
+
+Run the existing `python presentation/build_cover.py --workdir <scratch folder>` to regenerate static covers after a source or title change. The template has no decorative entrance animation. Keep the source qualifications when changing a cover.
