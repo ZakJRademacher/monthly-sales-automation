@@ -1,37 +1,20 @@
 # Monthly Sales Review
 
-![Current project presentation](deliverables/portfolio-cover-wide.png)
+**Why did sales fall while orders increased?**
 
-[Motion cover preview](deliverables/portfolio-motion.webm) · [Presentation maintenance guide](docs/VISUAL_DESIGN.md)
+For **December 1–30, 2018 versus the same dates in 2017**, recorded sales fell **12.6%** while distinct orders rose **33.5%**. Sales per order fell **34.6%**. East (−7,961.58 source units) and Office Supplies (−7,265.53) are separate, overlapping investigation leads; their contributions must not be added together or treated as causes.
 
-The November 2026 working-dashboard redesign adds a shared navy, blue and orange layout with clearer navigation and larger analytical panels. Calculations, source policies and report contracts are preserved. Cover motion is separate from native desktop report behavior. [Visual-release verification](docs/DASHBOARD_RELEASE.md).
+Python and SQLite validate **9,800 historical lines, 4,922 orders and 48 monthly exports**. Tableau provides a fixed decision brief; Power BI provides the filter-responsive explorer. Currency, quantities, unit prices and profit are not established by this source.
 
+[View current Tableau preview](deliverables/tableau-sales-preview.png) · [Download Tableau workbook](deliverables/Monthly%20Sales%20Review.twbx) · [Power BI explorer](deliverables/Monthly%20Sales%20Explorer.pbix) · [SQL](sql/review_drivers.sql) · [Reproduce](#explore-or-reproduce)
 
-![Tableau](https://img.shields.io/badge/Tableau-147D80?style=flat-square) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) ![SQLite](https://img.shields.io/badge/SQLite-31566D?style=flat-square) ![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square)
+![Current fixed Tableau decision brief: matched December periods](deliverables/tableau-sales-preview.png)
 
-**Why did sales fall while orders increased, and where should the next review focus?**
+The Tableau package includes reporting data. Its written findings describe the fixed December population; arbitrary worksheet filtering does not rewrite them. The Power BI explorer has its own documented selectors. [Scope and definitions](docs/TABLEAU_REVIEW.md) · [Current Power BI PDF](deliverables/Monthly%20Sales%20Explorer.pdf).
 
-A repeatable monthly performance review using **Python and SQLite**, with a focused **Tableau** decision brief: 9,800 historical sales lines, 4,922 orders and 48 monthly CSV files.
+The next check is source coverage and product mix within the listed segments. Request quantity and unit-price data before assigning a price or volume explanation. [Ranked source-product follow-ups](deliverables/review_actions.csv) · [Download the browser companion](deliverables/Monthly%20Sales%20Interactive.html).
 
-**Updated Tableau decision brief:** [View the full-size preview](deliverables/tableau-sales-preview.png) · [Definitions and scope](docs/TABLEAU_REVIEW.md). [Download the redesigned Tableau workbook](deliverables/Monthly%20Sales%20Review.twbx) · [Editable source and opening guide](tableau/README.md).
-
-![Tableau sales decision brief](deliverables/tableau-sales-preview.png)
-
-[Preview the four-page report](deliverables/Monthly%20Sales%20Explorer.pdf) · [Download the interactive PBIX](deliverables/Monthly%20Sales%20Explorer.pbix) · [Read the two-page briefing](deliverables/case-study.pdf)
-
-The redesigned Tableau workbook and its editable source are now downloadable. The package includes its reporting CSV and source notices. [Earlier workbook layout](https://github.com/ZakJRademacher/monthly-sales-automation/blob/e885e9667301ddeeec8753f4f63c8b5b43a538ab/deliverables/Monthly%20Sales%20Review.twbx) remains in repository history.
-
-## Findings
-
-For **Dec 1–30, 2018 versus Dec 1–30, 2017**:
-
-- Sales fell **12.6%**, from 95,007.35 to 83,030.39 in source monetary units.
-- Orders rose **33.5%**, while average order value fell **34.6%**.
-- East (−7,961.58) and Office Supplies (−7,265.53) are the largest regional and category decline leads. These overlapping views must not be added together.
-
-The next investigation is product mix and source coverage within those segments. [Ranked follow-ups](deliverables/review_actions.csv) identify source product IDs to inspect; the data does not establish a cause.
-
-[Download the working browser dashboard](deliverables/Monthly%20Sales%20Interactive.html) for the daily comparison, keyboard controls and reduced-motion-aware replay.
+[Earlier Tableau layout](https://github.com/ZakJRademacher/monthly-sales-automation/blob/e885e9667301ddeeec8753f4f63c8b5b43a538ab/deliverables/Monthly%20Sales%20Review.twbx) and [earlier two-page briefing](deliverables/case-study.pdf) remain historical references. [Independent November review exercise](docs/INDEPENDENT_PRACTICE.md).
 
 ## Explore or reproduce
 
@@ -68,3 +51,7 @@ Independent portfolio demonstration using historical Kaggle Superstore data (201
 
 Original code/documentation: [MIT](LICENSE). Data-derived files retain the source's GPL 2 label: [data license](data/LICENSE), [NOTICE](NOTICE).
 
+
+## Presentation history
+
+[Cover preview](deliverables/portfolio-cover-wide.png) · [Motion cover](deliverables/portfolio-motion.webm) · [Design maintenance](docs/VISUAL_DESIGN.md) · [November 1 release record](docs/DASHBOARD_RELEASE.md). Covers are presentation assets; native report behavior is documented separately.
