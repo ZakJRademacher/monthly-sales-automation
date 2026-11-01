@@ -1,6 +1,6 @@
 # The shape of sales / Power BI
 
-A native four-page Power BI report over the validated Kaggle Superstore sample. The editable project is [SalesExplorer.pbip](SalesExplorer.pbip); its semantic model, native visual definitions, Power Query and DAX source are included. Desktop validation and delivery evidence are recorded in [NATIVE_QA.md](NATIVE_QA.md).
+This four-page explorer is the interactive companion to the main Tableau brief. It uses the validated Kaggle Superstore sample and lets a reader move from the sales comparison to products and source records. The editable project is [SalesExplorer.pbip](SalesExplorer.pbip); its semantic model, native visual definitions, Power Query and DAX source are included. Desktop validation and delivery evidence are recorded in [NATIVE_QA.md](NATIVE_QA.md).
 
 ## Open and explore
 

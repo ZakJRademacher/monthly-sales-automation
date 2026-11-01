@@ -2,7 +2,7 @@
 
 [Back to project overview](../README.md)
 
-Run commands from the repository root. Paths in command examples are relative to that root.
+Start with the [Tableau brief](TABLEAU_REVIEW.md) for the main finding. This guide covers the interactive Power BI companion and the separate Python/Excel workflow. Run commands from the repository root.
 
 ## Update the dashboard
 
@@ -24,7 +24,7 @@ The same source deliveries also produce an editable workbook, a responsive HTML 
 
 For **Dec 1–30, 2018 vs Dec 1–30, 2017**, sales declined **12.6%** (95,007.35 → 83,030.39), although orders increased **33.5%** (167 → 223). Average order value fell **34.6%** (568.91 → 372.33). Values use source monetary units.
 
-The report identifies **East (−7,961.58)** and **Office Supplies (−7,265.53)** as the leading regional/category review leads. The generated CSV ranks five declining segments and lists source product IDs with the largest losses in each. These overlapping views must not be added together. This is a traceable starting point for investigation, not an invented recommendation to cut staff or reorder stock.
+The report identifies **East (−7,961.58)** and **Office Supplies (−7,265.53)** as the leading regional/category review leads. The generated CSV ranks five declining segments and lists source product IDs with the largest losses in each. These overlapping views must not be added together. Those records give the reviewer a place to begin. The source is not enough to recommend staffing or stock changes.
 
 - [Open the sales review](../deliverables/sales-review.html) — download and open locally; GitHub displays HTML source.
 - [Prioritized follow-up CSV](../deliverables/review_actions.csv)
@@ -99,7 +99,7 @@ python tools/demo_refresh.py
 python tools/verify_outputs.py
 ```
 
-The 38 standard-library tests run without Node or the authoring package; publication tests use a clearly identified writer test double. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
+The 42 standard-library tests run without Node or the authoring package. Publication tests use a writer test double, so they are separate from the actual spreadsheet-engine replay. The separate replay uses actual Excel generation, and independent QA inspects the delivered workbook. Six full-data reconciliations check row partitions and SQL totals. Native desktop Excel recalculation was not tested.
 
 To reproduce the briefing from the published evidence and build the compact bundle:
 
@@ -112,9 +112,9 @@ python tools/package_project.py
 
 See [visual design and interpretation](../docs/DESIGN.md) for chart choices, palette, design references and refresh behavior.
 
-## Relevant remote work
+## Adapting the workflow
 
-Recurring spreadsheet updates; CSV cleanup and merging; SQL summaries; exception handling; lightweight Python automation; clear refresh documentation. This is a personal portfolio demonstration, not a claimed client engagement or production deployment.
+For another reporting task, first agree on the source schema, line key, currency, reporting calendar, and review process. The supplied files are a historical portfolio example; their rules need checking against the new exports.
 
 ## Data context
 

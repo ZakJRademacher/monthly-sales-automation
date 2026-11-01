@@ -26,7 +26,7 @@ Optional: `python src/download_data.py` downloads the Kaggle snapshot into ignor
 ## QA and presentation dependencies
 `pip install -r requirements-qa.txt` supplies read-only XLSX/PDF inspection. `pip install -r requirements-visuals.txt` supplies reportlab for the optional PDF builder. `python tools/demo_refresh.py` also needs the real spreadsheet runtime. `tools/verify_outputs.py` needs the original downloaded train.csv and delivered evidence. `tools/build_presentation.py` needs the verified evidence, while packaging uses only the standard library.
 
-GitHub Actions runs the 42 core tests on Python 3.10 and 3.12. It does not pretend to install the optional private authoring runtime or recalculate in native desktop Excel.
+GitHub Actions runs the 42 core tests on Python 3.10 and 3.12. It does not install the optional authoring runtime or run native desktop Excel.
 
 The `--render` previews require the spreadsheet runtime. PDF rendering into portfolio PNGs uses optional Poppler: `pdftoppm -r 144 -png -f 1 -singlefile deliverables/case-study.pdf deliverables/portfolio-cover`. The PDF builder itself needs no Poppler or Matplotlib.
 

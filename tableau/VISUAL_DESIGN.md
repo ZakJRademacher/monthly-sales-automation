@@ -1,4 +1,6 @@
-# Cobalt and rose presentation
+# Tableau and browser presentation
+
+The palette discussion below records the earlier cobalt/rose design. For the current navy, blue, and orange report, use [Visual maintenance](../docs/VISUAL_DESIGN.md). The browser comparison and its data definitions remain as described here.
 
 The approved presentation pairs a refreshed native Tableau dashboard with a separate interactive browser companion. The native workbook runs locally; the repository supplies its preview and download under the existing arrangement.
 

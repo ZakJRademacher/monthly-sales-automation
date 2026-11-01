@@ -1,34 +1,37 @@
 # Maintaining the Monthly Sales presentation
 
-The working report uses the shared **Midnight / Blue / Orange** design: navy canvas, light text, electric blue for the primary series and warm orange for a comparison or emphasis. Labels, units, signs and definitions carry analytical meaning alongside color. Segoe UI and Arial are installed system fonts; no font files are distributed.
-
-The redesign changes composition as well as color: a persistent left control rail, clear page navigation, a prominent lead metric, compact supporting metrics, larger charts and a separate explanation area. The native canvas is 1600 × 1000. Dense tables retain scrolling and source identifiers.
+The native report uses navy backgrounds, light text, blue for the main series, and orange for comparisons or emphasis. Keep labels, signs, units, and definitions readable alongside the colors. Fonts are installed Segoe UI and Arial; no font files are distributed.
 
 ## Where to edit
 
-- `design-tokens.json`: reusable palette and layout metadata.
-- `tools/powerbi_layout.py` or `tools/tableau_layout.py`: native visual positions, spacing and formatting. Edit the helper rather than maintaining an unrelated picture of the dashboard.
-- `tools/apply_native_theme.py`: apply the approved layout after rebuilding the existing native source. Run from the project root: `python tools/apply_native_theme.py`.
-- The original native builders still generate data, calculations and visual queries. The layout helper must preserve those contracts.
+`design-tokens.json` holds the shared palette and layout metadata. `tools/powerbi_layout.py and tools/tableau_layout.py` controls the native visual positions and formatting. The original report builders still define the data, calculations, and queries.
 
-Close the relevant desktop report before rebuilding source. Reopen it afterwards; Desktop keeps an in-memory copy and saving an older open report can overwrite newer source formatting. Keep the existing semantic-model format when Power BI offers an optional migration during a visual-only edit.
+After rebuilding source, apply the layout from the repository root:
+
+```sh
+python tools/apply_native_theme.py
+```
+
+Close the report in Desktop before rebuilding, then reopen it. Saving an older in-memory copy can overwrite newer source changes. For a visual-only Power BI edit, keep the existing semantic-model format rather than accepting an optional format migration.
 
 ## Verify and hand off
 
-1. Preserve a dated backup before changing native source or downloads.
-2. Run the existing project tests. Compare source data, calculations, filters, relationships and visual queries with the pre-change baseline.
-3. Open the actual report in Tableau Desktop or Power BI Desktop. Refresh, inspect every report page, exercise a representative filter and inspect tooltips and scrolling.
-4. Restore default filters, save the editable source and save the existing downloadable format. Reopen the saved artifact to verify it independently.
-5. Check small text, contrast, long labels, missing/zero values and exports. A screenshot is evidence of the current working report; it is not a replacement for the report.
+1. Back up the source and download before editing.
+2. Run the project tests and compare data, calculations, relationships, filters, and visual queries with the baseline.
+3. Open the actual report in its desktop application. Refresh it, inspect every page, and check representative filters, tooltips, and scrolling.
+4. Restore defaults, save the editable source and portable download, then reopen that download.
+5. Check long labels, small text, contrast, blank and zero values, and PDF exports. Capture previews from the working report.
 
-Control example: **December 1–30, 2018: 83,030.3888 sales, 223 orders; matched prior: 95,007.3530 sales, 167 orders.** Displayed values may be rounded; the source arithmetic must remain unchanged.
+Control example: **December 1–30, 2018: 83,030.3888 sales and 223 orders. Matched 2017: 95,007.3530 sales and 167 orders.** Rounded labels may differ in precision from the source; underlying calculations must agree.
 
 ## Motion and presentation
 
-Native Power BI and Tableau reports retain their supported filtering, highlighting, hover detail and navigation. They do not implement the browser application's custom animated transitions. Static PDFs and Excel exports remain static. Monthly Sales additionally has a working browser report with a replayable daily comparison, keyboard control, responsive layout and reduced-motion support. Its source is `web/`; rebuild with `python tools/build_interactive.py`.
+Native report interactions include the filtering, highlighting, hover detail, and navigation described in the report guide. Motion covers are separate presentation files. PDF exports show a static view; long native tables may contain more rows than an exported page can display.
 
-Keep Excel worksheets light. Preserve source attribution, analytical caveats and licenses in all exports. The working interfaces were reviewed before regenerating covers and public screenshots from the native captures on November 1, 2026. Cover choreography is distinct from report interaction. Historical benchmark evidence must not be described as rerun merely because the visual design changed.
+Keep source attribution and analytical qualifications in the report. A new screenshot or color change does not establish a new data benchmark or refresh test. Record any new checks separately from the historical evidence.
 
 ## A small practice change
 
-Make a disposable copy. Change one accent in `design-tokens.json`, reapply the layout, open the report and verify the control example above. Try one filter, then reset it. Success means the appearance changes while counts, totals, dates and filters behave identically. Restore the shared palette before using the report in the portfolio.
+In a disposable copy, change one accent in `design-tokens.json`, apply the layout, and verify the control example. Test a supported interaction, then reset it. The appearance should change while the figures and filter definitions stay consistent. Restore the shared palette before portfolio use.
+
+The separate browser report has a daily comparison replay, keyboard controls, and reduced-motion support. Its source is `web/`; rebuild it with `python tools/build_interactive.py`. Those transitions do not run inside Tableau or Power BI.

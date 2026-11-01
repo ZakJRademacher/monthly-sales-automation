@@ -1,6 +1,6 @@
 # Report layout and interaction design
 
-A 1280 × 900 canvas uses dark ink backgrounds, Georgia titles, Segoe UI labels and mint/coral/lilac category colors. Native Power BI visuals provide real hover, selection, sorting and filtering. Screenshots and PDF previews support the interactive PBIX.
+The current pages use a 1600 × 1000 canvas with a navy control rail, light labels, and the shared blue/orange palette. Native Power BI visuals provide hover details, selection, sorting, and filtering. The PBIX is interactive; screenshots and PDF exports show a static view. See [visual maintenance](../docs/VISUAL_DESIGN.md) for the current layout helpers.
 
 | Page | Question | Interaction |
 |---|---|---|

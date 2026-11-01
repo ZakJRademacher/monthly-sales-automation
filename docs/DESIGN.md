@@ -1,5 +1,7 @@
 # Visual design and interpretation
 
+This guide covers the Excel/HTML/PDF design and the original Power BI edition. For the current Tableau and Power BI layouts, use [Visual maintenance](VISUAL_DESIGN.md).
+
 ## Reader and decision
 The report is for a small-business owner or operations manager reviewing monthly sales. It answers: Did sales change? Was that associated with order count or average order value? Which segments and product IDs deserve investigation?
 

@@ -1,57 +1,53 @@
 # Monthly Sales Review
 
-**Why did sales fall while orders increased?**
+Sales fell even though more orders came in. I compared the same December dates in both years, then looked at the categories, regions, and products behind the change.
 
-For **December 1–30, 2018 versus the same dates in 2017**, recorded sales fell **12.6%** while distinct orders rose **33.5%**. Sales per order fell **34.6%**. East (−7,961.58 source units) and Office Supplies (−7,265.53) are separate, overlapping investigation leads; their contributions must not be added together or treated as causes.
+The main report is a **Tableau brief**, backed by Python and SQLite analysis of **9,800 sales lines across 48 monthly exports**. It gives a reader the finding, the comparison, and a sensible place to investigate next.
 
-Python and SQLite validate **9,800 historical lines, 4,922 orders and 48 monthly exports**. Tableau provides a fixed decision brief; Power BI provides the filter-responsive explorer. Currency, quantities, unit prices and profit are not established by this source.
+[View the Tableau report](deliverables/tableau-sales-preview.png) · [Download the workbook](deliverables/Monthly%20Sales%20Review.twbx) · [Read the analysis](docs/METHOD.md)
 
-[View current Tableau preview](deliverables/tableau-sales-preview.png) · [Download Tableau workbook](deliverables/Monthly%20Sales%20Review.twbx) · [Power BI explorer](deliverables/Monthly%20Sales%20Explorer.pbix) · [SQL](sql/review_drivers.sql) · [Reproduce](#explore-or-reproduce)
+![Tableau sales review comparing December 1–30 in 2018 and 2017](deliverables/tableau-sales-preview.png)
 
-![Current fixed Tableau decision brief: matched December periods](deliverables/tableau-sales-preview.png)
+## What I found
 
-The Tableau package includes reporting data. Its written findings describe the fixed December population; arbitrary worksheet filtering does not rewrite them. The Power BI explorer has its own documented selectors. [Scope and definitions](docs/TABLEAU_REVIEW.md) · [Current Power BI PDF](deliverables/Monthly%20Sales%20Explorer.pdf).
+For **December 1–30, 2018 versus the same dates in 2017**, sales fell **12.6%**, distinct orders rose **33.5%**, and sales per order fell **34.6%**. The full source contains **4,922 distinct orders**.
 
-The next check is source coverage and product mix within the listed segments. Request quantity and unit-price data before assigning a price or volume explanation. [Ranked source-product follow-ups](deliverables/review_actions.csv) · [Download the browser companion](deliverables/Monthly%20Sales%20Interactive.html).
+The East region had the largest regional decline, at **7,961.58 source monetary units**. Office Supplies had the largest category decline, at **7,265.53**. These are two views of overlapping sales, so adding them would double-count part of the change.
 
-[Earlier Tableau layout](https://github.com/ZakJRademacher/monthly-sales-automation/blob/e885e9667301ddeeec8753f4f63c8b5b43a538ab/deliverables/Monthly%20Sales%20Review.twbx) and [earlier two-page briefing](deliverables/case-study.pdf) remain historical references. [Independent November review exercise](docs/INDEPENDENT_PRACTICE.md).
+That tells us where to look, but it doesn't explain why customers spent less per order. The next step is to check source coverage and product mix in those segments. Quantity and unit-price data would be needed to separate price changes from volume changes. This source doesn't establish either field, a currency, or profit.
+
+[SQL comparisons](sql/review_drivers.sql) · [Ranked product follow-ups](deliverables/review_actions.csv) · [Tableau definitions](docs/TABLEAU_REVIEW.md)
+
+## Open or explore the work
+
+**Tableau:** open the packaged workbook in Tableau Desktop. Reporting data is included. This is a fixed December brief: its written findings do not change when an individual worksheet is filtered. [Opening and editing guide](tableau/README.md).
+
+**Power BI companion:** the [Monthly Sales Explorer](deliverables/Monthly%20Sales%20Explorer.pbix) provides four pages of interactive exploration, with month, category, and region filters and product-level source detail. It uses the same validated input, with its own documented calculations. [Open and refresh](powerbi/README.md) · [Static PDF](deliverables/Monthly%20Sales%20Explorer.pdf).
+
+**Excel companion:** the [sales workbook](deliverables/monthly-sales_2018-12.xlsx) includes a monthly review and editable review-note inputs. [Preview](deliverables/excel-sales-review.png) · [Refresh guide](docs/REFRESH_GUIDE.md).
+
+The [browser companion](deliverables/Monthly%20Sales%20Interactive.html) can be downloaded and opened locally. The [earlier briefing](deliverables/case-study.pdf) and [earlier Tableau layout](https://github.com/ZakJRademacher/monthly-sales-automation/blob/e885e9667301ddeeec8753f4f63c8b5b43a538ab/deliverables/Monthly%20Sales%20Review.twbx) remain available for reference.
 
 ## Explore or reproduce
 
-**Power BI:** Open the PBIX with its imported sample. Use synchronized month, category and region filters, then inspect drivers and product-to-source detail. [Open and refresh guide](powerbi/README.md).
-
-**Python-only review:** From the repository root, with Python 3.10+:
+From the repository root, using Python 3.10+ and the standard library:
 
 ```sh
 python refresh.py --summary-only
 ```
 
-Open the HTML report in the run folder referenced by `runs/latest.json`. SQL extracts, a SQLite database, input hashes and the follow-up CSV accompany the report.
+Read `runs/latest.json`, then open the HTML review in the referenced run folder. The same folder contains SQL extracts, a SQLite database, input hashes, and the follow-up CSV. Excel generation uses the optional authoring runtime described in [setup](docs/SETUP.md).
 
-**Supporting Excel output:** [Ready-to-open workbook](deliverables/monthly-sales_2018-12.xlsx) · [Excel preview](deliverables/excel-sales-review.png). Rebuilding Excel requires the optional authoring runtime documented in [setup](docs/SETUP.md).
+Monthly CSVs pass through Python validation before SQLite builds the comparisons. Conflicting Row IDs stop publication; repeating the same inputs doesn't add sales again. Review notes are saved separately and rejoined by month and category.
 
-## How it works
+## Documentation
 
-Monthly CSVs → Python validation → SQLite/SQL comparisons → a validated snapshot for Power BI. A separate reporting command creates HTML/CSV outputs and optional Excel/PDF files. Duplicate conflicts stop publication, repeated runs do not accumulate totals, and saved review notes rejoin by business key.
+- [Operating guide](docs/PROJECT_GUIDE.md) · [Method and definitions](docs/METHOD.md)
+- [Source and licensing](docs/SOURCES.md) · [Tests](tests) · [Independent verification](docs/independent-verification.json)
+- [Power BI checks](powerbi/NATIVE_QA.md) · [Editable model](powerbi/SalesExplorer.pbip) · [DAX](powerbi/native-measures.dax)
+- [Practice exercise](docs/INDEPENDENT_PRACTICE.md) · [Design](docs/DESIGN.md) · [Visual maintenance](docs/VISUAL_DESIGN.md)
+- [Cover](deliverables/portfolio-cover-wide.png) · [Motion preview](deliverables/portfolio-motion.webm) · [Presentation history](docs/DASHBOARD_RELEASE.md)
 
-[SQL comparisons](sql/review_drivers.sql) · [Python analysis](src/business_review.py) · [Editable Power BI project](powerbi/SalesExplorer.pbip) · [Model measures](powerbi/native-measures.dax)
+This independent project replays historical Kaggle Superstore data from 2015–2018 as monthly deliveries. Matching dates makes the comparison more useful, but doesn't prove the original source is complete. Refresh runs locally on demand.
 
-## Technical detail
-
-- [Operating, reproduction and validation guide](docs/PROJECT_GUIDE.md)
-- [Refresh and review-note handoff](docs/REFRESH_GUIDE.md)
-- [Method and comparison definitions](docs/METHOD.md)
-- [Native Power BI checks and refresh replay](powerbi/NATIVE_QA.md)
-- [Tests](tests) · [Independent verification](docs/independent-verification.json)
-- [Source and licensing](docs/SOURCES.md) · [Visual design](docs/DESIGN.md)
-
-## Scope
-
-Independent portfolio demonstration using historical Kaggle Superstore data (2015–2018), replayed as monthly deliveries. Comparisons use a common day-of-month cutoff; this does not establish complete source coverage. Currency is unspecified, and sales are not profit or a forecast. Refresh is a local workflow; cloud scheduling is not configured.
-
-Original code/documentation: [MIT](LICENSE). Data-derived files retain the source's GPL 2 label: [data license](data/LICENSE), [NOTICE](NOTICE).
-
-
-## Presentation history
-
-[Cover preview](deliverables/portfolio-cover-wide.png) · [Motion cover](deliverables/portfolio-motion.webm) · [Design maintenance](docs/VISUAL_DESIGN.md) · [November 1 release record](docs/DASHBOARD_RELEASE.md). Covers are presentation assets; native report behavior is documented separately.
+Original code and documentation: [MIT](LICENSE). Data-derived files retain the source's GPL 2 label: [data license](data/LICENSE) and [NOTICE](NOTICE).
