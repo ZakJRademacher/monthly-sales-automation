@@ -8,4 +8,6 @@ The [Excel workbook](monthly-sales_2018-12.xlsx) contains four sheets, compariso
 
 Download `sales-review.html` and open it locally. Keep `review_actions.csv` beside it for the download link. The browser report contains the comparison, segment changes, and product IDs to investigate; GitHub displays its source rather than running it.
 
+The separate [interactive browser presentation](Monthly%20Sales%20Interactive.html) animates the fixed December comparison. It is built from the Tableau reporting data with `python tools/build_interactive.py`; `python refresh.py` does not update it.
+
 `python refresh.py --render --pdf` regenerates the Excel/HTML/CSV outputs and matching briefing for the latest inputs. It needs the optional authoring runtime and reportlab described in [setup](../docs/SETUP.md). Save review notes through the CSV import before refreshing. Recorded workbook checks use the authoring engine; native Excel recalculation remains untested.

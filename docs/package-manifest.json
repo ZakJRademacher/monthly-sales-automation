@@ -2,10 +2,10 @@
   "package_schema": 2,
   "project": "monthly-sales-automation",
   "release": {
-    "release": "2026-10-21-reliability-fixes",
-    "base_commit": "2f8b06cd700c551494ffc2634843716a796c0cdc",
+    "release": "2026-11-04-portfolio-bundle",
+    "base_commit": "e7f1d88ea38fb4d04bd38717b6760c26406ea34d",
     "publication": "GitHub portfolio release",
-    "scope": "Failure-safe refresh, annotation validation, export verification and packaging"
+    "scope": "Current Tableau-led documentation, validated companions, source, and reproduction files"
   },
   "results_layout": "Included input deliveries and validated Power BI sample",
   "files": [
@@ -36,8 +36,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5014,
-      "sha256": "299bd50cab368304ef0e983ae1f19f33c7d002a3e2dc3cbfbe446e35df8463ff"
+      "bytes": 4440,
+      "sha256": "e1a1ddfacdbfde671517e738df420728f05e5c7a2602b4d53847f8cc79be38fe"
     },
     {
       "path": "data/LICENSE",
@@ -316,8 +316,8 @@
     },
     {
       "path": "deliverables/README.md",
-      "bytes": 1406,
-      "sha256": "f0032aca6b544cdc7c4b06a4a2f61645bef3a62ec86fd60a1819dbc108bbfaa6"
+      "bytes": 1676,
+      "sha256": "7582eb838d0db33340c804aff286070c7c5211c215740a2d2e516d8f97e229a5"
     },
     {
       "path": "deliverables/case-study.pdf",
@@ -366,13 +366,13 @@
     },
     {
       "path": "deliverables/portfolio-cover-wide.png",
-      "bytes": 346162,
-      "sha256": "c5c917e00e8127ab2c26ef7ca0dfece5b2ea0c6b903d4d62336fadf20f52232d"
+      "bytes": 362517,
+      "sha256": "438c34cb17ea378b7b3bba5714489048f64372cba41d3fa74e5206d6f2e372d4"
     },
     {
       "path": "deliverables/portfolio-cover.png",
-      "bytes": 396724,
-      "sha256": "db1c1c832ccd228e9a6f980dabc6e1d7f4c67f071c859f92a668cd6a49c57a2c"
+      "bytes": 494625,
+      "sha256": "a846a5344a72fea7b9133e346697c401498394113426e3fa3d38f0beda216b63"
     },
     {
       "path": "deliverables/portfolio-motion.webm",
@@ -420,49 +420,29 @@
       "sha256": "48ab05d9a40702123b6c45e9e415e759e3e366e248585a7dcfb4a305efff4897"
     },
     {
-      "path": "docs/DASHBOARD_RELEASE.md",
-      "bytes": 2809,
-      "sha256": "6b480c432c9159cf19152651505f251b791d9280b5bc7866d17c62220adebae3"
-    },
-    {
       "path": "docs/DESIGN.md",
-      "bytes": 3988,
-      "sha256": "67fd848195d95217c0186049075c4a648ad96c33607f9b1e6f7b8692176b8bf8"
+      "bytes": 4158,
+      "sha256": "139c19e568842504734506b450c7729184edd2237ee798043569aa2cb3f791a8"
     },
     {
       "path": "docs/METHOD.md",
-      "bytes": 4544,
-      "sha256": "df99a79310f5fb032d596178199101ae1df2ccd449afb599a9ee455c007ed7c1"
+      "bytes": 4638,
+      "sha256": "5c72301fb42ddb0b216aae3bb3494094d196922c1ae6faddb320cfcdba9922ac"
     },
     {
       "path": "docs/PROJECT_GUIDE.md",
-      "bytes": 8573,
-      "sha256": "512708a8b363c1450e7e94a7a5f584eda913de78ee54436377a75c12eed24c81"
-    },
-    {
-      "path": "docs/PROJECT_WALKTHROUGH.md",
-      "bytes": 2269,
-      "sha256": "678c632e89401a9f37e74beb46cf884a046ecc042e9fa8cb034bc69621828fb7"
-    },
-    {
-      "path": "docs/QA_REPORT.md",
-      "bytes": 3773,
-      "sha256": "947c1242ee29ae852bb2d2c1830da0f181f2b8630c2dd5664f983c908613ff4b"
+      "bytes": 9053,
+      "sha256": "44312f5da8d236927f8b2bd823a598268e3aa7796ae54ae8fe0892846f010123"
     },
     {
       "path": "docs/REFRESH_GUIDE.md",
-      "bytes": 6288,
-      "sha256": "8b16909ff5a47830266936196962fa1ca485865d30c0d668aaed61400de34abe"
-    },
-    {
-      "path": "docs/RELIABILITY_UPDATE.md",
-      "bytes": 1213,
-      "sha256": "2bb5d371852e6570a3a32afbd8750b5df8bcd3bd7106792de31a4ec5e39e40fc"
+      "bytes": 6414,
+      "sha256": "acb57739e8708f9b71742072d203fdf6466d5a9d93b267986547024688b73afa"
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 3829,
-      "sha256": "6866d2a6c49163f6b0f1d5715bc3b4c88467870e958614b3b8e3dbc427211a42"
+      "bytes": 3799,
+      "sha256": "e5a5837a7c9f87abd26c4641ff9958f5a745418999ce843f6de50e079f49489c"
     },
     {
       "path": "docs/SOURCES.md",
@@ -471,18 +451,13 @@
     },
     {
       "path": "docs/TABLEAU_REVIEW.md",
-      "bytes": 1116,
-      "sha256": "6e3d0025d4f180e73572138c9e83398577532057eeaff4762b548d79125aeaa4"
-    },
-    {
-      "path": "docs/UPWORK_LISTING.md",
-      "bytes": 915,
-      "sha256": "bb2fd2f5626aa0fe9a1da8652c07e73e8929787331a214f747638a3862e56b5d"
+      "bytes": 1735,
+      "sha256": "a0d34b8c83a2810b78bb37865958c0b27f226d32bef76496de3ea4dc33faf65f"
     },
     {
       "path": "docs/VISUAL_DESIGN.md",
-      "bytes": 3769,
-      "sha256": "80485befa4ea2e6319b683021d143fdfcd93c890781557c09e2ec848945a5f0e"
+      "bytes": 3213,
+      "sha256": "990f0119f485f7cd6fca2aae65aa48794832e234dda72c2b9aeac824002c068c"
     },
     {
       "path": "docs/independent-verification.json",
@@ -596,13 +571,13 @@
     },
     {
       "path": "powerbi/README.md",
-      "bytes": 7474,
-      "sha256": "6b07761d164e14ae6af20f3936fb28b32dd2c1123cca1f8d42b6d6e0f78abe57"
+      "bytes": 7602,
+      "sha256": "bf4ceb8135a9eff60b8b127c6fdf8e19ee09e71c98d52520bad8f65b117f00a8"
     },
     {
       "path": "powerbi/REPORT_LAYOUT.md",
-      "bytes": 1721,
-      "sha256": "0ec6ca5f5d799b46369b6c47d928cc2a24d1aaa7f6a82cca9683c1862049036a"
+      "bytes": 1824,
+      "sha256": "0bb00ca030edadf9c2c8dad79c4664c997e6de5623b87a0b80813e2a8c25e5ec"
     },
     {
       "path": "powerbi/SalesExplorer.Report/.platform",
@@ -1156,13 +1131,13 @@
     },
     {
       "path": "presentation/cover-template.html",
-      "bytes": 4116,
-      "sha256": "a86b75770d581db473cf62dff6a2a3ed75b6278872773b47ab16a085dd517b52"
+      "bytes": 2300,
+      "sha256": "dc5c00c408ca184e159ebde547d4cfa6402b5afdcd816ee365f5aaaf6e414538"
     },
     {
       "path": "presentation/cover.json",
-      "bytes": 596,
-      "sha256": "36f9a20b04af752f51d3706e579058539dd177c95ab1680fa046ff7c50351f20"
+      "bytes": 630,
+      "sha256": "b0986301ae5af68c4d09816010f638a1e4469659e9ec96cd53be2c8abbd89df2"
     },
     {
       "path": "refresh.py",
@@ -1171,8 +1146,8 @@
     },
     {
       "path": "release.json",
-      "bytes": 253,
-      "sha256": "8affb91b9cb102dab2a037668d9f462f9b4c4d553c56a7ce1099628f7eca6dfb"
+      "bytes": 255,
+      "sha256": "4927a49957aee85e9e6ec8eefc75012b21f6f095973495d4c3736e0e761faf4b"
     },
     {
       "path": "requirements-qa.txt",
@@ -1256,13 +1231,13 @@
     },
     {
       "path": "tableau/README.md",
-      "bytes": 3328,
-      "sha256": "9495ab1f47941e22e17228cb1150a9ae1e951a1eaa515070e16189c5a6591120"
+      "bytes": 2888,
+      "sha256": "d3d2a1eb1b2234971bc4de03dccff0f7ef4f04d5f4cda21763391037f630bdc5"
     },
     {
       "path": "tableau/VISUAL_DESIGN.md",
-      "bytes": 2372,
-      "sha256": "c5d7f8da8db2d14ece760ceada07086f816ca66d898efd46d290daa4e7b58257"
+      "bytes": 2531,
+      "sha256": "6b90eeb5978d8a54ff1be41d0914ba3fe87fd46148661057b2fe629090e03088"
     },
     {
       "path": "tableau/design-tokens.json",

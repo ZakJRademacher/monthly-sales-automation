@@ -18,7 +18,7 @@ That tells us where to look, but it doesn't explain why customers spent less per
 
 [SQL comparisons](sql/review_drivers.sql) · [Ranked product follow-ups](deliverables/review_actions.csv) · [Tableau definitions](docs/TABLEAU_REVIEW.md)
 
-## Open or explore the work
+## Open and reproduce
 
 **Tableau:** open the packaged workbook in Tableau Desktop. Reporting data is included. This is a fixed December brief: its written findings do not change when an individual worksheet is filtered. [Opening and editing guide](tableau/README.md).
 
@@ -26,17 +26,15 @@ That tells us where to look, but it doesn't explain why customers spent less per
 
 **Excel companion:** the [sales workbook](deliverables/monthly-sales_2018-12.xlsx) includes a monthly review and editable review-note inputs. [Preview](deliverables/excel-sales-review.png) · [Refresh guide](docs/REFRESH_GUIDE.md).
 
-The [browser companion](deliverables/Monthly%20Sales%20Interactive.html) can be downloaded and opened locally. The generated [two-page briefing](deliverables/case-study.pdf) summarizes the same validated run.
+The [interactive browser presentation](deliverables/Monthly%20Sales%20Interactive.html) is a fixed view of the verified December brief; build it from the Tableau reporting data with `python tools/build_interactive.py`. The separate [sales-review.html](deliverables/sales-review.html) and [two-page briefing](deliverables/case-study.pdf) come from the Python refresh workflow.
 
-## Explore or reproduce
-
-From the repository root, using Python 3.10+ and the standard library:
+To refresh that Python review from the included monthly CSVs, run this from the repository root with Python 3.10+ and the standard library:
 
 ```sh
 python refresh.py --summary-only
 ```
 
-Read `runs/latest.json`, then open the HTML review in the referenced run folder. The same folder contains SQL extracts, a SQLite database, input hashes, and the follow-up CSV. Excel generation uses the optional authoring runtime described in [setup](docs/SETUP.md).
+Read `runs/latest.json`, then open `sales-review.html` in the referenced run folder. The same folder contains SQL extracts, a SQLite database, input hashes, and the follow-up CSV. Excel generation uses the optional authoring runtime described in [setup](docs/SETUP.md).
 
 Monthly CSVs pass through Python validation before SQLite builds the comparisons. Conflicting Row IDs stop publication; repeating the same inputs doesn't add sales again. Review notes are saved separately and rejoined by month and category.
 

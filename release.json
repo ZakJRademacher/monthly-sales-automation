@@ -1,6 +1,6 @@
 {
-  "release": "2026-10-21-reliability-fixes",
-  "base_commit": "2f8b06cd700c551494ffc2634843716a796c0cdc",
+  "release": "2026-11-04-portfolio-bundle",
+  "base_commit": "e7f1d88ea38fb4d04bd38717b6760c26406ea34d",
   "publication": "GitHub portfolio release",
-  "scope": "Failure-safe refresh, annotation validation, export verification and packaging"
+  "scope": "Current Tableau-led documentation, validated companions, source, and reproduction files"
 }
