@@ -22,8 +22,4 @@ The source, currency, period and limitations appear on the dashboard. The date a
 
 `Data/analysis.csv` contains View, Label, Series, Value, Sort and Note. Values are in source monetary units. Each View is a separate chart population. `verification.json` records the CSV fingerprint and scope. Python builders use only the standard library. See the existing source/licensing guide for underlying data rights.
 
-## Your practice task
-
-Explain why category and region changes cannot be added together. Open the Category changes worksheet and change its sort direction; confirm that values and the decision-period definition stay unchanged.
-
-Acceptance: explain the population, measure, comparison and next action without reading the project code. Change one worksheet and show that its totals still reconcile. Keep the modified copy and its reconciliation with your practice notes.
+Category and region changes are overlapping views of the same sales lines, so their totals should not be added together. Worksheet sorting changes presentation, not the fixed decision period or underlying values.

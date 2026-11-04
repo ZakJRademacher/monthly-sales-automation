@@ -26,7 +26,7 @@ That tells us where to look, but it doesn't explain why customers spent less per
 
 **Excel companion:** the [sales workbook](deliverables/monthly-sales_2018-12.xlsx) includes a monthly review and editable review-note inputs. [Preview](deliverables/excel-sales-review.png) · [Refresh guide](docs/REFRESH_GUIDE.md).
 
-The [browser companion](deliverables/Monthly%20Sales%20Interactive.html) can be downloaded and opened locally. The [earlier briefing](deliverables/case-study.pdf) and [earlier Tableau layout](https://github.com/ZakJRademacher/monthly-sales-automation/blob/e885e9667301ddeeec8753f4f63c8b5b43a538ab/deliverables/Monthly%20Sales%20Review.twbx) remain available for reference.
+The [browser companion](deliverables/Monthly%20Sales%20Interactive.html) can be downloaded and opened locally. The generated [two-page briefing](deliverables/case-study.pdf) summarizes the same validated run.
 
 ## Explore or reproduce
 
@@ -40,13 +40,11 @@ Read `runs/latest.json`, then open the HTML review in the referenced run folder.
 
 Monthly CSVs pass through Python validation before SQLite builds the comparisons. Conflicting Row IDs stop publication; repeating the same inputs doesn't add sales again. Review notes are saved separately and rejoined by month and category.
 
-## Documentation
+## Methods and verification
 
-- [Operating guide](docs/PROJECT_GUIDE.md) · [Method and definitions](docs/METHOD.md)
-- [Source and licensing](docs/SOURCES.md) · [Tests](tests) · [Independent verification](docs/independent-verification.json)
-- [Power BI checks](powerbi/NATIVE_QA.md) · [Editable model](powerbi/SalesExplorer.pbip) · [DAX](powerbi/native-measures.dax)
-- [Practice exercise](docs/INDEPENDENT_PRACTICE.md) · [Design](docs/DESIGN.md) · [Visual maintenance](docs/VISUAL_DESIGN.md)
-- [Cover](deliverables/portfolio-cover-wide.png) · [Motion preview](deliverables/portfolio-motion.webm) · [Presentation history](docs/DASHBOARD_RELEASE.md)
+- [Method and definitions](docs/METHOD.md) · [Source and licensing](docs/SOURCES.md) · [Operating guide](docs/PROJECT_GUIDE.md)
+- [Tests](tests) · [Independent verification](docs/independent-verification.json) · [Power BI checks](powerbi/NATIVE_QA.md)
+- [Editable Power BI model](powerbi/SalesExplorer.pbip) · [DAX](powerbi/native-measures.dax) · [Design maintenance](docs/VISUAL_DESIGN.md)
 
 This independent project replays historical Kaggle Superstore data from 2015–2018 as monthly deliveries. Matching dates makes the comparison more useful, but doesn't prove the original source is complete. Refresh runs locally on demand.
 

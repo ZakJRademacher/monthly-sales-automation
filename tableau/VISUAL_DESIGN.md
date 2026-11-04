@@ -12,4 +12,4 @@ The three headline values lead into the matched-period trend, followed by the ca
 
 `design-tokens.json` contains the palette and dashboard dimensions. `tools/apply_visual_theme.py` applies that presentation to the existing native workbook without rewriting the reporting CSV, queries, filters or field bindings. The normal build and packaging tools use these tokens so a rebuild retains the chosen design. Open and save in Tableau after rebuilding, then package and reopen the TWBX to inspect the result.
 
-Practice: change the `accent` color and apply the theme to a disposable workbook copy. Confirm that declining bars change while the 223 orders and 83,030.39 displayed sales remain unchanged. Restore the chosen accent afterward. Cumulative sales remain a matched December 1–30 comparison; category and regional contributions are overlapping views.
+After a palette change, confirm that declining bars use the new accent while the 223 orders and 83,030.39 displayed sales remain unchanged. Cumulative sales remain a matched December 1–30 comparison; category and regional contributions are overlapping views.
